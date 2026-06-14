@@ -1,0 +1,2269 @@
+"cluster","cellAtlas","monacoImmune","Freq"
+"0","B_cell","B cells",0
+"1","B_cell","B cells",1
+"2","B_cell","B cells",0
+"3","B_cell","B cells",0
+"4","B_cell","B cells",0
+"5","B_cell","B cells",0
+"6","B_cell","B cells",0
+"7","B_cell","B cells",0
+"8","B_cell","B cells",0
+"9","B_cell","B cells",0
+"10","B_cell","B cells",0
+"11","B_cell","B cells",1
+"12","B_cell","B cells",0
+"13","B_cell","B cells",6
+"0","BM","B cells",0
+"1","BM","B cells",0
+"2","BM","B cells",0
+"3","BM","B cells",0
+"4","BM","B cells",0
+"5","BM","B cells",0
+"6","BM","B cells",0
+"7","BM","B cells",0
+"8","BM","B cells",0
+"9","BM","B cells",0
+"10","BM","B cells",0
+"11","BM","B cells",0
+"12","BM","B cells",0
+"13","BM","B cells",0
+"0","BM & Prog.","B cells",0
+"1","BM & Prog.","B cells",0
+"2","BM & Prog.","B cells",0
+"3","BM & Prog.","B cells",0
+"4","BM & Prog.","B cells",0
+"5","BM & Prog.","B cells",0
+"6","BM & Prog.","B cells",0
+"7","BM & Prog.","B cells",0
+"8","BM & Prog.","B cells",0
+"9","BM & Prog.","B cells",0
+"10","BM & Prog.","B cells",0
+"11","BM & Prog.","B cells",0
+"12","BM & Prog.","B cells",0
+"13","BM & Prog.","B cells",0
+"0","Chondrocytes","B cells",0
+"1","Chondrocytes","B cells",0
+"2","Chondrocytes","B cells",0
+"3","Chondrocytes","B cells",0
+"4","Chondrocytes","B cells",0
+"5","Chondrocytes","B cells",0
+"6","Chondrocytes","B cells",0
+"7","Chondrocytes","B cells",0
+"8","Chondrocytes","B cells",0
+"9","Chondrocytes","B cells",0
+"10","Chondrocytes","B cells",0
+"11","Chondrocytes","B cells",0
+"12","Chondrocytes","B cells",0
+"13","Chondrocytes","B cells",0
+"0","DC","B cells",0
+"1","DC","B cells",0
+"2","DC","B cells",0
+"3","DC","B cells",0
+"4","DC","B cells",0
+"5","DC","B cells",0
+"6","DC","B cells",0
+"7","DC","B cells",0
+"8","DC","B cells",0
+"9","DC","B cells",0
+"10","DC","B cells",0
+"11","DC","B cells",0
+"12","DC","B cells",0
+"13","DC","B cells",0
+"0","Endothelial_cells","B cells",0
+"1","Endothelial_cells","B cells",0
+"2","Endothelial_cells","B cells",0
+"3","Endothelial_cells","B cells",0
+"4","Endothelial_cells","B cells",0
+"5","Endothelial_cells","B cells",0
+"6","Endothelial_cells","B cells",0
+"7","Endothelial_cells","B cells",0
+"8","Endothelial_cells","B cells",0
+"9","Endothelial_cells","B cells",0
+"10","Endothelial_cells","B cells",0
+"11","Endothelial_cells","B cells",0
+"12","Endothelial_cells","B cells",0
+"13","Endothelial_cells","B cells",0
+"0","Epithelial_cells","B cells",0
+"1","Epithelial_cells","B cells",0
+"2","Epithelial_cells","B cells",0
+"3","Epithelial_cells","B cells",0
+"4","Epithelial_cells","B cells",0
+"5","Epithelial_cells","B cells",0
+"6","Epithelial_cells","B cells",0
+"7","Epithelial_cells","B cells",0
+"8","Epithelial_cells","B cells",0
+"9","Epithelial_cells","B cells",0
+"10","Epithelial_cells","B cells",0
+"11","Epithelial_cells","B cells",0
+"12","Epithelial_cells","B cells",0
+"13","Epithelial_cells","B cells",0
+"0","Erythroblast","B cells",0
+"1","Erythroblast","B cells",0
+"2","Erythroblast","B cells",0
+"3","Erythroblast","B cells",0
+"4","Erythroblast","B cells",0
+"5","Erythroblast","B cells",0
+"6","Erythroblast","B cells",0
+"7","Erythroblast","B cells",0
+"8","Erythroblast","B cells",0
+"9","Erythroblast","B cells",0
+"10","Erythroblast","B cells",0
+"11","Erythroblast","B cells",0
+"12","Erythroblast","B cells",0
+"13","Erythroblast","B cells",0
+"0","Fibroblasts","B cells",0
+"1","Fibroblasts","B cells",0
+"2","Fibroblasts","B cells",0
+"3","Fibroblasts","B cells",0
+"4","Fibroblasts","B cells",0
+"5","Fibroblasts","B cells",0
+"6","Fibroblasts","B cells",0
+"7","Fibroblasts","B cells",0
+"8","Fibroblasts","B cells",0
+"9","Fibroblasts","B cells",0
+"10","Fibroblasts","B cells",0
+"11","Fibroblasts","B cells",0
+"12","Fibroblasts","B cells",0
+"13","Fibroblasts","B cells",0
+"0","Hepatocytes","B cells",0
+"1","Hepatocytes","B cells",0
+"2","Hepatocytes","B cells",0
+"3","Hepatocytes","B cells",0
+"4","Hepatocytes","B cells",0
+"5","Hepatocytes","B cells",0
+"6","Hepatocytes","B cells",0
+"7","Hepatocytes","B cells",0
+"8","Hepatocytes","B cells",0
+"9","Hepatocytes","B cells",0
+"10","Hepatocytes","B cells",0
+"11","Hepatocytes","B cells",0
+"12","Hepatocytes","B cells",0
+"13","Hepatocytes","B cells",0
+"0","HSC_-G-CSF","B cells",0
+"1","HSC_-G-CSF","B cells",0
+"2","HSC_-G-CSF","B cells",0
+"3","HSC_-G-CSF","B cells",0
+"4","HSC_-G-CSF","B cells",0
+"5","HSC_-G-CSF","B cells",0
+"6","HSC_-G-CSF","B cells",0
+"7","HSC_-G-CSF","B cells",0
+"8","HSC_-G-CSF","B cells",0
+"9","HSC_-G-CSF","B cells",0
+"10","HSC_-G-CSF","B cells",0
+"11","HSC_-G-CSF","B cells",0
+"12","HSC_-G-CSF","B cells",0
+"13","HSC_-G-CSF","B cells",0
+"0","Macrophage","B cells",0
+"1","Macrophage","B cells",0
+"2","Macrophage","B cells",0
+"3","Macrophage","B cells",0
+"4","Macrophage","B cells",0
+"5","Macrophage","B cells",0
+"6","Macrophage","B cells",0
+"7","Macrophage","B cells",0
+"8","Macrophage","B cells",0
+"9","Macrophage","B cells",0
+"10","Macrophage","B cells",0
+"11","Macrophage","B cells",0
+"12","Macrophage","B cells",0
+"13","Macrophage","B cells",0
+"0","MEP","B cells",0
+"1","MEP","B cells",0
+"2","MEP","B cells",0
+"3","MEP","B cells",0
+"4","MEP","B cells",0
+"5","MEP","B cells",0
+"6","MEP","B cells",0
+"7","MEP","B cells",0
+"8","MEP","B cells",0
+"9","MEP","B cells",0
+"10","MEP","B cells",0
+"11","MEP","B cells",0
+"12","MEP","B cells",0
+"13","MEP","B cells",0
+"0","Monocyte","B cells",0
+"1","Monocyte","B cells",0
+"2","Monocyte","B cells",0
+"3","Monocyte","B cells",0
+"4","Monocyte","B cells",0
+"5","Monocyte","B cells",0
+"6","Monocyte","B cells",0
+"7","Monocyte","B cells",0
+"8","Monocyte","B cells",0
+"9","Monocyte","B cells",0
+"10","Monocyte","B cells",0
+"11","Monocyte","B cells",0
+"12","Monocyte","B cells",0
+"13","Monocyte","B cells",0
+"0","NK_cell","B cells",0
+"1","NK_cell","B cells",0
+"2","NK_cell","B cells",0
+"3","NK_cell","B cells",0
+"4","NK_cell","B cells",0
+"5","NK_cell","B cells",0
+"6","NK_cell","B cells",0
+"7","NK_cell","B cells",0
+"8","NK_cell","B cells",0
+"9","NK_cell","B cells",0
+"10","NK_cell","B cells",0
+"11","NK_cell","B cells",0
+"12","NK_cell","B cells",0
+"13","NK_cell","B cells",1
+"0","Pre-B_cell_CD34-","B cells",0
+"1","Pre-B_cell_CD34-","B cells",0
+"2","Pre-B_cell_CD34-","B cells",0
+"3","Pre-B_cell_CD34-","B cells",0
+"4","Pre-B_cell_CD34-","B cells",0
+"5","Pre-B_cell_CD34-","B cells",0
+"6","Pre-B_cell_CD34-","B cells",0
+"7","Pre-B_cell_CD34-","B cells",0
+"8","Pre-B_cell_CD34-","B cells",0
+"9","Pre-B_cell_CD34-","B cells",2
+"10","Pre-B_cell_CD34-","B cells",0
+"11","Pre-B_cell_CD34-","B cells",0
+"12","Pre-B_cell_CD34-","B cells",0
+"13","Pre-B_cell_CD34-","B cells",2
+"0","Pro-B_cell_CD34+","B cells",0
+"1","Pro-B_cell_CD34+","B cells",0
+"2","Pro-B_cell_CD34+","B cells",0
+"3","Pro-B_cell_CD34+","B cells",0
+"4","Pro-B_cell_CD34+","B cells",0
+"5","Pro-B_cell_CD34+","B cells",0
+"6","Pro-B_cell_CD34+","B cells",0
+"7","Pro-B_cell_CD34+","B cells",0
+"8","Pro-B_cell_CD34+","B cells",0
+"9","Pro-B_cell_CD34+","B cells",0
+"10","Pro-B_cell_CD34+","B cells",0
+"11","Pro-B_cell_CD34+","B cells",0
+"12","Pro-B_cell_CD34+","B cells",0
+"13","Pro-B_cell_CD34+","B cells",0
+"0","T_cells","B cells",0
+"1","T_cells","B cells",1
+"2","T_cells","B cells",0
+"3","T_cells","B cells",0
+"4","T_cells","B cells",0
+"5","T_cells","B cells",0
+"6","T_cells","B cells",0
+"7","T_cells","B cells",0
+"8","T_cells","B cells",0
+"9","T_cells","B cells",1
+"10","T_cells","B cells",0
+"11","T_cells","B cells",0
+"12","T_cells","B cells",0
+"13","T_cells","B cells",18
+"0","B_cell","Basophils",0
+"1","B_cell","Basophils",0
+"2","B_cell","Basophils",0
+"3","B_cell","Basophils",0
+"4","B_cell","Basophils",0
+"5","B_cell","Basophils",0
+"6","B_cell","Basophils",0
+"7","B_cell","Basophils",0
+"8","B_cell","Basophils",0
+"9","B_cell","Basophils",0
+"10","B_cell","Basophils",0
+"11","B_cell","Basophils",0
+"12","B_cell","Basophils",0
+"13","B_cell","Basophils",0
+"0","BM","Basophils",0
+"1","BM","Basophils",0
+"2","BM","Basophils",0
+"3","BM","Basophils",0
+"4","BM","Basophils",0
+"5","BM","Basophils",0
+"6","BM","Basophils",0
+"7","BM","Basophils",0
+"8","BM","Basophils",0
+"9","BM","Basophils",0
+"10","BM","Basophils",0
+"11","BM","Basophils",0
+"12","BM","Basophils",0
+"13","BM","Basophils",0
+"0","BM & Prog.","Basophils",0
+"1","BM & Prog.","Basophils",0
+"2","BM & Prog.","Basophils",0
+"3","BM & Prog.","Basophils",0
+"4","BM & Prog.","Basophils",0
+"5","BM & Prog.","Basophils",0
+"6","BM & Prog.","Basophils",0
+"7","BM & Prog.","Basophils",0
+"8","BM & Prog.","Basophils",0
+"9","BM & Prog.","Basophils",0
+"10","BM & Prog.","Basophils",0
+"11","BM & Prog.","Basophils",0
+"12","BM & Prog.","Basophils",0
+"13","BM & Prog.","Basophils",0
+"0","Chondrocytes","Basophils",0
+"1","Chondrocytes","Basophils",0
+"2","Chondrocytes","Basophils",0
+"3","Chondrocytes","Basophils",0
+"4","Chondrocytes","Basophils",0
+"5","Chondrocytes","Basophils",0
+"6","Chondrocytes","Basophils",0
+"7","Chondrocytes","Basophils",0
+"8","Chondrocytes","Basophils",0
+"9","Chondrocytes","Basophils",0
+"10","Chondrocytes","Basophils",0
+"11","Chondrocytes","Basophils",0
+"12","Chondrocytes","Basophils",0
+"13","Chondrocytes","Basophils",0
+"0","DC","Basophils",0
+"1","DC","Basophils",0
+"2","DC","Basophils",0
+"3","DC","Basophils",0
+"4","DC","Basophils",0
+"5","DC","Basophils",0
+"6","DC","Basophils",0
+"7","DC","Basophils",0
+"8","DC","Basophils",0
+"9","DC","Basophils",0
+"10","DC","Basophils",0
+"11","DC","Basophils",0
+"12","DC","Basophils",0
+"13","DC","Basophils",0
+"0","Endothelial_cells","Basophils",0
+"1","Endothelial_cells","Basophils",0
+"2","Endothelial_cells","Basophils",0
+"3","Endothelial_cells","Basophils",0
+"4","Endothelial_cells","Basophils",0
+"5","Endothelial_cells","Basophils",0
+"6","Endothelial_cells","Basophils",0
+"7","Endothelial_cells","Basophils",0
+"8","Endothelial_cells","Basophils",0
+"9","Endothelial_cells","Basophils",0
+"10","Endothelial_cells","Basophils",0
+"11","Endothelial_cells","Basophils",0
+"12","Endothelial_cells","Basophils",0
+"13","Endothelial_cells","Basophils",2
+"0","Epithelial_cells","Basophils",0
+"1","Epithelial_cells","Basophils",0
+"2","Epithelial_cells","Basophils",0
+"3","Epithelial_cells","Basophils",0
+"4","Epithelial_cells","Basophils",0
+"5","Epithelial_cells","Basophils",0
+"6","Epithelial_cells","Basophils",0
+"7","Epithelial_cells","Basophils",0
+"8","Epithelial_cells","Basophils",0
+"9","Epithelial_cells","Basophils",0
+"10","Epithelial_cells","Basophils",0
+"11","Epithelial_cells","Basophils",0
+"12","Epithelial_cells","Basophils",0
+"13","Epithelial_cells","Basophils",0
+"0","Erythroblast","Basophils",0
+"1","Erythroblast","Basophils",0
+"2","Erythroblast","Basophils",0
+"3","Erythroblast","Basophils",0
+"4","Erythroblast","Basophils",0
+"5","Erythroblast","Basophils",0
+"6","Erythroblast","Basophils",0
+"7","Erythroblast","Basophils",0
+"8","Erythroblast","Basophils",0
+"9","Erythroblast","Basophils",0
+"10","Erythroblast","Basophils",0
+"11","Erythroblast","Basophils",0
+"12","Erythroblast","Basophils",0
+"13","Erythroblast","Basophils",0
+"0","Fibroblasts","Basophils",0
+"1","Fibroblasts","Basophils",0
+"2","Fibroblasts","Basophils",0
+"3","Fibroblasts","Basophils",0
+"4","Fibroblasts","Basophils",0
+"5","Fibroblasts","Basophils",0
+"6","Fibroblasts","Basophils",0
+"7","Fibroblasts","Basophils",0
+"8","Fibroblasts","Basophils",0
+"9","Fibroblasts","Basophils",0
+"10","Fibroblasts","Basophils",0
+"11","Fibroblasts","Basophils",0
+"12","Fibroblasts","Basophils",0
+"13","Fibroblasts","Basophils",0
+"0","Hepatocytes","Basophils",0
+"1","Hepatocytes","Basophils",0
+"2","Hepatocytes","Basophils",0
+"3","Hepatocytes","Basophils",0
+"4","Hepatocytes","Basophils",0
+"5","Hepatocytes","Basophils",0
+"6","Hepatocytes","Basophils",0
+"7","Hepatocytes","Basophils",0
+"8","Hepatocytes","Basophils",0
+"9","Hepatocytes","Basophils",0
+"10","Hepatocytes","Basophils",0
+"11","Hepatocytes","Basophils",0
+"12","Hepatocytes","Basophils",0
+"13","Hepatocytes","Basophils",0
+"0","HSC_-G-CSF","Basophils",0
+"1","HSC_-G-CSF","Basophils",0
+"2","HSC_-G-CSF","Basophils",0
+"3","HSC_-G-CSF","Basophils",0
+"4","HSC_-G-CSF","Basophils",0
+"5","HSC_-G-CSF","Basophils",0
+"6","HSC_-G-CSF","Basophils",0
+"7","HSC_-G-CSF","Basophils",0
+"8","HSC_-G-CSF","Basophils",0
+"9","HSC_-G-CSF","Basophils",0
+"10","HSC_-G-CSF","Basophils",0
+"11","HSC_-G-CSF","Basophils",0
+"12","HSC_-G-CSF","Basophils",0
+"13","HSC_-G-CSF","Basophils",0
+"0","Macrophage","Basophils",0
+"1","Macrophage","Basophils",0
+"2","Macrophage","Basophils",0
+"3","Macrophage","Basophils",0
+"4","Macrophage","Basophils",0
+"5","Macrophage","Basophils",0
+"6","Macrophage","Basophils",0
+"7","Macrophage","Basophils",0
+"8","Macrophage","Basophils",0
+"9","Macrophage","Basophils",0
+"10","Macrophage","Basophils",0
+"11","Macrophage","Basophils",0
+"12","Macrophage","Basophils",0
+"13","Macrophage","Basophils",0
+"0","MEP","Basophils",0
+"1","MEP","Basophils",0
+"2","MEP","Basophils",0
+"3","MEP","Basophils",0
+"4","MEP","Basophils",0
+"5","MEP","Basophils",0
+"6","MEP","Basophils",0
+"7","MEP","Basophils",0
+"8","MEP","Basophils",0
+"9","MEP","Basophils",0
+"10","MEP","Basophils",0
+"11","MEP","Basophils",0
+"12","MEP","Basophils",0
+"13","MEP","Basophils",0
+"0","Monocyte","Basophils",0
+"1","Monocyte","Basophils",0
+"2","Monocyte","Basophils",0
+"3","Monocyte","Basophils",0
+"4","Monocyte","Basophils",0
+"5","Monocyte","Basophils",0
+"6","Monocyte","Basophils",0
+"7","Monocyte","Basophils",0
+"8","Monocyte","Basophils",0
+"9","Monocyte","Basophils",0
+"10","Monocyte","Basophils",0
+"11","Monocyte","Basophils",0
+"12","Monocyte","Basophils",0
+"13","Monocyte","Basophils",0
+"0","NK_cell","Basophils",0
+"1","NK_cell","Basophils",0
+"2","NK_cell","Basophils",0
+"3","NK_cell","Basophils",0
+"4","NK_cell","Basophils",0
+"5","NK_cell","Basophils",0
+"6","NK_cell","Basophils",0
+"7","NK_cell","Basophils",0
+"8","NK_cell","Basophils",0
+"9","NK_cell","Basophils",0
+"10","NK_cell","Basophils",0
+"11","NK_cell","Basophils",0
+"12","NK_cell","Basophils",0
+"13","NK_cell","Basophils",0
+"0","Pre-B_cell_CD34-","Basophils",0
+"1","Pre-B_cell_CD34-","Basophils",0
+"2","Pre-B_cell_CD34-","Basophils",0
+"3","Pre-B_cell_CD34-","Basophils",0
+"4","Pre-B_cell_CD34-","Basophils",0
+"5","Pre-B_cell_CD34-","Basophils",0
+"6","Pre-B_cell_CD34-","Basophils",0
+"7","Pre-B_cell_CD34-","Basophils",1
+"8","Pre-B_cell_CD34-","Basophils",0
+"9","Pre-B_cell_CD34-","Basophils",0
+"10","Pre-B_cell_CD34-","Basophils",0
+"11","Pre-B_cell_CD34-","Basophils",0
+"12","Pre-B_cell_CD34-","Basophils",0
+"13","Pre-B_cell_CD34-","Basophils",0
+"0","Pro-B_cell_CD34+","Basophils",0
+"1","Pro-B_cell_CD34+","Basophils",0
+"2","Pro-B_cell_CD34+","Basophils",0
+"3","Pro-B_cell_CD34+","Basophils",0
+"4","Pro-B_cell_CD34+","Basophils",0
+"5","Pro-B_cell_CD34+","Basophils",0
+"6","Pro-B_cell_CD34+","Basophils",0
+"7","Pro-B_cell_CD34+","Basophils",0
+"8","Pro-B_cell_CD34+","Basophils",0
+"9","Pro-B_cell_CD34+","Basophils",0
+"10","Pro-B_cell_CD34+","Basophils",0
+"11","Pro-B_cell_CD34+","Basophils",0
+"12","Pro-B_cell_CD34+","Basophils",0
+"13","Pro-B_cell_CD34+","Basophils",0
+"0","T_cells","Basophils",0
+"1","T_cells","Basophils",0
+"2","T_cells","Basophils",0
+"3","T_cells","Basophils",0
+"4","T_cells","Basophils",0
+"5","T_cells","Basophils",0
+"6","T_cells","Basophils",0
+"7","T_cells","Basophils",0
+"8","T_cells","Basophils",0
+"9","T_cells","Basophils",0
+"10","T_cells","Basophils",0
+"11","T_cells","Basophils",0
+"12","T_cells","Basophils",0
+"13","T_cells","Basophils",0
+"0","B_cell","CD4+ T cells",0
+"1","B_cell","CD4+ T cells",0
+"2","B_cell","CD4+ T cells",0
+"3","B_cell","CD4+ T cells",0
+"4","B_cell","CD4+ T cells",0
+"5","B_cell","CD4+ T cells",0
+"6","B_cell","CD4+ T cells",0
+"7","B_cell","CD4+ T cells",0
+"8","B_cell","CD4+ T cells",0
+"9","B_cell","CD4+ T cells",0
+"10","B_cell","CD4+ T cells",0
+"11","B_cell","CD4+ T cells",0
+"12","B_cell","CD4+ T cells",0
+"13","B_cell","CD4+ T cells",0
+"0","BM","CD4+ T cells",0
+"1","BM","CD4+ T cells",0
+"2","BM","CD4+ T cells",0
+"3","BM","CD4+ T cells",0
+"4","BM","CD4+ T cells",0
+"5","BM","CD4+ T cells",0
+"6","BM","CD4+ T cells",0
+"7","BM","CD4+ T cells",0
+"8","BM","CD4+ T cells",0
+"9","BM","CD4+ T cells",0
+"10","BM","CD4+ T cells",0
+"11","BM","CD4+ T cells",0
+"12","BM","CD4+ T cells",0
+"13","BM","CD4+ T cells",0
+"0","BM & Prog.","CD4+ T cells",0
+"1","BM & Prog.","CD4+ T cells",0
+"2","BM & Prog.","CD4+ T cells",0
+"3","BM & Prog.","CD4+ T cells",0
+"4","BM & Prog.","CD4+ T cells",0
+"5","BM & Prog.","CD4+ T cells",0
+"6","BM & Prog.","CD4+ T cells",0
+"7","BM & Prog.","CD4+ T cells",0
+"8","BM & Prog.","CD4+ T cells",0
+"9","BM & Prog.","CD4+ T cells",0
+"10","BM & Prog.","CD4+ T cells",0
+"11","BM & Prog.","CD4+ T cells",0
+"12","BM & Prog.","CD4+ T cells",0
+"13","BM & Prog.","CD4+ T cells",0
+"0","Chondrocytes","CD4+ T cells",0
+"1","Chondrocytes","CD4+ T cells",0
+"2","Chondrocytes","CD4+ T cells",0
+"3","Chondrocytes","CD4+ T cells",0
+"4","Chondrocytes","CD4+ T cells",0
+"5","Chondrocytes","CD4+ T cells",0
+"6","Chondrocytes","CD4+ T cells",0
+"7","Chondrocytes","CD4+ T cells",0
+"8","Chondrocytes","CD4+ T cells",0
+"9","Chondrocytes","CD4+ T cells",0
+"10","Chondrocytes","CD4+ T cells",0
+"11","Chondrocytes","CD4+ T cells",0
+"12","Chondrocytes","CD4+ T cells",0
+"13","Chondrocytes","CD4+ T cells",0
+"0","DC","CD4+ T cells",0
+"1","DC","CD4+ T cells",0
+"2","DC","CD4+ T cells",0
+"3","DC","CD4+ T cells",0
+"4","DC","CD4+ T cells",0
+"5","DC","CD4+ T cells",0
+"6","DC","CD4+ T cells",0
+"7","DC","CD4+ T cells",0
+"8","DC","CD4+ T cells",0
+"9","DC","CD4+ T cells",0
+"10","DC","CD4+ T cells",0
+"11","DC","CD4+ T cells",0
+"12","DC","CD4+ T cells",0
+"13","DC","CD4+ T cells",0
+"0","Endothelial_cells","CD4+ T cells",0
+"1","Endothelial_cells","CD4+ T cells",0
+"2","Endothelial_cells","CD4+ T cells",0
+"3","Endothelial_cells","CD4+ T cells",0
+"4","Endothelial_cells","CD4+ T cells",0
+"5","Endothelial_cells","CD4+ T cells",0
+"6","Endothelial_cells","CD4+ T cells",0
+"7","Endothelial_cells","CD4+ T cells",0
+"8","Endothelial_cells","CD4+ T cells",0
+"9","Endothelial_cells","CD4+ T cells",0
+"10","Endothelial_cells","CD4+ T cells",0
+"11","Endothelial_cells","CD4+ T cells",0
+"12","Endothelial_cells","CD4+ T cells",0
+"13","Endothelial_cells","CD4+ T cells",0
+"0","Epithelial_cells","CD4+ T cells",0
+"1","Epithelial_cells","CD4+ T cells",0
+"2","Epithelial_cells","CD4+ T cells",0
+"3","Epithelial_cells","CD4+ T cells",0
+"4","Epithelial_cells","CD4+ T cells",0
+"5","Epithelial_cells","CD4+ T cells",0
+"6","Epithelial_cells","CD4+ T cells",0
+"7","Epithelial_cells","CD4+ T cells",0
+"8","Epithelial_cells","CD4+ T cells",0
+"9","Epithelial_cells","CD4+ T cells",0
+"10","Epithelial_cells","CD4+ T cells",0
+"11","Epithelial_cells","CD4+ T cells",0
+"12","Epithelial_cells","CD4+ T cells",0
+"13","Epithelial_cells","CD4+ T cells",0
+"0","Erythroblast","CD4+ T cells",0
+"1","Erythroblast","CD4+ T cells",0
+"2","Erythroblast","CD4+ T cells",0
+"3","Erythroblast","CD4+ T cells",0
+"4","Erythroblast","CD4+ T cells",0
+"5","Erythroblast","CD4+ T cells",0
+"6","Erythroblast","CD4+ T cells",0
+"7","Erythroblast","CD4+ T cells",0
+"8","Erythroblast","CD4+ T cells",0
+"9","Erythroblast","CD4+ T cells",0
+"10","Erythroblast","CD4+ T cells",0
+"11","Erythroblast","CD4+ T cells",0
+"12","Erythroblast","CD4+ T cells",0
+"13","Erythroblast","CD4+ T cells",0
+"0","Fibroblasts","CD4+ T cells",0
+"1","Fibroblasts","CD4+ T cells",0
+"2","Fibroblasts","CD4+ T cells",0
+"3","Fibroblasts","CD4+ T cells",0
+"4","Fibroblasts","CD4+ T cells",0
+"5","Fibroblasts","CD4+ T cells",0
+"6","Fibroblasts","CD4+ T cells",0
+"7","Fibroblasts","CD4+ T cells",0
+"8","Fibroblasts","CD4+ T cells",0
+"9","Fibroblasts","CD4+ T cells",0
+"10","Fibroblasts","CD4+ T cells",0
+"11","Fibroblasts","CD4+ T cells",0
+"12","Fibroblasts","CD4+ T cells",0
+"13","Fibroblasts","CD4+ T cells",0
+"0","Hepatocytes","CD4+ T cells",0
+"1","Hepatocytes","CD4+ T cells",0
+"2","Hepatocytes","CD4+ T cells",0
+"3","Hepatocytes","CD4+ T cells",0
+"4","Hepatocytes","CD4+ T cells",0
+"5","Hepatocytes","CD4+ T cells",0
+"6","Hepatocytes","CD4+ T cells",0
+"7","Hepatocytes","CD4+ T cells",0
+"8","Hepatocytes","CD4+ T cells",0
+"9","Hepatocytes","CD4+ T cells",0
+"10","Hepatocytes","CD4+ T cells",0
+"11","Hepatocytes","CD4+ T cells",0
+"12","Hepatocytes","CD4+ T cells",0
+"13","Hepatocytes","CD4+ T cells",0
+"0","HSC_-G-CSF","CD4+ T cells",0
+"1","HSC_-G-CSF","CD4+ T cells",0
+"2","HSC_-G-CSF","CD4+ T cells",0
+"3","HSC_-G-CSF","CD4+ T cells",0
+"4","HSC_-G-CSF","CD4+ T cells",0
+"5","HSC_-G-CSF","CD4+ T cells",0
+"6","HSC_-G-CSF","CD4+ T cells",0
+"7","HSC_-G-CSF","CD4+ T cells",0
+"8","HSC_-G-CSF","CD4+ T cells",0
+"9","HSC_-G-CSF","CD4+ T cells",0
+"10","HSC_-G-CSF","CD4+ T cells",0
+"11","HSC_-G-CSF","CD4+ T cells",0
+"12","HSC_-G-CSF","CD4+ T cells",0
+"13","HSC_-G-CSF","CD4+ T cells",0
+"0","Macrophage","CD4+ T cells",0
+"1","Macrophage","CD4+ T cells",0
+"2","Macrophage","CD4+ T cells",0
+"3","Macrophage","CD4+ T cells",0
+"4","Macrophage","CD4+ T cells",0
+"5","Macrophage","CD4+ T cells",0
+"6","Macrophage","CD4+ T cells",0
+"7","Macrophage","CD4+ T cells",0
+"8","Macrophage","CD4+ T cells",0
+"9","Macrophage","CD4+ T cells",0
+"10","Macrophage","CD4+ T cells",0
+"11","Macrophage","CD4+ T cells",0
+"12","Macrophage","CD4+ T cells",0
+"13","Macrophage","CD4+ T cells",0
+"0","MEP","CD4+ T cells",0
+"1","MEP","CD4+ T cells",0
+"2","MEP","CD4+ T cells",0
+"3","MEP","CD4+ T cells",0
+"4","MEP","CD4+ T cells",0
+"5","MEP","CD4+ T cells",0
+"6","MEP","CD4+ T cells",0
+"7","MEP","CD4+ T cells",0
+"8","MEP","CD4+ T cells",0
+"9","MEP","CD4+ T cells",0
+"10","MEP","CD4+ T cells",0
+"11","MEP","CD4+ T cells",0
+"12","MEP","CD4+ T cells",0
+"13","MEP","CD4+ T cells",0
+"0","Monocyte","CD4+ T cells",0
+"1","Monocyte","CD4+ T cells",0
+"2","Monocyte","CD4+ T cells",0
+"3","Monocyte","CD4+ T cells",0
+"4","Monocyte","CD4+ T cells",0
+"5","Monocyte","CD4+ T cells",0
+"6","Monocyte","CD4+ T cells",0
+"7","Monocyte","CD4+ T cells",0
+"8","Monocyte","CD4+ T cells",0
+"9","Monocyte","CD4+ T cells",0
+"10","Monocyte","CD4+ T cells",0
+"11","Monocyte","CD4+ T cells",0
+"12","Monocyte","CD4+ T cells",0
+"13","Monocyte","CD4+ T cells",0
+"0","NK_cell","CD4+ T cells",0
+"1","NK_cell","CD4+ T cells",0
+"2","NK_cell","CD4+ T cells",0
+"3","NK_cell","CD4+ T cells",0
+"4","NK_cell","CD4+ T cells",0
+"5","NK_cell","CD4+ T cells",1
+"6","NK_cell","CD4+ T cells",0
+"7","NK_cell","CD4+ T cells",0
+"8","NK_cell","CD4+ T cells",1
+"9","NK_cell","CD4+ T cells",1
+"10","NK_cell","CD4+ T cells",0
+"11","NK_cell","CD4+ T cells",0
+"12","NK_cell","CD4+ T cells",0
+"13","NK_cell","CD4+ T cells",0
+"0","Pre-B_cell_CD34-","CD4+ T cells",0
+"1","Pre-B_cell_CD34-","CD4+ T cells",1
+"2","Pre-B_cell_CD34-","CD4+ T cells",0
+"3","Pre-B_cell_CD34-","CD4+ T cells",0
+"4","Pre-B_cell_CD34-","CD4+ T cells",0
+"5","Pre-B_cell_CD34-","CD4+ T cells",0
+"6","Pre-B_cell_CD34-","CD4+ T cells",0
+"7","Pre-B_cell_CD34-","CD4+ T cells",0
+"8","Pre-B_cell_CD34-","CD4+ T cells",0
+"9","Pre-B_cell_CD34-","CD4+ T cells",0
+"10","Pre-B_cell_CD34-","CD4+ T cells",0
+"11","Pre-B_cell_CD34-","CD4+ T cells",0
+"12","Pre-B_cell_CD34-","CD4+ T cells",0
+"13","Pre-B_cell_CD34-","CD4+ T cells",0
+"0","Pro-B_cell_CD34+","CD4+ T cells",0
+"1","Pro-B_cell_CD34+","CD4+ T cells",0
+"2","Pro-B_cell_CD34+","CD4+ T cells",0
+"3","Pro-B_cell_CD34+","CD4+ T cells",0
+"4","Pro-B_cell_CD34+","CD4+ T cells",0
+"5","Pro-B_cell_CD34+","CD4+ T cells",0
+"6","Pro-B_cell_CD34+","CD4+ T cells",0
+"7","Pro-B_cell_CD34+","CD4+ T cells",0
+"8","Pro-B_cell_CD34+","CD4+ T cells",0
+"9","Pro-B_cell_CD34+","CD4+ T cells",0
+"10","Pro-B_cell_CD34+","CD4+ T cells",0
+"11","Pro-B_cell_CD34+","CD4+ T cells",1
+"12","Pro-B_cell_CD34+","CD4+ T cells",0
+"13","Pro-B_cell_CD34+","CD4+ T cells",0
+"0","T_cells","CD4+ T cells",16
+"1","T_cells","CD4+ T cells",5662
+"2","T_cells","CD4+ T cells",17
+"3","T_cells","CD4+ T cells",768
+"4","T_cells","CD4+ T cells",0
+"5","T_cells","CD4+ T cells",1163
+"6","T_cells","CD4+ T cells",2773
+"7","T_cells","CD4+ T cells",74
+"8","T_cells","CD4+ T cells",2699
+"9","T_cells","CD4+ T cells",380
+"10","T_cells","CD4+ T cells",0
+"11","T_cells","CD4+ T cells",60
+"12","T_cells","CD4+ T cells",0
+"13","T_cells","CD4+ T cells",3
+"0","B_cell","CD8+ T cells",0
+"1","B_cell","CD8+ T cells",0
+"2","B_cell","CD8+ T cells",0
+"3","B_cell","CD8+ T cells",0
+"4","B_cell","CD8+ T cells",0
+"5","B_cell","CD8+ T cells",0
+"6","B_cell","CD8+ T cells",0
+"7","B_cell","CD8+ T cells",0
+"8","B_cell","CD8+ T cells",0
+"9","B_cell","CD8+ T cells",0
+"10","B_cell","CD8+ T cells",0
+"11","B_cell","CD8+ T cells",0
+"12","B_cell","CD8+ T cells",0
+"13","B_cell","CD8+ T cells",0
+"0","BM","CD8+ T cells",0
+"1","BM","CD8+ T cells",0
+"2","BM","CD8+ T cells",0
+"3","BM","CD8+ T cells",0
+"4","BM","CD8+ T cells",0
+"5","BM","CD8+ T cells",0
+"6","BM","CD8+ T cells",0
+"7","BM","CD8+ T cells",0
+"8","BM","CD8+ T cells",0
+"9","BM","CD8+ T cells",0
+"10","BM","CD8+ T cells",0
+"11","BM","CD8+ T cells",0
+"12","BM","CD8+ T cells",0
+"13","BM","CD8+ T cells",0
+"0","BM & Prog.","CD8+ T cells",0
+"1","BM & Prog.","CD8+ T cells",0
+"2","BM & Prog.","CD8+ T cells",0
+"3","BM & Prog.","CD8+ T cells",0
+"4","BM & Prog.","CD8+ T cells",0
+"5","BM & Prog.","CD8+ T cells",0
+"6","BM & Prog.","CD8+ T cells",0
+"7","BM & Prog.","CD8+ T cells",0
+"8","BM & Prog.","CD8+ T cells",0
+"9","BM & Prog.","CD8+ T cells",0
+"10","BM & Prog.","CD8+ T cells",0
+"11","BM & Prog.","CD8+ T cells",0
+"12","BM & Prog.","CD8+ T cells",0
+"13","BM & Prog.","CD8+ T cells",0
+"0","Chondrocytes","CD8+ T cells",0
+"1","Chondrocytes","CD8+ T cells",0
+"2","Chondrocytes","CD8+ T cells",0
+"3","Chondrocytes","CD8+ T cells",0
+"4","Chondrocytes","CD8+ T cells",0
+"5","Chondrocytes","CD8+ T cells",0
+"6","Chondrocytes","CD8+ T cells",0
+"7","Chondrocytes","CD8+ T cells",0
+"8","Chondrocytes","CD8+ T cells",0
+"9","Chondrocytes","CD8+ T cells",0
+"10","Chondrocytes","CD8+ T cells",0
+"11","Chondrocytes","CD8+ T cells",0
+"12","Chondrocytes","CD8+ T cells",0
+"13","Chondrocytes","CD8+ T cells",0
+"0","DC","CD8+ T cells",0
+"1","DC","CD8+ T cells",0
+"2","DC","CD8+ T cells",0
+"3","DC","CD8+ T cells",0
+"4","DC","CD8+ T cells",0
+"5","DC","CD8+ T cells",0
+"6","DC","CD8+ T cells",0
+"7","DC","CD8+ T cells",0
+"8","DC","CD8+ T cells",0
+"9","DC","CD8+ T cells",0
+"10","DC","CD8+ T cells",0
+"11","DC","CD8+ T cells",0
+"12","DC","CD8+ T cells",0
+"13","DC","CD8+ T cells",0
+"0","Endothelial_cells","CD8+ T cells",0
+"1","Endothelial_cells","CD8+ T cells",0
+"2","Endothelial_cells","CD8+ T cells",0
+"3","Endothelial_cells","CD8+ T cells",0
+"4","Endothelial_cells","CD8+ T cells",0
+"5","Endothelial_cells","CD8+ T cells",0
+"6","Endothelial_cells","CD8+ T cells",0
+"7","Endothelial_cells","CD8+ T cells",0
+"8","Endothelial_cells","CD8+ T cells",0
+"9","Endothelial_cells","CD8+ T cells",0
+"10","Endothelial_cells","CD8+ T cells",0
+"11","Endothelial_cells","CD8+ T cells",0
+"12","Endothelial_cells","CD8+ T cells",0
+"13","Endothelial_cells","CD8+ T cells",0
+"0","Epithelial_cells","CD8+ T cells",0
+"1","Epithelial_cells","CD8+ T cells",0
+"2","Epithelial_cells","CD8+ T cells",0
+"3","Epithelial_cells","CD8+ T cells",0
+"4","Epithelial_cells","CD8+ T cells",0
+"5","Epithelial_cells","CD8+ T cells",0
+"6","Epithelial_cells","CD8+ T cells",0
+"7","Epithelial_cells","CD8+ T cells",0
+"8","Epithelial_cells","CD8+ T cells",0
+"9","Epithelial_cells","CD8+ T cells",0
+"10","Epithelial_cells","CD8+ T cells",0
+"11","Epithelial_cells","CD8+ T cells",0
+"12","Epithelial_cells","CD8+ T cells",0
+"13","Epithelial_cells","CD8+ T cells",0
+"0","Erythroblast","CD8+ T cells",0
+"1","Erythroblast","CD8+ T cells",0
+"2","Erythroblast","CD8+ T cells",0
+"3","Erythroblast","CD8+ T cells",0
+"4","Erythroblast","CD8+ T cells",0
+"5","Erythroblast","CD8+ T cells",0
+"6","Erythroblast","CD8+ T cells",0
+"7","Erythroblast","CD8+ T cells",0
+"8","Erythroblast","CD8+ T cells",0
+"9","Erythroblast","CD8+ T cells",0
+"10","Erythroblast","CD8+ T cells",0
+"11","Erythroblast","CD8+ T cells",0
+"12","Erythroblast","CD8+ T cells",0
+"13","Erythroblast","CD8+ T cells",0
+"0","Fibroblasts","CD8+ T cells",0
+"1","Fibroblasts","CD8+ T cells",0
+"2","Fibroblasts","CD8+ T cells",0
+"3","Fibroblasts","CD8+ T cells",0
+"4","Fibroblasts","CD8+ T cells",0
+"5","Fibroblasts","CD8+ T cells",0
+"6","Fibroblasts","CD8+ T cells",0
+"7","Fibroblasts","CD8+ T cells",0
+"8","Fibroblasts","CD8+ T cells",0
+"9","Fibroblasts","CD8+ T cells",0
+"10","Fibroblasts","CD8+ T cells",0
+"11","Fibroblasts","CD8+ T cells",0
+"12","Fibroblasts","CD8+ T cells",0
+"13","Fibroblasts","CD8+ T cells",0
+"0","Hepatocytes","CD8+ T cells",0
+"1","Hepatocytes","CD8+ T cells",0
+"2","Hepatocytes","CD8+ T cells",0
+"3","Hepatocytes","CD8+ T cells",0
+"4","Hepatocytes","CD8+ T cells",0
+"5","Hepatocytes","CD8+ T cells",0
+"6","Hepatocytes","CD8+ T cells",0
+"7","Hepatocytes","CD8+ T cells",0
+"8","Hepatocytes","CD8+ T cells",0
+"9","Hepatocytes","CD8+ T cells",0
+"10","Hepatocytes","CD8+ T cells",0
+"11","Hepatocytes","CD8+ T cells",0
+"12","Hepatocytes","CD8+ T cells",0
+"13","Hepatocytes","CD8+ T cells",0
+"0","HSC_-G-CSF","CD8+ T cells",0
+"1","HSC_-G-CSF","CD8+ T cells",0
+"2","HSC_-G-CSF","CD8+ T cells",0
+"3","HSC_-G-CSF","CD8+ T cells",0
+"4","HSC_-G-CSF","CD8+ T cells",0
+"5","HSC_-G-CSF","CD8+ T cells",0
+"6","HSC_-G-CSF","CD8+ T cells",0
+"7","HSC_-G-CSF","CD8+ T cells",0
+"8","HSC_-G-CSF","CD8+ T cells",0
+"9","HSC_-G-CSF","CD8+ T cells",0
+"10","HSC_-G-CSF","CD8+ T cells",0
+"11","HSC_-G-CSF","CD8+ T cells",0
+"12","HSC_-G-CSF","CD8+ T cells",0
+"13","HSC_-G-CSF","CD8+ T cells",0
+"0","Macrophage","CD8+ T cells",0
+"1","Macrophage","CD8+ T cells",0
+"2","Macrophage","CD8+ T cells",0
+"3","Macrophage","CD8+ T cells",0
+"4","Macrophage","CD8+ T cells",0
+"5","Macrophage","CD8+ T cells",0
+"6","Macrophage","CD8+ T cells",0
+"7","Macrophage","CD8+ T cells",0
+"8","Macrophage","CD8+ T cells",0
+"9","Macrophage","CD8+ T cells",0
+"10","Macrophage","CD8+ T cells",0
+"11","Macrophage","CD8+ T cells",0
+"12","Macrophage","CD8+ T cells",0
+"13","Macrophage","CD8+ T cells",0
+"0","MEP","CD8+ T cells",0
+"1","MEP","CD8+ T cells",0
+"2","MEP","CD8+ T cells",0
+"3","MEP","CD8+ T cells",0
+"4","MEP","CD8+ T cells",0
+"5","MEP","CD8+ T cells",0
+"6","MEP","CD8+ T cells",0
+"7","MEP","CD8+ T cells",0
+"8","MEP","CD8+ T cells",0
+"9","MEP","CD8+ T cells",0
+"10","MEP","CD8+ T cells",0
+"11","MEP","CD8+ T cells",0
+"12","MEP","CD8+ T cells",0
+"13","MEP","CD8+ T cells",0
+"0","Monocyte","CD8+ T cells",0
+"1","Monocyte","CD8+ T cells",0
+"2","Monocyte","CD8+ T cells",0
+"3","Monocyte","CD8+ T cells",0
+"4","Monocyte","CD8+ T cells",0
+"5","Monocyte","CD8+ T cells",0
+"6","Monocyte","CD8+ T cells",0
+"7","Monocyte","CD8+ T cells",0
+"8","Monocyte","CD8+ T cells",0
+"9","Monocyte","CD8+ T cells",0
+"10","Monocyte","CD8+ T cells",0
+"11","Monocyte","CD8+ T cells",0
+"12","Monocyte","CD8+ T cells",0
+"13","Monocyte","CD8+ T cells",0
+"0","NK_cell","CD8+ T cells",6
+"1","NK_cell","CD8+ T cells",0
+"2","NK_cell","CD8+ T cells",0
+"3","NK_cell","CD8+ T cells",0
+"4","NK_cell","CD8+ T cells",0
+"5","NK_cell","CD8+ T cells",0
+"6","NK_cell","CD8+ T cells",0
+"7","NK_cell","CD8+ T cells",0
+"8","NK_cell","CD8+ T cells",0
+"9","NK_cell","CD8+ T cells",1
+"10","NK_cell","CD8+ T cells",0
+"11","NK_cell","CD8+ T cells",0
+"12","NK_cell","CD8+ T cells",0
+"13","NK_cell","CD8+ T cells",0
+"0","Pre-B_cell_CD34-","CD8+ T cells",0
+"1","Pre-B_cell_CD34-","CD8+ T cells",0
+"2","Pre-B_cell_CD34-","CD8+ T cells",0
+"3","Pre-B_cell_CD34-","CD8+ T cells",0
+"4","Pre-B_cell_CD34-","CD8+ T cells",0
+"5","Pre-B_cell_CD34-","CD8+ T cells",0
+"6","Pre-B_cell_CD34-","CD8+ T cells",0
+"7","Pre-B_cell_CD34-","CD8+ T cells",0
+"8","Pre-B_cell_CD34-","CD8+ T cells",0
+"9","Pre-B_cell_CD34-","CD8+ T cells",0
+"10","Pre-B_cell_CD34-","CD8+ T cells",0
+"11","Pre-B_cell_CD34-","CD8+ T cells",0
+"12","Pre-B_cell_CD34-","CD8+ T cells",0
+"13","Pre-B_cell_CD34-","CD8+ T cells",0
+"0","Pro-B_cell_CD34+","CD8+ T cells",0
+"1","Pro-B_cell_CD34+","CD8+ T cells",0
+"2","Pro-B_cell_CD34+","CD8+ T cells",0
+"3","Pro-B_cell_CD34+","CD8+ T cells",0
+"4","Pro-B_cell_CD34+","CD8+ T cells",0
+"5","Pro-B_cell_CD34+","CD8+ T cells",0
+"6","Pro-B_cell_CD34+","CD8+ T cells",0
+"7","Pro-B_cell_CD34+","CD8+ T cells",0
+"8","Pro-B_cell_CD34+","CD8+ T cells",0
+"9","Pro-B_cell_CD34+","CD8+ T cells",0
+"10","Pro-B_cell_CD34+","CD8+ T cells",0
+"11","Pro-B_cell_CD34+","CD8+ T cells",0
+"12","Pro-B_cell_CD34+","CD8+ T cells",0
+"13","Pro-B_cell_CD34+","CD8+ T cells",0
+"0","T_cells","CD8+ T cells",1040
+"1","T_cells","CD8+ T cells",865
+"2","T_cells","CD8+ T cells",403
+"3","T_cells","CD8+ T cells",47
+"4","T_cells","CD8+ T cells",38
+"5","T_cells","CD8+ T cells",186
+"6","T_cells","CD8+ T cells",54
+"7","T_cells","CD8+ T cells",3
+"8","T_cells","CD8+ T cells",36
+"9","T_cells","CD8+ T cells",146
+"10","T_cells","CD8+ T cells",125
+"11","T_cells","CD8+ T cells",18
+"12","T_cells","CD8+ T cells",3
+"13","T_cells","CD8+ T cells",6
+"0","B_cell","Dendritic cells",0
+"1","B_cell","Dendritic cells",0
+"2","B_cell","Dendritic cells",0
+"3","B_cell","Dendritic cells",0
+"4","B_cell","Dendritic cells",0
+"5","B_cell","Dendritic cells",0
+"6","B_cell","Dendritic cells",0
+"7","B_cell","Dendritic cells",0
+"8","B_cell","Dendritic cells",0
+"9","B_cell","Dendritic cells",0
+"10","B_cell","Dendritic cells",0
+"11","B_cell","Dendritic cells",0
+"12","B_cell","Dendritic cells",0
+"13","B_cell","Dendritic cells",0
+"0","BM","Dendritic cells",0
+"1","BM","Dendritic cells",0
+"2","BM","Dendritic cells",0
+"3","BM","Dendritic cells",0
+"4","BM","Dendritic cells",0
+"5","BM","Dendritic cells",0
+"6","BM","Dendritic cells",0
+"7","BM","Dendritic cells",0
+"8","BM","Dendritic cells",0
+"9","BM","Dendritic cells",0
+"10","BM","Dendritic cells",0
+"11","BM","Dendritic cells",0
+"12","BM","Dendritic cells",0
+"13","BM","Dendritic cells",0
+"0","BM & Prog.","Dendritic cells",0
+"1","BM & Prog.","Dendritic cells",0
+"2","BM & Prog.","Dendritic cells",0
+"3","BM & Prog.","Dendritic cells",0
+"4","BM & Prog.","Dendritic cells",0
+"5","BM & Prog.","Dendritic cells",0
+"6","BM & Prog.","Dendritic cells",0
+"7","BM & Prog.","Dendritic cells",0
+"8","BM & Prog.","Dendritic cells",0
+"9","BM & Prog.","Dendritic cells",0
+"10","BM & Prog.","Dendritic cells",0
+"11","BM & Prog.","Dendritic cells",0
+"12","BM & Prog.","Dendritic cells",0
+"13","BM & Prog.","Dendritic cells",0
+"0","Chondrocytes","Dendritic cells",0
+"1","Chondrocytes","Dendritic cells",0
+"2","Chondrocytes","Dendritic cells",0
+"3","Chondrocytes","Dendritic cells",0
+"4","Chondrocytes","Dendritic cells",0
+"5","Chondrocytes","Dendritic cells",0
+"6","Chondrocytes","Dendritic cells",0
+"7","Chondrocytes","Dendritic cells",0
+"8","Chondrocytes","Dendritic cells",0
+"9","Chondrocytes","Dendritic cells",0
+"10","Chondrocytes","Dendritic cells",0
+"11","Chondrocytes","Dendritic cells",0
+"12","Chondrocytes","Dendritic cells",0
+"13","Chondrocytes","Dendritic cells",0
+"0","DC","Dendritic cells",0
+"1","DC","Dendritic cells",0
+"2","DC","Dendritic cells",0
+"3","DC","Dendritic cells",0
+"4","DC","Dendritic cells",0
+"5","DC","Dendritic cells",0
+"6","DC","Dendritic cells",0
+"7","DC","Dendritic cells",0
+"8","DC","Dendritic cells",0
+"9","DC","Dendritic cells",0
+"10","DC","Dendritic cells",0
+"11","DC","Dendritic cells",0
+"12","DC","Dendritic cells",0
+"13","DC","Dendritic cells",0
+"0","Endothelial_cells","Dendritic cells",0
+"1","Endothelial_cells","Dendritic cells",0
+"2","Endothelial_cells","Dendritic cells",0
+"3","Endothelial_cells","Dendritic cells",0
+"4","Endothelial_cells","Dendritic cells",0
+"5","Endothelial_cells","Dendritic cells",0
+"6","Endothelial_cells","Dendritic cells",0
+"7","Endothelial_cells","Dendritic cells",0
+"8","Endothelial_cells","Dendritic cells",0
+"9","Endothelial_cells","Dendritic cells",0
+"10","Endothelial_cells","Dendritic cells",0
+"11","Endothelial_cells","Dendritic cells",0
+"12","Endothelial_cells","Dendritic cells",0
+"13","Endothelial_cells","Dendritic cells",3
+"0","Epithelial_cells","Dendritic cells",0
+"1","Epithelial_cells","Dendritic cells",0
+"2","Epithelial_cells","Dendritic cells",0
+"3","Epithelial_cells","Dendritic cells",0
+"4","Epithelial_cells","Dendritic cells",0
+"5","Epithelial_cells","Dendritic cells",0
+"6","Epithelial_cells","Dendritic cells",0
+"7","Epithelial_cells","Dendritic cells",0
+"8","Epithelial_cells","Dendritic cells",0
+"9","Epithelial_cells","Dendritic cells",0
+"10","Epithelial_cells","Dendritic cells",0
+"11","Epithelial_cells","Dendritic cells",1
+"12","Epithelial_cells","Dendritic cells",0
+"13","Epithelial_cells","Dendritic cells",6
+"0","Erythroblast","Dendritic cells",0
+"1","Erythroblast","Dendritic cells",0
+"2","Erythroblast","Dendritic cells",0
+"3","Erythroblast","Dendritic cells",0
+"4","Erythroblast","Dendritic cells",0
+"5","Erythroblast","Dendritic cells",0
+"6","Erythroblast","Dendritic cells",0
+"7","Erythroblast","Dendritic cells",0
+"8","Erythroblast","Dendritic cells",0
+"9","Erythroblast","Dendritic cells",0
+"10","Erythroblast","Dendritic cells",0
+"11","Erythroblast","Dendritic cells",0
+"12","Erythroblast","Dendritic cells",0
+"13","Erythroblast","Dendritic cells",0
+"0","Fibroblasts","Dendritic cells",0
+"1","Fibroblasts","Dendritic cells",0
+"2","Fibroblasts","Dendritic cells",0
+"3","Fibroblasts","Dendritic cells",0
+"4","Fibroblasts","Dendritic cells",0
+"5","Fibroblasts","Dendritic cells",0
+"6","Fibroblasts","Dendritic cells",0
+"7","Fibroblasts","Dendritic cells",0
+"8","Fibroblasts","Dendritic cells",0
+"9","Fibroblasts","Dendritic cells",0
+"10","Fibroblasts","Dendritic cells",0
+"11","Fibroblasts","Dendritic cells",0
+"12","Fibroblasts","Dendritic cells",0
+"13","Fibroblasts","Dendritic cells",0
+"0","Hepatocytes","Dendritic cells",0
+"1","Hepatocytes","Dendritic cells",0
+"2","Hepatocytes","Dendritic cells",0
+"3","Hepatocytes","Dendritic cells",0
+"4","Hepatocytes","Dendritic cells",0
+"5","Hepatocytes","Dendritic cells",0
+"6","Hepatocytes","Dendritic cells",0
+"7","Hepatocytes","Dendritic cells",1
+"8","Hepatocytes","Dendritic cells",0
+"9","Hepatocytes","Dendritic cells",0
+"10","Hepatocytes","Dendritic cells",0
+"11","Hepatocytes","Dendritic cells",0
+"12","Hepatocytes","Dendritic cells",0
+"13","Hepatocytes","Dendritic cells",0
+"0","HSC_-G-CSF","Dendritic cells",0
+"1","HSC_-G-CSF","Dendritic cells",0
+"2","HSC_-G-CSF","Dendritic cells",0
+"3","HSC_-G-CSF","Dendritic cells",0
+"4","HSC_-G-CSF","Dendritic cells",0
+"5","HSC_-G-CSF","Dendritic cells",0
+"6","HSC_-G-CSF","Dendritic cells",0
+"7","HSC_-G-CSF","Dendritic cells",0
+"8","HSC_-G-CSF","Dendritic cells",0
+"9","HSC_-G-CSF","Dendritic cells",0
+"10","HSC_-G-CSF","Dendritic cells",0
+"11","HSC_-G-CSF","Dendritic cells",0
+"12","HSC_-G-CSF","Dendritic cells",0
+"13","HSC_-G-CSF","Dendritic cells",1
+"0","Macrophage","Dendritic cells",0
+"1","Macrophage","Dendritic cells",0
+"2","Macrophage","Dendritic cells",0
+"3","Macrophage","Dendritic cells",0
+"4","Macrophage","Dendritic cells",0
+"5","Macrophage","Dendritic cells",0
+"6","Macrophage","Dendritic cells",0
+"7","Macrophage","Dendritic cells",0
+"8","Macrophage","Dendritic cells",0
+"9","Macrophage","Dendritic cells",0
+"10","Macrophage","Dendritic cells",0
+"11","Macrophage","Dendritic cells",0
+"12","Macrophage","Dendritic cells",0
+"13","Macrophage","Dendritic cells",0
+"0","MEP","Dendritic cells",0
+"1","MEP","Dendritic cells",0
+"2","MEP","Dendritic cells",0
+"3","MEP","Dendritic cells",0
+"4","MEP","Dendritic cells",0
+"5","MEP","Dendritic cells",0
+"6","MEP","Dendritic cells",0
+"7","MEP","Dendritic cells",0
+"8","MEP","Dendritic cells",0
+"9","MEP","Dendritic cells",0
+"10","MEP","Dendritic cells",0
+"11","MEP","Dendritic cells",0
+"12","MEP","Dendritic cells",0
+"13","MEP","Dendritic cells",0
+"0","Monocyte","Dendritic cells",0
+"1","Monocyte","Dendritic cells",0
+"2","Monocyte","Dendritic cells",0
+"3","Monocyte","Dendritic cells",0
+"4","Monocyte","Dendritic cells",0
+"5","Monocyte","Dendritic cells",0
+"6","Monocyte","Dendritic cells",0
+"7","Monocyte","Dendritic cells",0
+"8","Monocyte","Dendritic cells",0
+"9","Monocyte","Dendritic cells",0
+"10","Monocyte","Dendritic cells",0
+"11","Monocyte","Dendritic cells",0
+"12","Monocyte","Dendritic cells",0
+"13","Monocyte","Dendritic cells",1
+"0","NK_cell","Dendritic cells",0
+"1","NK_cell","Dendritic cells",0
+"2","NK_cell","Dendritic cells",0
+"3","NK_cell","Dendritic cells",0
+"4","NK_cell","Dendritic cells",0
+"5","NK_cell","Dendritic cells",0
+"6","NK_cell","Dendritic cells",0
+"7","NK_cell","Dendritic cells",0
+"8","NK_cell","Dendritic cells",0
+"9","NK_cell","Dendritic cells",0
+"10","NK_cell","Dendritic cells",0
+"11","NK_cell","Dendritic cells",0
+"12","NK_cell","Dendritic cells",0
+"13","NK_cell","Dendritic cells",0
+"0","Pre-B_cell_CD34-","Dendritic cells",0
+"1","Pre-B_cell_CD34-","Dendritic cells",0
+"2","Pre-B_cell_CD34-","Dendritic cells",0
+"3","Pre-B_cell_CD34-","Dendritic cells",0
+"4","Pre-B_cell_CD34-","Dendritic cells",0
+"5","Pre-B_cell_CD34-","Dendritic cells",0
+"6","Pre-B_cell_CD34-","Dendritic cells",0
+"7","Pre-B_cell_CD34-","Dendritic cells",0
+"8","Pre-B_cell_CD34-","Dendritic cells",0
+"9","Pre-B_cell_CD34-","Dendritic cells",0
+"10","Pre-B_cell_CD34-","Dendritic cells",0
+"11","Pre-B_cell_CD34-","Dendritic cells",0
+"12","Pre-B_cell_CD34-","Dendritic cells",0
+"13","Pre-B_cell_CD34-","Dendritic cells",12
+"0","Pro-B_cell_CD34+","Dendritic cells",0
+"1","Pro-B_cell_CD34+","Dendritic cells",0
+"2","Pro-B_cell_CD34+","Dendritic cells",0
+"3","Pro-B_cell_CD34+","Dendritic cells",0
+"4","Pro-B_cell_CD34+","Dendritic cells",0
+"5","Pro-B_cell_CD34+","Dendritic cells",0
+"6","Pro-B_cell_CD34+","Dendritic cells",0
+"7","Pro-B_cell_CD34+","Dendritic cells",0
+"8","Pro-B_cell_CD34+","Dendritic cells",0
+"9","Pro-B_cell_CD34+","Dendritic cells",0
+"10","Pro-B_cell_CD34+","Dendritic cells",0
+"11","Pro-B_cell_CD34+","Dendritic cells",0
+"12","Pro-B_cell_CD34+","Dendritic cells",0
+"13","Pro-B_cell_CD34+","Dendritic cells",0
+"0","T_cells","Dendritic cells",0
+"1","T_cells","Dendritic cells",0
+"2","T_cells","Dendritic cells",0
+"3","T_cells","Dendritic cells",0
+"4","T_cells","Dendritic cells",0
+"5","T_cells","Dendritic cells",0
+"6","T_cells","Dendritic cells",0
+"7","T_cells","Dendritic cells",0
+"8","T_cells","Dendritic cells",0
+"9","T_cells","Dendritic cells",0
+"10","T_cells","Dendritic cells",0
+"11","T_cells","Dendritic cells",0
+"12","T_cells","Dendritic cells",0
+"13","T_cells","Dendritic cells",2
+"0","B_cell","Monocytes",0
+"1","B_cell","Monocytes",0
+"2","B_cell","Monocytes",0
+"3","B_cell","Monocytes",0
+"4","B_cell","Monocytes",0
+"5","B_cell","Monocytes",0
+"6","B_cell","Monocytes",0
+"7","B_cell","Monocytes",0
+"8","B_cell","Monocytes",0
+"9","B_cell","Monocytes",0
+"10","B_cell","Monocytes",0
+"11","B_cell","Monocytes",0
+"12","B_cell","Monocytes",0
+"13","B_cell","Monocytes",0
+"0","BM","Monocytes",0
+"1","BM","Monocytes",0
+"2","BM","Monocytes",0
+"3","BM","Monocytes",0
+"4","BM","Monocytes",0
+"5","BM","Monocytes",0
+"6","BM","Monocytes",0
+"7","BM","Monocytes",0
+"8","BM","Monocytes",0
+"9","BM","Monocytes",0
+"10","BM","Monocytes",0
+"11","BM","Monocytes",0
+"12","BM","Monocytes",0
+"13","BM","Monocytes",0
+"0","BM & Prog.","Monocytes",0
+"1","BM & Prog.","Monocytes",0
+"2","BM & Prog.","Monocytes",0
+"3","BM & Prog.","Monocytes",0
+"4","BM & Prog.","Monocytes",0
+"5","BM & Prog.","Monocytes",0
+"6","BM & Prog.","Monocytes",0
+"7","BM & Prog.","Monocytes",0
+"8","BM & Prog.","Monocytes",0
+"9","BM & Prog.","Monocytes",0
+"10","BM & Prog.","Monocytes",0
+"11","BM & Prog.","Monocytes",0
+"12","BM & Prog.","Monocytes",0
+"13","BM & Prog.","Monocytes",0
+"0","Chondrocytes","Monocytes",0
+"1","Chondrocytes","Monocytes",0
+"2","Chondrocytes","Monocytes",0
+"3","Chondrocytes","Monocytes",0
+"4","Chondrocytes","Monocytes",0
+"5","Chondrocytes","Monocytes",0
+"6","Chondrocytes","Monocytes",0
+"7","Chondrocytes","Monocytes",0
+"8","Chondrocytes","Monocytes",0
+"9","Chondrocytes","Monocytes",0
+"10","Chondrocytes","Monocytes",0
+"11","Chondrocytes","Monocytes",0
+"12","Chondrocytes","Monocytes",0
+"13","Chondrocytes","Monocytes",1
+"0","DC","Monocytes",0
+"1","DC","Monocytes",0
+"2","DC","Monocytes",0
+"3","DC","Monocytes",0
+"4","DC","Monocytes",0
+"5","DC","Monocytes",0
+"6","DC","Monocytes",0
+"7","DC","Monocytes",0
+"8","DC","Monocytes",0
+"9","DC","Monocytes",0
+"10","DC","Monocytes",0
+"11","DC","Monocytes",0
+"12","DC","Monocytes",0
+"13","DC","Monocytes",4
+"0","Endothelial_cells","Monocytes",0
+"1","Endothelial_cells","Monocytes",1
+"2","Endothelial_cells","Monocytes",0
+"3","Endothelial_cells","Monocytes",0
+"4","Endothelial_cells","Monocytes",0
+"5","Endothelial_cells","Monocytes",0
+"6","Endothelial_cells","Monocytes",0
+"7","Endothelial_cells","Monocytes",0
+"8","Endothelial_cells","Monocytes",0
+"9","Endothelial_cells","Monocytes",0
+"10","Endothelial_cells","Monocytes",0
+"11","Endothelial_cells","Monocytes",0
+"12","Endothelial_cells","Monocytes",0
+"13","Endothelial_cells","Monocytes",1
+"0","Epithelial_cells","Monocytes",0
+"1","Epithelial_cells","Monocytes",0
+"2","Epithelial_cells","Monocytes",1
+"3","Epithelial_cells","Monocytes",0
+"4","Epithelial_cells","Monocytes",0
+"5","Epithelial_cells","Monocytes",0
+"6","Epithelial_cells","Monocytes",0
+"7","Epithelial_cells","Monocytes",0
+"8","Epithelial_cells","Monocytes",0
+"9","Epithelial_cells","Monocytes",0
+"10","Epithelial_cells","Monocytes",0
+"11","Epithelial_cells","Monocytes",1
+"12","Epithelial_cells","Monocytes",0
+"13","Epithelial_cells","Monocytes",9
+"0","Erythroblast","Monocytes",0
+"1","Erythroblast","Monocytes",0
+"2","Erythroblast","Monocytes",0
+"3","Erythroblast","Monocytes",0
+"4","Erythroblast","Monocytes",0
+"5","Erythroblast","Monocytes",0
+"6","Erythroblast","Monocytes",0
+"7","Erythroblast","Monocytes",0
+"8","Erythroblast","Monocytes",0
+"9","Erythroblast","Monocytes",0
+"10","Erythroblast","Monocytes",0
+"11","Erythroblast","Monocytes",0
+"12","Erythroblast","Monocytes",0
+"13","Erythroblast","Monocytes",0
+"0","Fibroblasts","Monocytes",0
+"1","Fibroblasts","Monocytes",0
+"2","Fibroblasts","Monocytes",0
+"3","Fibroblasts","Monocytes",0
+"4","Fibroblasts","Monocytes",0
+"5","Fibroblasts","Monocytes",0
+"6","Fibroblasts","Monocytes",0
+"7","Fibroblasts","Monocytes",0
+"8","Fibroblasts","Monocytes",0
+"9","Fibroblasts","Monocytes",0
+"10","Fibroblasts","Monocytes",0
+"11","Fibroblasts","Monocytes",0
+"12","Fibroblasts","Monocytes",0
+"13","Fibroblasts","Monocytes",1
+"0","Hepatocytes","Monocytes",0
+"1","Hepatocytes","Monocytes",0
+"2","Hepatocytes","Monocytes",0
+"3","Hepatocytes","Monocytes",0
+"4","Hepatocytes","Monocytes",0
+"5","Hepatocytes","Monocytes",0
+"6","Hepatocytes","Monocytes",0
+"7","Hepatocytes","Monocytes",0
+"8","Hepatocytes","Monocytes",0
+"9","Hepatocytes","Monocytes",0
+"10","Hepatocytes","Monocytes",0
+"11","Hepatocytes","Monocytes",0
+"12","Hepatocytes","Monocytes",0
+"13","Hepatocytes","Monocytes",2
+"0","HSC_-G-CSF","Monocytes",0
+"1","HSC_-G-CSF","Monocytes",0
+"2","HSC_-G-CSF","Monocytes",0
+"3","HSC_-G-CSF","Monocytes",0
+"4","HSC_-G-CSF","Monocytes",0
+"5","HSC_-G-CSF","Monocytes",0
+"6","HSC_-G-CSF","Monocytes",0
+"7","HSC_-G-CSF","Monocytes",0
+"8","HSC_-G-CSF","Monocytes",0
+"9","HSC_-G-CSF","Monocytes",0
+"10","HSC_-G-CSF","Monocytes",0
+"11","HSC_-G-CSF","Monocytes",0
+"12","HSC_-G-CSF","Monocytes",0
+"13","HSC_-G-CSF","Monocytes",2
+"0","Macrophage","Monocytes",0
+"1","Macrophage","Monocytes",0
+"2","Macrophage","Monocytes",0
+"3","Macrophage","Monocytes",0
+"4","Macrophage","Monocytes",0
+"5","Macrophage","Monocytes",0
+"6","Macrophage","Monocytes",0
+"7","Macrophage","Monocytes",0
+"8","Macrophage","Monocytes",0
+"9","Macrophage","Monocytes",0
+"10","Macrophage","Monocytes",0
+"11","Macrophage","Monocytes",0
+"12","Macrophage","Monocytes",0
+"13","Macrophage","Monocytes",1
+"0","MEP","Monocytes",0
+"1","MEP","Monocytes",0
+"2","MEP","Monocytes",0
+"3","MEP","Monocytes",0
+"4","MEP","Monocytes",0
+"5","MEP","Monocytes",0
+"6","MEP","Monocytes",0
+"7","MEP","Monocytes",0
+"8","MEP","Monocytes",0
+"9","MEP","Monocytes",0
+"10","MEP","Monocytes",0
+"11","MEP","Monocytes",0
+"12","MEP","Monocytes",0
+"13","MEP","Monocytes",0
+"0","Monocyte","Monocytes",0
+"1","Monocyte","Monocytes",0
+"2","Monocyte","Monocytes",0
+"3","Monocyte","Monocytes",0
+"4","Monocyte","Monocytes",0
+"5","Monocyte","Monocytes",0
+"6","Monocyte","Monocytes",0
+"7","Monocyte","Monocytes",0
+"8","Monocyte","Monocytes",0
+"9","Monocyte","Monocytes",0
+"10","Monocyte","Monocytes",0
+"11","Monocyte","Monocytes",0
+"12","Monocyte","Monocytes",0
+"13","Monocyte","Monocytes",6
+"0","NK_cell","Monocytes",0
+"1","NK_cell","Monocytes",0
+"2","NK_cell","Monocytes",0
+"3","NK_cell","Monocytes",0
+"4","NK_cell","Monocytes",0
+"5","NK_cell","Monocytes",0
+"6","NK_cell","Monocytes",0
+"7","NK_cell","Monocytes",0
+"8","NK_cell","Monocytes",0
+"9","NK_cell","Monocytes",0
+"10","NK_cell","Monocytes",0
+"11","NK_cell","Monocytes",0
+"12","NK_cell","Monocytes",0
+"13","NK_cell","Monocytes",0
+"0","Pre-B_cell_CD34-","Monocytes",0
+"1","Pre-B_cell_CD34-","Monocytes",0
+"2","Pre-B_cell_CD34-","Monocytes",0
+"3","Pre-B_cell_CD34-","Monocytes",0
+"4","Pre-B_cell_CD34-","Monocytes",0
+"5","Pre-B_cell_CD34-","Monocytes",0
+"6","Pre-B_cell_CD34-","Monocytes",0
+"7","Pre-B_cell_CD34-","Monocytes",0
+"8","Pre-B_cell_CD34-","Monocytes",0
+"9","Pre-B_cell_CD34-","Monocytes",1
+"10","Pre-B_cell_CD34-","Monocytes",0
+"11","Pre-B_cell_CD34-","Monocytes",0
+"12","Pre-B_cell_CD34-","Monocytes",0
+"13","Pre-B_cell_CD34-","Monocytes",2
+"0","Pro-B_cell_CD34+","Monocytes",0
+"1","Pro-B_cell_CD34+","Monocytes",0
+"2","Pro-B_cell_CD34+","Monocytes",0
+"3","Pro-B_cell_CD34+","Monocytes",0
+"4","Pro-B_cell_CD34+","Monocytes",0
+"5","Pro-B_cell_CD34+","Monocytes",0
+"6","Pro-B_cell_CD34+","Monocytes",0
+"7","Pro-B_cell_CD34+","Monocytes",0
+"8","Pro-B_cell_CD34+","Monocytes",0
+"9","Pro-B_cell_CD34+","Monocytes",0
+"10","Pro-B_cell_CD34+","Monocytes",0
+"11","Pro-B_cell_CD34+","Monocytes",0
+"12","Pro-B_cell_CD34+","Monocytes",0
+"13","Pro-B_cell_CD34+","Monocytes",0
+"0","T_cells","Monocytes",0
+"1","T_cells","Monocytes",0
+"2","T_cells","Monocytes",0
+"3","T_cells","Monocytes",0
+"4","T_cells","Monocytes",0
+"5","T_cells","Monocytes",0
+"6","T_cells","Monocytes",0
+"7","T_cells","Monocytes",0
+"8","T_cells","Monocytes",0
+"9","T_cells","Monocytes",0
+"10","T_cells","Monocytes",0
+"11","T_cells","Monocytes",0
+"12","T_cells","Monocytes",0
+"13","T_cells","Monocytes",0
+"0","B_cell","NK cells",0
+"1","B_cell","NK cells",0
+"2","B_cell","NK cells",0
+"3","B_cell","NK cells",0
+"4","B_cell","NK cells",0
+"5","B_cell","NK cells",0
+"6","B_cell","NK cells",0
+"7","B_cell","NK cells",0
+"8","B_cell","NK cells",0
+"9","B_cell","NK cells",0
+"10","B_cell","NK cells",0
+"11","B_cell","NK cells",0
+"12","B_cell","NK cells",0
+"13","B_cell","NK cells",0
+"0","BM","NK cells",0
+"1","BM","NK cells",0
+"2","BM","NK cells",0
+"3","BM","NK cells",0
+"4","BM","NK cells",0
+"5","BM","NK cells",0
+"6","BM","NK cells",0
+"7","BM","NK cells",0
+"8","BM","NK cells",0
+"9","BM","NK cells",0
+"10","BM","NK cells",0
+"11","BM","NK cells",0
+"12","BM","NK cells",0
+"13","BM","NK cells",0
+"0","BM & Prog.","NK cells",0
+"1","BM & Prog.","NK cells",0
+"2","BM & Prog.","NK cells",0
+"3","BM & Prog.","NK cells",0
+"4","BM & Prog.","NK cells",0
+"5","BM & Prog.","NK cells",0
+"6","BM & Prog.","NK cells",0
+"7","BM & Prog.","NK cells",0
+"8","BM & Prog.","NK cells",0
+"9","BM & Prog.","NK cells",0
+"10","BM & Prog.","NK cells",0
+"11","BM & Prog.","NK cells",0
+"12","BM & Prog.","NK cells",0
+"13","BM & Prog.","NK cells",0
+"0","Chondrocytes","NK cells",0
+"1","Chondrocytes","NK cells",0
+"2","Chondrocytes","NK cells",0
+"3","Chondrocytes","NK cells",0
+"4","Chondrocytes","NK cells",0
+"5","Chondrocytes","NK cells",0
+"6","Chondrocytes","NK cells",0
+"7","Chondrocytes","NK cells",0
+"8","Chondrocytes","NK cells",0
+"9","Chondrocytes","NK cells",0
+"10","Chondrocytes","NK cells",0
+"11","Chondrocytes","NK cells",0
+"12","Chondrocytes","NK cells",0
+"13","Chondrocytes","NK cells",0
+"0","DC","NK cells",0
+"1","DC","NK cells",0
+"2","DC","NK cells",0
+"3","DC","NK cells",0
+"4","DC","NK cells",0
+"5","DC","NK cells",0
+"6","DC","NK cells",0
+"7","DC","NK cells",0
+"8","DC","NK cells",0
+"9","DC","NK cells",0
+"10","DC","NK cells",0
+"11","DC","NK cells",0
+"12","DC","NK cells",0
+"13","DC","NK cells",0
+"0","Endothelial_cells","NK cells",0
+"1","Endothelial_cells","NK cells",0
+"2","Endothelial_cells","NK cells",0
+"3","Endothelial_cells","NK cells",0
+"4","Endothelial_cells","NK cells",0
+"5","Endothelial_cells","NK cells",0
+"6","Endothelial_cells","NK cells",0
+"7","Endothelial_cells","NK cells",0
+"8","Endothelial_cells","NK cells",0
+"9","Endothelial_cells","NK cells",0
+"10","Endothelial_cells","NK cells",0
+"11","Endothelial_cells","NK cells",0
+"12","Endothelial_cells","NK cells",0
+"13","Endothelial_cells","NK cells",0
+"0","Epithelial_cells","NK cells",0
+"1","Epithelial_cells","NK cells",0
+"2","Epithelial_cells","NK cells",0
+"3","Epithelial_cells","NK cells",0
+"4","Epithelial_cells","NK cells",0
+"5","Epithelial_cells","NK cells",0
+"6","Epithelial_cells","NK cells",0
+"7","Epithelial_cells","NK cells",0
+"8","Epithelial_cells","NK cells",0
+"9","Epithelial_cells","NK cells",0
+"10","Epithelial_cells","NK cells",0
+"11","Epithelial_cells","NK cells",0
+"12","Epithelial_cells","NK cells",0
+"13","Epithelial_cells","NK cells",0
+"0","Erythroblast","NK cells",0
+"1","Erythroblast","NK cells",0
+"2","Erythroblast","NK cells",0
+"3","Erythroblast","NK cells",0
+"4","Erythroblast","NK cells",0
+"5","Erythroblast","NK cells",0
+"6","Erythroblast","NK cells",0
+"7","Erythroblast","NK cells",0
+"8","Erythroblast","NK cells",0
+"9","Erythroblast","NK cells",0
+"10","Erythroblast","NK cells",0
+"11","Erythroblast","NK cells",0
+"12","Erythroblast","NK cells",0
+"13","Erythroblast","NK cells",0
+"0","Fibroblasts","NK cells",0
+"1","Fibroblasts","NK cells",0
+"2","Fibroblasts","NK cells",0
+"3","Fibroblasts","NK cells",0
+"4","Fibroblasts","NK cells",0
+"5","Fibroblasts","NK cells",0
+"6","Fibroblasts","NK cells",0
+"7","Fibroblasts","NK cells",0
+"8","Fibroblasts","NK cells",0
+"9","Fibroblasts","NK cells",0
+"10","Fibroblasts","NK cells",0
+"11","Fibroblasts","NK cells",0
+"12","Fibroblasts","NK cells",0
+"13","Fibroblasts","NK cells",0
+"0","Hepatocytes","NK cells",0
+"1","Hepatocytes","NK cells",0
+"2","Hepatocytes","NK cells",0
+"3","Hepatocytes","NK cells",0
+"4","Hepatocytes","NK cells",0
+"5","Hepatocytes","NK cells",0
+"6","Hepatocytes","NK cells",0
+"7","Hepatocytes","NK cells",0
+"8","Hepatocytes","NK cells",0
+"9","Hepatocytes","NK cells",0
+"10","Hepatocytes","NK cells",0
+"11","Hepatocytes","NK cells",0
+"12","Hepatocytes","NK cells",0
+"13","Hepatocytes","NK cells",0
+"0","HSC_-G-CSF","NK cells",0
+"1","HSC_-G-CSF","NK cells",0
+"2","HSC_-G-CSF","NK cells",0
+"3","HSC_-G-CSF","NK cells",0
+"4","HSC_-G-CSF","NK cells",0
+"5","HSC_-G-CSF","NK cells",0
+"6","HSC_-G-CSF","NK cells",0
+"7","HSC_-G-CSF","NK cells",0
+"8","HSC_-G-CSF","NK cells",0
+"9","HSC_-G-CSF","NK cells",0
+"10","HSC_-G-CSF","NK cells",0
+"11","HSC_-G-CSF","NK cells",0
+"12","HSC_-G-CSF","NK cells",0
+"13","HSC_-G-CSF","NK cells",0
+"0","Macrophage","NK cells",0
+"1","Macrophage","NK cells",0
+"2","Macrophage","NK cells",0
+"3","Macrophage","NK cells",0
+"4","Macrophage","NK cells",0
+"5","Macrophage","NK cells",0
+"6","Macrophage","NK cells",0
+"7","Macrophage","NK cells",0
+"8","Macrophage","NK cells",0
+"9","Macrophage","NK cells",0
+"10","Macrophage","NK cells",0
+"11","Macrophage","NK cells",0
+"12","Macrophage","NK cells",0
+"13","Macrophage","NK cells",0
+"0","MEP","NK cells",0
+"1","MEP","NK cells",0
+"2","MEP","NK cells",0
+"3","MEP","NK cells",0
+"4","MEP","NK cells",0
+"5","MEP","NK cells",0
+"6","MEP","NK cells",0
+"7","MEP","NK cells",0
+"8","MEP","NK cells",0
+"9","MEP","NK cells",0
+"10","MEP","NK cells",0
+"11","MEP","NK cells",0
+"12","MEP","NK cells",0
+"13","MEP","NK cells",0
+"0","Monocyte","NK cells",0
+"1","Monocyte","NK cells",0
+"2","Monocyte","NK cells",0
+"3","Monocyte","NK cells",0
+"4","Monocyte","NK cells",0
+"5","Monocyte","NK cells",0
+"6","Monocyte","NK cells",0
+"7","Monocyte","NK cells",0
+"8","Monocyte","NK cells",0
+"9","Monocyte","NK cells",0
+"10","Monocyte","NK cells",0
+"11","Monocyte","NK cells",0
+"12","Monocyte","NK cells",0
+"13","Monocyte","NK cells",0
+"0","NK_cell","NK cells",1
+"1","NK_cell","NK cells",0
+"2","NK_cell","NK cells",1
+"3","NK_cell","NK cells",0
+"4","NK_cell","NK cells",196
+"5","NK_cell","NK cells",0
+"6","NK_cell","NK cells",0
+"7","NK_cell","NK cells",2
+"8","NK_cell","NK cells",0
+"9","NK_cell","NK cells",3
+"10","NK_cell","NK cells",29
+"11","NK_cell","NK cells",19
+"12","NK_cell","NK cells",3
+"13","NK_cell","NK cells",0
+"0","Pre-B_cell_CD34-","NK cells",0
+"1","Pre-B_cell_CD34-","NK cells",0
+"2","Pre-B_cell_CD34-","NK cells",0
+"3","Pre-B_cell_CD34-","NK cells",0
+"4","Pre-B_cell_CD34-","NK cells",0
+"5","Pre-B_cell_CD34-","NK cells",0
+"6","Pre-B_cell_CD34-","NK cells",0
+"7","Pre-B_cell_CD34-","NK cells",0
+"8","Pre-B_cell_CD34-","NK cells",0
+"9","Pre-B_cell_CD34-","NK cells",0
+"10","Pre-B_cell_CD34-","NK cells",0
+"11","Pre-B_cell_CD34-","NK cells",0
+"12","Pre-B_cell_CD34-","NK cells",0
+"13","Pre-B_cell_CD34-","NK cells",0
+"0","Pro-B_cell_CD34+","NK cells",0
+"1","Pro-B_cell_CD34+","NK cells",0
+"2","Pro-B_cell_CD34+","NK cells",0
+"3","Pro-B_cell_CD34+","NK cells",0
+"4","Pro-B_cell_CD34+","NK cells",0
+"5","Pro-B_cell_CD34+","NK cells",0
+"6","Pro-B_cell_CD34+","NK cells",0
+"7","Pro-B_cell_CD34+","NK cells",0
+"8","Pro-B_cell_CD34+","NK cells",0
+"9","Pro-B_cell_CD34+","NK cells",0
+"10","Pro-B_cell_CD34+","NK cells",0
+"11","Pro-B_cell_CD34+","NK cells",0
+"12","Pro-B_cell_CD34+","NK cells",0
+"13","Pro-B_cell_CD34+","NK cells",0
+"0","T_cells","NK cells",4
+"1","T_cells","NK cells",0
+"2","T_cells","NK cells",4
+"3","T_cells","NK cells",1
+"4","T_cells","NK cells",200
+"5","T_cells","NK cells",0
+"6","T_cells","NK cells",0
+"7","T_cells","NK cells",0
+"8","T_cells","NK cells",0
+"9","T_cells","NK cells",2
+"10","T_cells","NK cells",16
+"11","T_cells","NK cells",10
+"12","T_cells","NK cells",4
+"13","T_cells","NK cells",0
+"0","B_cell","Progenitors",0
+"1","B_cell","Progenitors",0
+"2","B_cell","Progenitors",0
+"3","B_cell","Progenitors",0
+"4","B_cell","Progenitors",0
+"5","B_cell","Progenitors",0
+"6","B_cell","Progenitors",0
+"7","B_cell","Progenitors",0
+"8","B_cell","Progenitors",0
+"9","B_cell","Progenitors",0
+"10","B_cell","Progenitors",0
+"11","B_cell","Progenitors",0
+"12","B_cell","Progenitors",0
+"13","B_cell","Progenitors",0
+"0","BM","Progenitors",0
+"1","BM","Progenitors",0
+"2","BM","Progenitors",0
+"3","BM","Progenitors",0
+"4","BM","Progenitors",0
+"5","BM","Progenitors",0
+"6","BM","Progenitors",0
+"7","BM","Progenitors",0
+"8","BM","Progenitors",0
+"9","BM","Progenitors",1
+"10","BM","Progenitors",0
+"11","BM","Progenitors",0
+"12","BM","Progenitors",0
+"13","BM","Progenitors",0
+"0","BM & Prog.","Progenitors",0
+"1","BM & Prog.","Progenitors",0
+"2","BM & Prog.","Progenitors",0
+"3","BM & Prog.","Progenitors",0
+"4","BM & Prog.","Progenitors",0
+"5","BM & Prog.","Progenitors",0
+"6","BM & Prog.","Progenitors",0
+"7","BM & Prog.","Progenitors",0
+"8","BM & Prog.","Progenitors",0
+"9","BM & Prog.","Progenitors",0
+"10","BM & Prog.","Progenitors",0
+"11","BM & Prog.","Progenitors",2
+"12","BM & Prog.","Progenitors",0
+"13","BM & Prog.","Progenitors",0
+"0","Chondrocytes","Progenitors",0
+"1","Chondrocytes","Progenitors",0
+"2","Chondrocytes","Progenitors",0
+"3","Chondrocytes","Progenitors",0
+"4","Chondrocytes","Progenitors",0
+"5","Chondrocytes","Progenitors",0
+"6","Chondrocytes","Progenitors",0
+"7","Chondrocytes","Progenitors",0
+"8","Chondrocytes","Progenitors",0
+"9","Chondrocytes","Progenitors",0
+"10","Chondrocytes","Progenitors",0
+"11","Chondrocytes","Progenitors",0
+"12","Chondrocytes","Progenitors",0
+"13","Chondrocytes","Progenitors",0
+"0","DC","Progenitors",0
+"1","DC","Progenitors",0
+"2","DC","Progenitors",0
+"3","DC","Progenitors",0
+"4","DC","Progenitors",0
+"5","DC","Progenitors",0
+"6","DC","Progenitors",0
+"7","DC","Progenitors",0
+"8","DC","Progenitors",0
+"9","DC","Progenitors",0
+"10","DC","Progenitors",0
+"11","DC","Progenitors",0
+"12","DC","Progenitors",0
+"13","DC","Progenitors",0
+"0","Endothelial_cells","Progenitors",0
+"1","Endothelial_cells","Progenitors",0
+"2","Endothelial_cells","Progenitors",0
+"3","Endothelial_cells","Progenitors",0
+"4","Endothelial_cells","Progenitors",0
+"5","Endothelial_cells","Progenitors",0
+"6","Endothelial_cells","Progenitors",0
+"7","Endothelial_cells","Progenitors",0
+"8","Endothelial_cells","Progenitors",0
+"9","Endothelial_cells","Progenitors",0
+"10","Endothelial_cells","Progenitors",0
+"11","Endothelial_cells","Progenitors",0
+"12","Endothelial_cells","Progenitors",0
+"13","Endothelial_cells","Progenitors",7
+"0","Epithelial_cells","Progenitors",0
+"1","Epithelial_cells","Progenitors",0
+"2","Epithelial_cells","Progenitors",0
+"3","Epithelial_cells","Progenitors",0
+"4","Epithelial_cells","Progenitors",0
+"5","Epithelial_cells","Progenitors",0
+"6","Epithelial_cells","Progenitors",0
+"7","Epithelial_cells","Progenitors",0
+"8","Epithelial_cells","Progenitors",0
+"9","Epithelial_cells","Progenitors",0
+"10","Epithelial_cells","Progenitors",0
+"11","Epithelial_cells","Progenitors",1
+"12","Epithelial_cells","Progenitors",0
+"13","Epithelial_cells","Progenitors",1
+"0","Erythroblast","Progenitors",0
+"1","Erythroblast","Progenitors",0
+"2","Erythroblast","Progenitors",0
+"3","Erythroblast","Progenitors",0
+"4","Erythroblast","Progenitors",0
+"5","Erythroblast","Progenitors",0
+"6","Erythroblast","Progenitors",0
+"7","Erythroblast","Progenitors",0
+"8","Erythroblast","Progenitors",0
+"9","Erythroblast","Progenitors",0
+"10","Erythroblast","Progenitors",0
+"11","Erythroblast","Progenitors",1
+"12","Erythroblast","Progenitors",0
+"13","Erythroblast","Progenitors",0
+"0","Fibroblasts","Progenitors",0
+"1","Fibroblasts","Progenitors",0
+"2","Fibroblasts","Progenitors",0
+"3","Fibroblasts","Progenitors",0
+"4","Fibroblasts","Progenitors",0
+"5","Fibroblasts","Progenitors",0
+"6","Fibroblasts","Progenitors",0
+"7","Fibroblasts","Progenitors",0
+"8","Fibroblasts","Progenitors",0
+"9","Fibroblasts","Progenitors",0
+"10","Fibroblasts","Progenitors",0
+"11","Fibroblasts","Progenitors",0
+"12","Fibroblasts","Progenitors",0
+"13","Fibroblasts","Progenitors",0
+"0","Hepatocytes","Progenitors",0
+"1","Hepatocytes","Progenitors",0
+"2","Hepatocytes","Progenitors",0
+"3","Hepatocytes","Progenitors",0
+"4","Hepatocytes","Progenitors",0
+"5","Hepatocytes","Progenitors",0
+"6","Hepatocytes","Progenitors",0
+"7","Hepatocytes","Progenitors",0
+"8","Hepatocytes","Progenitors",0
+"9","Hepatocytes","Progenitors",0
+"10","Hepatocytes","Progenitors",0
+"11","Hepatocytes","Progenitors",0
+"12","Hepatocytes","Progenitors",0
+"13","Hepatocytes","Progenitors",0
+"0","HSC_-G-CSF","Progenitors",0
+"1","HSC_-G-CSF","Progenitors",0
+"2","HSC_-G-CSF","Progenitors",0
+"3","HSC_-G-CSF","Progenitors",0
+"4","HSC_-G-CSF","Progenitors",0
+"5","HSC_-G-CSF","Progenitors",0
+"6","HSC_-G-CSF","Progenitors",0
+"7","HSC_-G-CSF","Progenitors",0
+"8","HSC_-G-CSF","Progenitors",0
+"9","HSC_-G-CSF","Progenitors",0
+"10","HSC_-G-CSF","Progenitors",0
+"11","HSC_-G-CSF","Progenitors",0
+"12","HSC_-G-CSF","Progenitors",0
+"13","HSC_-G-CSF","Progenitors",0
+"0","Macrophage","Progenitors",0
+"1","Macrophage","Progenitors",0
+"2","Macrophage","Progenitors",0
+"3","Macrophage","Progenitors",0
+"4","Macrophage","Progenitors",0
+"5","Macrophage","Progenitors",0
+"6","Macrophage","Progenitors",0
+"7","Macrophage","Progenitors",0
+"8","Macrophage","Progenitors",0
+"9","Macrophage","Progenitors",0
+"10","Macrophage","Progenitors",0
+"11","Macrophage","Progenitors",0
+"12","Macrophage","Progenitors",0
+"13","Macrophage","Progenitors",0
+"0","MEP","Progenitors",0
+"1","MEP","Progenitors",0
+"2","MEP","Progenitors",0
+"3","MEP","Progenitors",0
+"4","MEP","Progenitors",0
+"5","MEP","Progenitors",0
+"6","MEP","Progenitors",0
+"7","MEP","Progenitors",0
+"8","MEP","Progenitors",0
+"9","MEP","Progenitors",0
+"10","MEP","Progenitors",0
+"11","MEP","Progenitors",1
+"12","MEP","Progenitors",0
+"13","MEP","Progenitors",0
+"0","Monocyte","Progenitors",0
+"1","Monocyte","Progenitors",0
+"2","Monocyte","Progenitors",0
+"3","Monocyte","Progenitors",0
+"4","Monocyte","Progenitors",0
+"5","Monocyte","Progenitors",0
+"6","Monocyte","Progenitors",0
+"7","Monocyte","Progenitors",0
+"8","Monocyte","Progenitors",0
+"9","Monocyte","Progenitors",0
+"10","Monocyte","Progenitors",0
+"11","Monocyte","Progenitors",0
+"12","Monocyte","Progenitors",0
+"13","Monocyte","Progenitors",0
+"0","NK_cell","Progenitors",0
+"1","NK_cell","Progenitors",0
+"2","NK_cell","Progenitors",0
+"3","NK_cell","Progenitors",0
+"4","NK_cell","Progenitors",0
+"5","NK_cell","Progenitors",0
+"6","NK_cell","Progenitors",0
+"7","NK_cell","Progenitors",0
+"8","NK_cell","Progenitors",0
+"9","NK_cell","Progenitors",0
+"10","NK_cell","Progenitors",0
+"11","NK_cell","Progenitors",0
+"12","NK_cell","Progenitors",0
+"13","NK_cell","Progenitors",0
+"0","Pre-B_cell_CD34-","Progenitors",0
+"1","Pre-B_cell_CD34-","Progenitors",0
+"2","Pre-B_cell_CD34-","Progenitors",0
+"3","Pre-B_cell_CD34-","Progenitors",0
+"4","Pre-B_cell_CD34-","Progenitors",0
+"5","Pre-B_cell_CD34-","Progenitors",0
+"6","Pre-B_cell_CD34-","Progenitors",0
+"7","Pre-B_cell_CD34-","Progenitors",0
+"8","Pre-B_cell_CD34-","Progenitors",0
+"9","Pre-B_cell_CD34-","Progenitors",0
+"10","Pre-B_cell_CD34-","Progenitors",0
+"11","Pre-B_cell_CD34-","Progenitors",0
+"12","Pre-B_cell_CD34-","Progenitors",0
+"13","Pre-B_cell_CD34-","Progenitors",0
+"0","Pro-B_cell_CD34+","Progenitors",0
+"1","Pro-B_cell_CD34+","Progenitors",0
+"2","Pro-B_cell_CD34+","Progenitors",0
+"3","Pro-B_cell_CD34+","Progenitors",0
+"4","Pro-B_cell_CD34+","Progenitors",0
+"5","Pro-B_cell_CD34+","Progenitors",0
+"6","Pro-B_cell_CD34+","Progenitors",0
+"7","Pro-B_cell_CD34+","Progenitors",0
+"8","Pro-B_cell_CD34+","Progenitors",0
+"9","Pro-B_cell_CD34+","Progenitors",0
+"10","Pro-B_cell_CD34+","Progenitors",0
+"11","Pro-B_cell_CD34+","Progenitors",0
+"12","Pro-B_cell_CD34+","Progenitors",0
+"13","Pro-B_cell_CD34+","Progenitors",0
+"0","T_cells","Progenitors",0
+"1","T_cells","Progenitors",0
+"2","T_cells","Progenitors",0
+"3","T_cells","Progenitors",0
+"4","T_cells","Progenitors",0
+"5","T_cells","Progenitors",0
+"6","T_cells","Progenitors",0
+"7","T_cells","Progenitors",0
+"8","T_cells","Progenitors",0
+"9","T_cells","Progenitors",0
+"10","T_cells","Progenitors",0
+"11","T_cells","Progenitors",0
+"12","T_cells","Progenitors",0
+"13","T_cells","Progenitors",0
+"0","B_cell","T cells",0
+"1","B_cell","T cells",0
+"2","B_cell","T cells",0
+"3","B_cell","T cells",0
+"4","B_cell","T cells",0
+"5","B_cell","T cells",0
+"6","B_cell","T cells",0
+"7","B_cell","T cells",0
+"8","B_cell","T cells",0
+"9","B_cell","T cells",0
+"10","B_cell","T cells",0
+"11","B_cell","T cells",0
+"12","B_cell","T cells",0
+"13","B_cell","T cells",0
+"0","BM","T cells",0
+"1","BM","T cells",0
+"2","BM","T cells",0
+"3","BM","T cells",0
+"4","BM","T cells",0
+"5","BM","T cells",0
+"6","BM","T cells",0
+"7","BM","T cells",0
+"8","BM","T cells",0
+"9","BM","T cells",0
+"10","BM","T cells",0
+"11","BM","T cells",0
+"12","BM","T cells",0
+"13","BM","T cells",0
+"0","BM & Prog.","T cells",0
+"1","BM & Prog.","T cells",0
+"2","BM & Prog.","T cells",0
+"3","BM & Prog.","T cells",0
+"4","BM & Prog.","T cells",0
+"5","BM & Prog.","T cells",0
+"6","BM & Prog.","T cells",0
+"7","BM & Prog.","T cells",0
+"8","BM & Prog.","T cells",0
+"9","BM & Prog.","T cells",0
+"10","BM & Prog.","T cells",0
+"11","BM & Prog.","T cells",0
+"12","BM & Prog.","T cells",0
+"13","BM & Prog.","T cells",0
+"0","Chondrocytes","T cells",0
+"1","Chondrocytes","T cells",0
+"2","Chondrocytes","T cells",0
+"3","Chondrocytes","T cells",0
+"4","Chondrocytes","T cells",0
+"5","Chondrocytes","T cells",0
+"6","Chondrocytes","T cells",0
+"7","Chondrocytes","T cells",0
+"8","Chondrocytes","T cells",0
+"9","Chondrocytes","T cells",0
+"10","Chondrocytes","T cells",0
+"11","Chondrocytes","T cells",0
+"12","Chondrocytes","T cells",0
+"13","Chondrocytes","T cells",0
+"0","DC","T cells",0
+"1","DC","T cells",0
+"2","DC","T cells",0
+"3","DC","T cells",0
+"4","DC","T cells",0
+"5","DC","T cells",0
+"6","DC","T cells",0
+"7","DC","T cells",0
+"8","DC","T cells",0
+"9","DC","T cells",0
+"10","DC","T cells",0
+"11","DC","T cells",0
+"12","DC","T cells",0
+"13","DC","T cells",0
+"0","Endothelial_cells","T cells",0
+"1","Endothelial_cells","T cells",0
+"2","Endothelial_cells","T cells",0
+"3","Endothelial_cells","T cells",0
+"4","Endothelial_cells","T cells",0
+"5","Endothelial_cells","T cells",0
+"6","Endothelial_cells","T cells",0
+"7","Endothelial_cells","T cells",0
+"8","Endothelial_cells","T cells",0
+"9","Endothelial_cells","T cells",0
+"10","Endothelial_cells","T cells",0
+"11","Endothelial_cells","T cells",0
+"12","Endothelial_cells","T cells",0
+"13","Endothelial_cells","T cells",0
+"0","Epithelial_cells","T cells",0
+"1","Epithelial_cells","T cells",0
+"2","Epithelial_cells","T cells",0
+"3","Epithelial_cells","T cells",0
+"4","Epithelial_cells","T cells",0
+"5","Epithelial_cells","T cells",0
+"6","Epithelial_cells","T cells",0
+"7","Epithelial_cells","T cells",0
+"8","Epithelial_cells","T cells",0
+"9","Epithelial_cells","T cells",0
+"10","Epithelial_cells","T cells",0
+"11","Epithelial_cells","T cells",0
+"12","Epithelial_cells","T cells",0
+"13","Epithelial_cells","T cells",0
+"0","Erythroblast","T cells",0
+"1","Erythroblast","T cells",0
+"2","Erythroblast","T cells",0
+"3","Erythroblast","T cells",0
+"4","Erythroblast","T cells",0
+"5","Erythroblast","T cells",0
+"6","Erythroblast","T cells",0
+"7","Erythroblast","T cells",0
+"8","Erythroblast","T cells",0
+"9","Erythroblast","T cells",0
+"10","Erythroblast","T cells",0
+"11","Erythroblast","T cells",0
+"12","Erythroblast","T cells",0
+"13","Erythroblast","T cells",0
+"0","Fibroblasts","T cells",0
+"1","Fibroblasts","T cells",0
+"2","Fibroblasts","T cells",0
+"3","Fibroblasts","T cells",0
+"4","Fibroblasts","T cells",0
+"5","Fibroblasts","T cells",0
+"6","Fibroblasts","T cells",0
+"7","Fibroblasts","T cells",0
+"8","Fibroblasts","T cells",0
+"9","Fibroblasts","T cells",0
+"10","Fibroblasts","T cells",0
+"11","Fibroblasts","T cells",0
+"12","Fibroblasts","T cells",0
+"13","Fibroblasts","T cells",0
+"0","Hepatocytes","T cells",0
+"1","Hepatocytes","T cells",0
+"2","Hepatocytes","T cells",0
+"3","Hepatocytes","T cells",0
+"4","Hepatocytes","T cells",0
+"5","Hepatocytes","T cells",0
+"6","Hepatocytes","T cells",0
+"7","Hepatocytes","T cells",0
+"8","Hepatocytes","T cells",0
+"9","Hepatocytes","T cells",0
+"10","Hepatocytes","T cells",0
+"11","Hepatocytes","T cells",0
+"12","Hepatocytes","T cells",0
+"13","Hepatocytes","T cells",0
+"0","HSC_-G-CSF","T cells",0
+"1","HSC_-G-CSF","T cells",0
+"2","HSC_-G-CSF","T cells",0
+"3","HSC_-G-CSF","T cells",0
+"4","HSC_-G-CSF","T cells",0
+"5","HSC_-G-CSF","T cells",0
+"6","HSC_-G-CSF","T cells",0
+"7","HSC_-G-CSF","T cells",0
+"8","HSC_-G-CSF","T cells",0
+"9","HSC_-G-CSF","T cells",0
+"10","HSC_-G-CSF","T cells",0
+"11","HSC_-G-CSF","T cells",0
+"12","HSC_-G-CSF","T cells",0
+"13","HSC_-G-CSF","T cells",0
+"0","Macrophage","T cells",0
+"1","Macrophage","T cells",0
+"2","Macrophage","T cells",0
+"3","Macrophage","T cells",0
+"4","Macrophage","T cells",0
+"5","Macrophage","T cells",0
+"6","Macrophage","T cells",0
+"7","Macrophage","T cells",0
+"8","Macrophage","T cells",0
+"9","Macrophage","T cells",0
+"10","Macrophage","T cells",0
+"11","Macrophage","T cells",0
+"12","Macrophage","T cells",0
+"13","Macrophage","T cells",0
+"0","MEP","T cells",0
+"1","MEP","T cells",0
+"2","MEP","T cells",0
+"3","MEP","T cells",0
+"4","MEP","T cells",0
+"5","MEP","T cells",0
+"6","MEP","T cells",0
+"7","MEP","T cells",0
+"8","MEP","T cells",0
+"9","MEP","T cells",0
+"10","MEP","T cells",0
+"11","MEP","T cells",0
+"12","MEP","T cells",0
+"13","MEP","T cells",0
+"0","Monocyte","T cells",0
+"1","Monocyte","T cells",0
+"2","Monocyte","T cells",0
+"3","Monocyte","T cells",0
+"4","Monocyte","T cells",0
+"5","Monocyte","T cells",0
+"6","Monocyte","T cells",0
+"7","Monocyte","T cells",0
+"8","Monocyte","T cells",0
+"9","Monocyte","T cells",0
+"10","Monocyte","T cells",0
+"11","Monocyte","T cells",0
+"12","Monocyte","T cells",0
+"13","Monocyte","T cells",0
+"0","NK_cell","T cells",161
+"1","NK_cell","T cells",1
+"2","NK_cell","T cells",14
+"3","NK_cell","T cells",7
+"4","NK_cell","T cells",232
+"5","NK_cell","T cells",11
+"6","NK_cell","T cells",0
+"7","NK_cell","T cells",6
+"8","NK_cell","T cells",0
+"9","NK_cell","T cells",38
+"10","NK_cell","T cells",36
+"11","NK_cell","T cells",13
+"12","NK_cell","T cells",56
+"13","NK_cell","T cells",0
+"0","Pre-B_cell_CD34-","T cells",0
+"1","Pre-B_cell_CD34-","T cells",0
+"2","Pre-B_cell_CD34-","T cells",0
+"3","Pre-B_cell_CD34-","T cells",0
+"4","Pre-B_cell_CD34-","T cells",0
+"5","Pre-B_cell_CD34-","T cells",0
+"6","Pre-B_cell_CD34-","T cells",0
+"7","Pre-B_cell_CD34-","T cells",0
+"8","Pre-B_cell_CD34-","T cells",0
+"9","Pre-B_cell_CD34-","T cells",0
+"10","Pre-B_cell_CD34-","T cells",0
+"11","Pre-B_cell_CD34-","T cells",0
+"12","Pre-B_cell_CD34-","T cells",0
+"13","Pre-B_cell_CD34-","T cells",0
+"0","Pro-B_cell_CD34+","T cells",0
+"1","Pro-B_cell_CD34+","T cells",0
+"2","Pro-B_cell_CD34+","T cells",0
+"3","Pro-B_cell_CD34+","T cells",0
+"4","Pro-B_cell_CD34+","T cells",0
+"5","Pro-B_cell_CD34+","T cells",0
+"6","Pro-B_cell_CD34+","T cells",0
+"7","Pro-B_cell_CD34+","T cells",0
+"8","Pro-B_cell_CD34+","T cells",0
+"9","Pro-B_cell_CD34+","T cells",0
+"10","Pro-B_cell_CD34+","T cells",0
+"11","Pro-B_cell_CD34+","T cells",0
+"12","Pro-B_cell_CD34+","T cells",0
+"13","Pro-B_cell_CD34+","T cells",0
+"0","T_cells","T cells",8660
+"1","T_cells","T cells",2169
+"2","T_cells","T cells",7260
+"3","T_cells","T cells",5430
+"4","T_cells","T cells",4917
+"5","T_cells","T cells",3926
+"6","T_cells","T cells",1746
+"7","T_cells","T cells",3735
+"8","T_cells","T cells",735
+"9","T_cells","T cells",1367
+"10","T_cells","T cells",667
+"11","T_cells","T cells",420
+"12","T_cells","T cells",162
+"13","T_cells","T cells",40

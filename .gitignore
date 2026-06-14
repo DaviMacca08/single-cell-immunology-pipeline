@@ -1,0 +1,14 @@
+# R files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# RStudio
+.Rproj.user/
+
+# Temporary files
+*.tmp
+
+# macOS
+.DS_Store

@@ -152,7 +152,7 @@ for (celltype in level_celltype) {
     ggtitle(paste0("Cell Type Level ", gsub("\\D", "", celltype)))
   
   ggsave(
-    filename = file.path(paths$plot_azimuth, paste0("PBMC_CellType_Level", gsub("\\D", "", celltype), ".png")),
+    filename = file.path(paths$plots_azimuth, paste0("PBMC_CellType_Level", gsub("\\D", "", celltype), ".png")),
     plot = p,
     width = 14,
     height = 10,
@@ -287,7 +287,7 @@ mapping.score_plot <- VlnPlot(cd_harmony, features = "mapping.score", group.by =
   NoLegend() + 
   ggtitle("Mapping Score")
 
-save_plot(mapping.score_plot, filename = "mapping.score_plot.png", dir = paths$plot_azimuth, width = 18, height = 14)
+save_plot(mapping.score_plot, filename = "mapping.score_plot.png", dir = paths$plots_azimuth, width = 18, height = 14)
 
 # ---------------------------------------------------------
 # Cluster vs label heatmap
@@ -299,7 +299,7 @@ tab_celltype_level2 <- table(
   cd_harmony$predicted.celltype.l2
 )
 
-open_pdf(filename = "Azimuth_PBMC_Cluster_Annotation_Heatmap.pdf", dir = paths$plot_azimuth)
+open_pdf(filename = "Azimuth_PBMC_Cluster_Annotation_Heatmap.pdf", dir = paths$plots_azimuth)
 
 pheatmap(
   log10(tab_celltype_level2 + 1),

@@ -148,6 +148,7 @@ Consensus annotation workflow:
 
 -   Azimuth reference mapping
 -   SingleR automated annotation
+-   Marker-guided annotation using CellMarker2.0 database references
 -   Canonical marker-based validation
 -   Consensus biological interpretation
 

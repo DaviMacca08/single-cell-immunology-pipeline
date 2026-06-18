@@ -167,7 +167,7 @@ cd_harmony$Single.R.labels.MonacoImmune <- MonacoImmune_pred$pruned.labels[match
 # CellAtlas heatmap
 # ---------------------------------------------------------
 
-open_pdf(filename = "SingleR_CellAtlas_ScoreHeatmap.pdf", dir = paths$plot_singler, width = 12, height = 10)
+open_pdf(filename = "SingleR_CellAtlas_ScoreHeatmap.pdf", dir = paths$plots_singler, width = 12, height = 10)
 
 plotScoreHeatmap(CellAtlas_pred)
 
@@ -177,7 +177,7 @@ close_pdf()
 # MonacoImmune heatmap
 # ---------------------------------------------------------
 
-open_pdf(filename = "SingleR_Monaco_ScoreHeatmap.pdf", dir = paths$plot_singler, width = 12, height = 10)
+open_pdf(filename = "SingleR_Monaco_ScoreHeatmap.pdf", dir = paths$plots_singler, width = 12, height = 10)
 
 plotScoreHeatmap(MonacoImmune_pred)
 
@@ -187,13 +187,13 @@ close_pdf()
 # Delta distributions
 # ---------------------------------------------------------
 
-open_pdf(filename = "SingleR_CellAtlas_DeltaDistribution.pdf", dir = paths$plot_singler)
+open_pdf(filename = "SingleR_CellAtlas_DeltaDistribution.pdf", dir = paths$plots_singler)
 
 plotDeltaDistribution(CellAtlas_pred)
 
 close_pdf()
 
-open_pdf(filename = "SingleR_Monaco_DeltaDistribution.pdf", dir = paths$plot_singler)
+open_pdf(filename = "SingleR_Monaco_DeltaDistribution.pdf", dir = paths$plots_singler)
 
 plotDeltaDistribution(MonacoImmune_pred)
 
@@ -218,7 +218,7 @@ tab_MonacoImmune <- table(
 # CellAtlas pheatmap
 # ---------------------------------------------------------
 
-open_pdf(filename = "CellAtlas_Cluster_Annotation_Heatmap.pdf", dir = paths$plot_singler)
+open_pdf(filename = "CellAtlas_Cluster_Annotation_Heatmap.pdf", dir = paths$plots_singler)
 
 pheatmap(
   log10(tab_CellAtlas + 10),
@@ -234,7 +234,7 @@ close_pdf()
 # MonacoImmune pheatmap
 # ---------------------------------------------------------
 
-open_pdf(filename = "MonacoImmune_Cluster_Annotation_Heatmap.pdf", dir = paths$plot_singler)
+open_pdf(filename = "MonacoImmune_Cluster_Annotation_Heatmap.pdf", dir = paths$plots_singler)
 
 pheatmap(
   log10(tab_MonacoImmune + 10),

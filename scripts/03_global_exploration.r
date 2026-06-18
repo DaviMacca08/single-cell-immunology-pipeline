@@ -373,9 +373,7 @@ save_plot(consensus_featureplot, filename = "FeaturePlot_Consensus.pdf", dir = p
 #                  Save outputs
 # =========================================================
 
-save_rds(AllMarkers, filename = "AllMarkers_clusters.rds", dir = paths$tables)
-
-save_csv(AllMarkers, filename = "AllMarkers_clusters.csv", dir = paths$tables)
+save_csv(AllMarkers, filename = "AllMarkers_clusters.csv", dir = paths$tables_markers)
 
 message("Global exploration pipeline completed successfully")
 

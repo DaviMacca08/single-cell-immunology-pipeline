@@ -153,13 +153,13 @@ pbmc_plot <- DimPlot(cd_harmony, reduction = "umap", group.by = "pbmc_majority",
 
 message("Saving diagnostic UMAP comparisons...")
 
-save_plot(cellatlas_plot + cluster_plots, filename = "Cluster_CellAtlas.pdf", dir = paths$plot_cellannotation, 
+save_plot(cellatlas_plot + cluster_plots, filename = "Cluster_CellAtlas.pdf", dir = paths$plots_cellannotation, 
           width = 14, height = 6)
 
-save_plot(monaco_plot + cluster_plots, filename = "Cluster_MonacoImmune.pdf", dir = paths$plot_cellannotation, 
+save_plot(monaco_plot + cluster_plots, filename = "Cluster_MonacoImmune.pdf", dir = paths$plots_cellannotation, 
           width = 14, height = 6)
 
-save_plot(pbmc_plot + cluster_plots, filename = "Cluster_PBMC.pdf", dir = paths$plot_cellannotation, 
+save_plot(pbmc_plot + cluster_plots, filename = "Cluster_PBMC.pdf", dir = paths$plots_cellannotation, 
           width = 14, height = 6)
 
 
@@ -230,13 +230,13 @@ dotplot_final <- DotPlot(cd_harmony, features = canonical_markers, scale = FALSE
 #  Save final plots
 # -------------------
 
-save_plot(final_plot, filename = "UMAP_Final_Annotation.png", dir = paths$plot_cellannotation,
+save_plot(final_plot, filename = "UMAP_Final_Annotation.png", dir = paths$plots_cellannotation,
           width = 12, height = 10)
 
-save_plot(final_plot, filename = "UMAP_Final_Annotation.pdf", dir = paths$plot_cellannotation,
+save_plot(final_plot, filename = "UMAP_Final_Annotation.pdf", dir = paths$plots_cellannotation,
           width = 12, height = 10)
 
-save_plot(dotplot_final, filename = "DotPlot_CanonicalMarkers.pdf", dir = paths$plot_cellannotation,
+save_plot(dotplot_final, filename = "DotPlot_CanonicalMarkers.pdf", dir = paths$plots_cellannotation,
           width = 14, height = 10)
 
 

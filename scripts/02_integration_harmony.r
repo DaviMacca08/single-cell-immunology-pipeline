@@ -85,6 +85,8 @@ message("Merge completed: ", ncol(seurat_merge), " total cells")
 
 save_rds(seurat_merge, "Filtered_MergedSamples.rds",dir = paths$objects)
 
+paste0("Total cells: ", ncol(cd_harmony))
+
 
 # =========================================================
 #                  Normalization + HVGs

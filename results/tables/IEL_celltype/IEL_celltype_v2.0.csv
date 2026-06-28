@@ -1,0 +1,21 @@
+﻿cluster ,adjust_celltype,final_annotation,matching
+0,CD39⁺ tissue-resident CD8 (mixed TRM states),CD39+ tissue-resident CD8 T cells,CD39_tissue-resident_CD8_Tcells
+1,γδ T cells / NK-like cytotoxic,γδ T cells / NK-like cytotoxic T cells,gamma-delta_Tcells_NK-like_cytotoxic_Tcells
+2,cytotoxic γδ T cells (NK-like),Cytotoxic γδ T cells,Cytotoxic_gamma-delta_Tcells
+3,naïve / early activated CD4 (CD8 contamination),Naive CD4 T cells,Naive_CD4_Tcells
+4,TH17 + cytotoxic CD4 + ILC-like,TH17-like CD4 T cells,TH17-like_CD4_Tcells
+5,TH17 effector (CCR6⁺ CCL20⁺ CXCR6⁺),TH17 effector,TH17_effector
+6,circulating memory-like CD8,IL7R+ memory-like CD8 T cells,IL7R_memory-like_CD8_Tcells
+7,TFH-like (CXCL13⁺ PDCD1⁺),CXCL13+ TFH-like T cells,CXCL13_TFH-like_Tcells
+8,naïve / central memory CD4,Naïve / central memory CD4,Naive_central_memory_CD4
+9,activated memory CD4 (NF-κB⁺),Activated memory CD4 ,Activated_memory_CD4
+10,GZMK⁺ effector memory CD8,GZMK+ effector memory CD8 T cells,GZMK_effector_memory_CD8_T_cells
+11,TH17 / ILC-like helper,TH17-like innate-associated CD4 T cells,TH17-like_innate-associated_CD4_Tcells
+12,naïve / central memory CD4,Naïve CD4,Naive_CD4_Tcells
+13,mixed effector CD8/CD4-like,Effector T cell mixed state,Effector_Tcell_mixed_state
+14,terminal cytotoxic CD8,Terminal effector CD8 T cells,Terminal_effector_CD8_Tcells
+15,NK-like cytotoxic lymphocytes,NK-like cytotoxic T cells,NK-like_cytotoxic_Tcells
+16,Proliferating T cells,Cycling T cells,Cycling_Tcells
+17,FOXP3⁺ Treg,FOXP3+ IL2RA+ Treg,FOXP3_IL2RA_Treg
+18,macrophages,CST3+ LYZ+ macrophages,CST3_LYZ_macrophages
+19,epithelial cells,Epithelial cells / enterocytes,Epithelial_cells_enterocytes

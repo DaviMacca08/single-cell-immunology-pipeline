@@ -1,0 +1,290 @@
+---
+title: "Single-Cell RNA-seq Analysis Report: Global Transcriptomic Profiling and Consensus Cell-Type Annotation"
+author: "Bioinformatics Analysis Service"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: false
+    theme: readable
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  fig.align = "center",
+  fig.width = 8,
+  fig.height = 5
+)
+
+source("../../../Setup_Environment/00_paths.R")
+```
+
+# 1. Executive Summary
+
+This report describes the global exploration analysis performed on a human intestinal single-cell RNA-seq dataset derived from Crohn’s disease patients and healthy controls.
+
+The objective of this analysis was to generate an integrated representation of the cellular landscape, characterize transcriptional heterogeneity across samples, identify major cellular populations, and establish a robust cell-type annotation framework for downstream biological investigations.
+
+The analytical workflow included:
+
+-   quality control and preprocessing of single-cell transcriptomic data
+-   normalization and feature selection
+-   dimensionality reduction and integrated embedding generation
+-   correction of sample-associated variation through batch integration
+-   unsupervised clustering of transcriptional profiles
+-   consensus cell-type annotation combining reference-based predictions and marker-based biological validation
+
+The analysis identified **14 transcriptionally distinct clusters**, which were further interpreted and consolidated into **6 major biological cell populations** through integrative annotation.
+
+The resulting annotated Seurat object provides a curated representation of the dataset and serves as the reference framework for subsequent compartment-specific analyses.
+
+------------------------------------------------------------------------
+
+# 2. Experimental Design
+
+The dataset consists of multi-sample human intestinal single-cell RNA-seq profiles generated from patient-derived biopsy samples.
+
+| Parameter | Description |
+|----|----|
+| Organism | Homo sapiens |
+| Tissue | Intestinal mucosa (lamina propria and intraepithelial compartments) |
+| Disease model | Crohn’s disease and healthy controls |
+| Experimental material | Patient-derived intestinal biopsy samples |
+| Sequencing platform | 10x Genomics Chromium single-cell RNA-seq |
+| Dataset type | Multi-sample single-cell transcriptomic dataset |
+| Public dataset | GEO GSE157477 |
+| Batch identifier | `sample_id` |
+
+## Cell number summary
+
+Cells were evaluated before and after quality control filtering.
+
+| Sample     | Condition       | Cells before QC | Cells after QC | Retention (%) |
+|------------|-----------------|-----------------|----------------|---------------|
+| GSM4766839 | Normal          | 7498            | 7457           | 99.45         |
+| GSM4766840 | Normal          | 4110            | 4025           | 97.93         |
+| GSM4766841 | Crohn's disease | 5628            | 5587           | 99.27         |
+| GSM4766842 | Crohn's disease | 5634            | 5537           | 98.28         |
+| GSM4766843 | Crohn's disease | 7638            | 7630           | 99.90         |
+| GSM4766844 | Crohn's disease | 7700            | 7669           | 99.60         |
+| GSM4766845 | Normal          | 6827            | 6674           | 97.76         |
+| GSM4766846 | Normal          | 5370            | 5293           | 98.57         |
+| GSM4766847 | Crohn's disease | 2687            | 2626           | 97.73         |
+| GSM4766848 | Crohn's disease | 4549            | 4372           | 96.11         |
+| GSM4766849 | Crohn's disease | 2434            | 2403           | 98.73         |
+
+Quality control filtering resulted in high cell retention across all samples (96.1%–99.9%), indicating that the applied filtering strategy removed a limited proportion of cells while maintaining the majority of the original dataset.
+
+------------------------------------------------------------------------
+
+# 3. Data Processing Workflow
+
+The single-cell RNA-seq data processing workflow was implemented using a modular pipeline designed to ensure reproducibility, scalability, and compatibility with downstream integrative analyses. The workflow consisted of the following sequential steps:
+
+1- Raw gene-by-cell count matrix import and initial object construction 2- Generation of Seurat object for unified data handling 3- Quality control (QC) filtering of low-quality cells and potential doublets 4- Data normalization and scaling 5- Identification of highly variable genes (HVGs) 6- Principal component analysis (PCA) for dimensionality reduction 7- Batch effect correction and dataset integration using Harmony 8- Non-linear embedding using UMAP for visualization 9- Graph-based clustering of cells in the integrated latent space 10- Reference-based cell type annotation 11- Consensus-based refinement of cell identity assignments across methods
+
+------------------------------------------------------------------------
+
+# 4. Quality Control Assessment
+
+Quality control was performed using:
+
+-   number of detected genes (nFeature_RNA)
+-   total transcript counts (nCount_RNA)
+-   mitochondrial RNA percentage (percent.mt)
+
+## 4.1 QC metrics distribution
+
+**Before Filtering**
+
+```{r QC_plot_before_filtering, fig.width = 7, fig.height = 6}
+knitr::include_graphics(file.path("../../../results/plots/QC_by_sample/01-QC_ViolinPlot.png"))
+
+```
+
+**After Filtering**
+
+```{r QC_plot_after_filtering, fig.width = 7, fig.height = 6}
+knitr::include_graphics(file.path("../../../results/plots/QC_by_sample/04-QC_ViolinPlot_filtered.png"))
+
+```
+
+------------------------------------------------------------------------
+
+# 5. Global Transcriptomic Landscape
+
+## 5.1 Principal Component Analysis
+
+PCA was performed to evaluate major transcriptional sources of variation.
+
+```{r PCA_Embedding_plot, fig.width = 6, fig.height = 5}
+knitr::include_graphics(file.path("../../../results/plots/Integration_HVG/PCA_EmbeddingPlot.png"))
+
+```
+
+# 5.2 Harmony Integration
+
+Harmony was applied using sample_id as batch variable to reduce sample-associated variation while preserving biological differences.
+
+**Before integration**
+
+```{r PCA_Before_harmony, fig.width = 6, fig.height = 5}
+knitr::include_graphics(file.path("../../../results/plots/Integration_HVG/BeforeHarmony_sample_id.png"))
+
+```
+
+**After integration**
+
+```{r PCA_After_harmony, fig.width = 6, fig.height = 5}
+knitr::include_graphics(file.path("../../../results/plots/Integration_HVG/AfterHarmony_sample_id.png"))
+```
+
+------------------------------------------------------------------------
+
+# 6. Unsupervised Clustering Analysis
+
+Graph-based clustering was performed on the Harmony-integrated latent space using a shared nearest neighbor (SNN) graph.
+
+A total of **14** transcriptionally distinct clusters were identified.
+
+**Cluster visualization**
+
+```{r Clusters, fig.width = 6, fig.height = 5}
+knitr::include_graphics(file.path("../../../results/plots/Integration_HVG/DimPlot_clusters.png"))
+```
+
+**Marker gene identification**
+
+Cluster-specific marker genes were identified to support biological interpretation.
+
+```{r Heatmap_Clusters_TopGenes, fig.align='center'}
+knitr::include_graphics(file.path("../../../results/plots/Global_Exploration/Heatmap_TopGenes.png"))
+```
+
+------------------------------------------------------------------------
+
+# 7. Cell-Type Annotation
+
+Cell identities were assigned using a multi-step consensus approach.
+
+Cell identity assignment was based on a consensus approach combining reference-based annotation and marker-driven biological validation.
+
+## 7.1 Reference-based annotation
+
+**Azimuth**
+
+Reference mapping was performed using Azimuth to obtain predicted cell identities.
+
+```{r Heatmap_annotations_azimuth, fig.align='center'}
+knitr::include_graphics(file.path("../../../results/plots/Global_Exploration/Azimuth_PBMC/Azimuth_PBMC_Cluster_Annotation_Heatmap.png"))
+```
+
+**SingleR**
+
+SingleR annotation was performed using reference transcriptomic profiles.
+
+```{r Heatmap_annotations_singler, fig.align='center'}
+knitr::include_graphics(file.path("../../../results/plots/Global_Exploration/SingleR/CellAtlas_Cluster_Annotation_Heatmap.png"))
+```
+
+## 7.2 Biological validation
+
+Predicted identities were evaluated using canonical marker genes cluster-specific differential expression known immune and intestinal cell signatures.
+
+## 7.3 Consensus integration
+
+Integration of computational predictions and biological validation resulted in:
+
+**14** transcriptional clusters → **6** major cell populations
+
+------------------------------------------------------------------------
+
+# 8. Final annotated cell atlas
+
+## Annotated UMAP
+
+```{r Annotated_UMAP, fig.align='center'}
+knitr::include_graphics(file.path("../../../results/plots/Global_Exploration/CellAnnotation/UMAP_Final_Annotation.png"))
+```
+
+## Cell-type validation and composition
+
+```{r Dotplot_annotations, fig.align='center'}
+knitr::include_graphics(file.path("../../../results/plots/Global_Exploration/CellAnnotation/DotPlot_CanonicalMarkers.png"))
+```
+
+------------------------------------------------------------------------
+
+# 9. Biological Interpretation
+
+The integrated single-cell analysis framework enables the resolution of complex cellular ecosystems by combining unsupervised clustering, reference-based annotation, and marker-driven validation.
+
+Graph-based clustering identified multiple transcriptionally distinct cell clusters in the integrated latent space, reflecting underlying heterogeneity within the dataset.
+
+This structure provides the basis for downstream annotation and interpretation, where clusters are progressively mapped to biologically meaningful cell identities through consensus-based approaches.
+
+Overall, this multi-layered strategy supports a reproducible and scalable framework for interpreting high-dimensional single-cell transcriptomic data.
+
+------------------------------------------------------------------------
+
+# 10. Reproducibility
+
+All analyses were performed in a standardized R environment to ensure reproducibility of results.
+
+Software environment:
+
+-   R version: 4.6.0
+-   Seurat: 5.5.0
+-   Harmony: 2.0.3
+-   SingleR: 2.14.0
+-   Azimuth: 0.5.1
+-   celldex: 1.22.0
+
+A complete session information log is stored in the `results/logs/` directory of the project repository, enabling full computational reproducibility of the analysis environment.
+
+------------------------------------------------------------------------
+
+# 11. Limitations and Considerations
+
+Single-cell RNA-seq annotation represents a computational inference based on transcriptomic similarity and marker gene expression, rather than direct phenotypic validation.
+
+Reference-based annotation methods may be influenced by:
+
+composition of the reference dataset tissue-specific transcriptional variability disease-associated or context-specific cellular states
+
+For this reason, cell identity assignment was based on a consensus approach integrating multiple annotation strategies, rather than relying on a single automated method.
+
+------------------------------------------------------------------------
+
+# 12. Deliverables
+
+This analysis produces a complete set of reproducible outputs, including:
+
+-   quality-controlled Seurat object
+-   Harmony-integrated dataset
+-   graph-based clustering results
+-   marker gene tables for cluster characterization
+-   reference-based annotation outputs
+-   consensus cell-type classification
+-   publication-ready visualization figures
+
+The final annotated dataset can support downstream analyses including:
+
+1.  compartment-specific subsetting
+2.  differential gene expression analysis
+3.  pathway and enrichment analysis
+4.  cell-state and trajectory characterization
+
+------------------------------------------------------------------------
+
+# 13. Conclusion
+
+This workflow provides a reproducible end-to-end framework for single-cell RNA-seq data processing and analysis.
+
+The global analysis successfully integrated multiple intestinal samples, identified 14 transcriptionally distinct clusters, and generated a consensus annotation resolving 6 major cellular populations.
+
+Overall, the resulting annotated dataset provides a structured reference for downstream biological investigation of intestinal cellular heterogeneity and disease-associated transcriptional programs.

@@ -1,0 +1,22 @@
+﻿cluster ,adjust_celltype,final_annotation
+0,CD8 Effector / Cytotoxic activated T cells,Activated cytotoxic CD8 T cells
+1,Activated CD4 memory / transitional effector state,Activated CD4 memory T cells
+2,Th17-like activated CD4 T cells,Th17-like activated CD4 T cells
+3,Activated CD4 T cells (IL2+ effector/stress response),Activated CD4 T cells stress response
+4,Naive / central memory CD4 T cells,Naive CD4 T cells
+5,Innate-like / TRM CD8 (CD160+ XCL1/XCL2) with γδ features,Innate-like / TRM CD8
+6,FOXP3+ activated Treg,FOXP3+ activated Treg
+7,Activated cytotoxic CD8 T cells,Activated cytotoxic CD8 T cells
+8,CXCL13+ PD1+ TFH (activated/terminal),T follicular helper
+9,IFN-activated CD8 cytotoxic T cells,IFN-activated CD8 cytotoxic T cells
+10,Naive/central memory CD4 T cells,Naive CD4 T cells
+11,Activated effector Treg,Activated effector Treg
+12,Naive CD4 / stress-adapted state,Naive CD4 T cells
+13,Naive CD4 T cells,Naive CD4 T cells
+14,CD4 TRM / activated memory T cells,CD4 TRM-like activated memory T cells
+15,γδ T cells / innate cytotoxic T cells,γδ T cells / innate cytotoxic T cells
+16,NK-like / highly cytotoxic innate T cells,NK-like cytotoxic T cells
+17,Cycling T cells (CD4/CD8 mixed),Cycling T cells
+18,TRM CD8 / NK-like cytotoxic resident T cells,TRM-like CD8 cytotoxic T cells
+19,Exhausted-like CD4 memory T cells,Exhaustion-like CD4 memory T cells
+20,Epithelial / stromal / myeloid contamination,Epithelial/stromal contamination

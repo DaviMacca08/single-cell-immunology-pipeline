@@ -1,5 +1,5 @@
 ---
-title: "End-to-End Single-Cell RNA-seq Analysis Workflow: Seurat, Harmony, SingleR, Azimuth and Consensus Cell-Type Annotation"
+title: "End-to-End Single-Cell RNA-seq Analysis Framework: Seurat-Based Workflow, Integration and Consensus Cell-Type Annotation"
 output: github_document
 ---
 
@@ -11,38 +11,38 @@ knitr::opts_chunk\$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 # 💼 Bioinformatics Service Demonstration
 
-This repository presents a complete end-to-end single-cell RNA-seq (scRNA-seq) analysis workflow implemented in R using the Seurat ecosystem.
+This repository presents a modular single-cell RNA-seq (scRNA-seq) analysis framework designed for the systematic exploration of cellular heterogeneity in complex biological systems.
 
-It is designed as a reproducible and modular pipeline, suitable for:
+The project is structured to support end-to-end analysis workflows, from initial data exploration to downstream compartment-specific investigations, within a reproducible and extensible computational environment.
 
--   exploratory analysis of scRNA-seq datasets
--   quality control and preprocessing
--   batch correction and integration
--   unsupervised identification of transcriptional populations
--   reference-based and marker-supported cell-type annotation
+It is suitable for:
 
-**Analysis capabilities demonstrated in this project include:**
+-   exploratory analysis of single-cell transcriptomic datasets
+-   systematic characterization of cellular heterogeneity across conditions and samples
+-   structured decomposition of complex tissues into biologically meaningful compartments
+-   reproducible computational analysis with transparent methodological tracking
+-   integration of multiple annotation and interpretation strategies
 
--   Quality control assessment (gene counts, UMI counts, mitochondrial content)
--   Normalization and highly variable gene identification
--   Dimensionality reduction (PCA, UMAP)
--   Graph-based clustering
--   Batch integration using Harmony
--   Automated cell-type annotation using reference-based approaches
--   Consensus cell-type assignment integrating multiple annotation strategies
--   Reproducible visualization and reporting
+**Core analytical functionalities supported by the framework include:**
+
+-   systematic quality assessment of single-cell datasets
+-   data-driven identification of transcriptional heterogeneity
+-   construction of low-dimensional representations for interpretation and visualization
+-   structured analysis of batch and sample variability
+-   robust cell identity inference using complementary computational strategies
+-   hierarchical organization of analyses from global system-level structure to compartment-specific resolution
+-   reproducible reporting and visualization of analytical outcomes
 
 **📤 Deliverables**
 
--   Modular R analysis pipeline
--   Integrated Seurat object
--   QC and integration diagnostic plots
--   Global clustering analysis
--   Consensus cell-type annotation at whole-dataset level
+-   Structured single-cell analytical outputs
+-   Annotated cellular representations
+-   Reproducible analysis reports
+-   Visualization and summary results
 
 # 📊 Case Study
 
-This workflow is demonstrated using a human intestinal single-cell RNA-seq dataset:
+This repository uses a public dataset as a demonstration case to showcase the implementation of a reproducible single-cell RNA-seq analysis framework.
 
 **Organism:** Homo sapiens (human)
 
@@ -50,7 +50,7 @@ This workflow is demonstrated using a human intestinal single-cell RNA-seq datas
 
 **Platform:** 10x Genomics Chromium single-cell RNA-seq
 
-**Public dataset source:** GEO (Gene Expression Omnibus) associated with the study
+**Public dataset source:** GEO (Gene Expression Omnibus) associated with the study (GSE157477)
 
 **Study DOI:** <https://doi.org/10.1038/s41467-021-22164-6>
 
@@ -65,121 +65,72 @@ The aim of this analysis is to characterize cellular heterogeneity within intest
 -   assigning biologically meaningful cell identities
 -   generating a validated cellular reference for downstream compartment-specific analyses
 
-The current analysis focuses on global dataset characterization before biological subsetting.
+The analysis framework enables characterization of cellular heterogeneity across biological compartments and supports downstream compartment-specific investigations.
 
 ------------------------------------------------------------------------
 
 # 📌 Key Results
 
-The global analysis workflow achieved:
+The analysis framework produces a structured and high-resolution representation of single-cell transcriptional heterogeneity across biological conditions.
 
--   Identification of transcriptionally distinct clusters using graph-based clustering
--   Correction of sample-associated variation using Harmony integration with sample_id as integration variable
--   Visualization of integrated cellular structure using PCA and UMAP
--   Reference-based annotation using:
-    1)  Azimuth mapping
-    2)  SingleR reference annotation
-    3)  canonical marker validation
+The pipeline integrates multiple computational strategies to ensure robustness in downstream biological interpretation, including:
 
-A consensus cell-type annotation strategy was applied by integrating computational predictions with biological marker evaluation.
+-   Identification of transcriptionally distinct cellular states from high-dimensional single-cell data
+-   Correction of technical and sample-associated variation to enable biologically meaningful comparisons across samples
+-   Generation of low-dimensional representations suitable for visualization and downstream analysis
+-   Cell-type assignment supported by complementary computational and marker-based strategies
+-   Integration of multiple annotation sources into a unified consensus framework
 
-The resulting annotated Seurat object represents the global cellular landscape and serves as the starting point for downstream compartment-specific analyses (e.g. IEL and LPL subsetting).
+The final output is a curated single-cell representation of the system, designed to support reproducible downstream analyses and hypothesis-driven exploration of cellular composition and states.
 
 ------------------------------------------------------------------------
 
-# ⚙️ Analysis Pipeline
+# 🗂 Analysis Organization
 
-1.  Data loading & preprocessing
+The repository is organized into independent analytical modules.
 
--   Raw count matrix import
--   Sample metadata integration
--   Initial Seurat object creation
+Currently available workflows:
 
-2.  Quality control
+-   Global exploration
+-   Cell compartment-specific subsetting
 
-Quality filtering based on:
+Each analysis is structured as a self-contained module and includes:
 
--   nFeature_RNA
--   nCount_RNA
--   mitochondrial RNA percentage (percent.mt)
+-   dedicated R scripts implementing the analytical workflow
+-   a **dedicated analytical report** describing the specific pipeline used
+-   a `results/` directory containing all generated outputs, organized into subfolders (e.g. results/ -\> plots -\> Global_Exploration/)
+-   an `objects/` directory storing processed Seurat objects and intermediate data structures generated across analyses
 
-Diagnostic visualization:
+This structure ensures full traceability and reproducibility across the analytical workflow:
 
--   QC violin plots
--   feature-count distributions
--   mitochondrial content assessment
+analysis code → processed objects & results → visualization outputs → biological conclusions
 
-3.  Normalization and feature selection
+## Visualization
 
--   LogNormalize workflow
--   Identification of highly variable genes (HVGs)
+Each analytical module generates structured visualization outputs supporting quality assessment, integration evaluation, clustering interpretation and biological annotation.
 
-4.  Dimensionality reduction
+All generated figures are organized within the `results/plots/` directory and grouped by analytical module.
 
--   PCA
--   UMAP embedding
+Representative results are summarized in dedicated analysis reports, while intermediate outputs are retained within the results structure to preserve reproducibility and traceability.
 
-5.  Batch integration
+### Reproducibility and reporting
 
--   Harmony integration
+Each analysis includes a dedicated report that integrates key representative figures with methodological context and biological interpretation. These reports provide a curated view of the most relevant results, while the full set of intermediate plots remains stored locally within the `results/` directory structure.
 
-Batch variable:
+This approach ensures a balance between:
 
--   sample_id
-
-Integration quality assessed through:
-
--   PCA/UMAP visualization before and after correction
--   sample distribution within integrated embeddings
-
-6.  Unsupervised clustering
-
-Graph-based clustering performed on integrated representations.
-
-Outputs:
-
--   transcriptional clusters
--   cluster markers
--   global cellular landscape
-
-7.  Cell-type annotation
-
-Consensus annotation workflow:
-
--   Azimuth reference mapping
--   SingleR automated annotation
--   Marker-guided annotation using CellMarker2.0 database references
--   Canonical marker-based validation
--   Consensus biological interpretation
-
-## 8. Visualization
-
-The workflow produces a comprehensive set of visualization outputs for quality assessment, integration evaluation, clustering interpretation and cell-type annotation.
-
-Selected representative outputs are included in this repository:
-
--   QC distribution plots
--   PCA and UMAP embeddings
--   Cluster-level visualization
--   Reference-based annotation plots (Azimuth / SingleR)
--   Feature plots for canonical markers
--   Marker expression visualization
-
-Additional plots generated during intermediate analytical steps are retained locally but not uploaded to the repository to keep the project lightweight and focused on key results.
+-   completeness of generated outputs
+-   clarity of reported results
+-   repository maintainability and lightweight structure
 
 ------------------------------------------------------------------------
 
 # Experimental Design
 
--   Multi-sample human intestinal scRNA-seq dataset
-
--   Crohn’s disease vs healthy control samples
-
--   Multiple patient-derived biopsies
-
--   Variable number of cells per sample
-
-The global annotation step precedes compartment-specific analyses.
+-   Human intestinal scRNA-seq dataset
+-   Crohn's disease and healthy control samples
+-   Multiple patient-derived samples
+-   Compartment-specific downstream analyses
 
 ------------------------------------------------------------------------
 
@@ -187,27 +138,41 @@ The global annotation step precedes compartment-specific analyses.
 
 ``` text
 scRNAseq_project/
-├── scripts/
-│   ├── 00_setup/
-│   ├── 01_QC_single_sample.R
-│   ├── 02_integration_harmony.R
-│   ├── 03_global_exploration.R
-│   ├── 04_cell_annotation_singler.R
-│   ├── 05_cell_annotation_azimuth.R
-│   ├── 06_consensus_celltype_annotation
+
+├── analysis/
+│   │
+│   ├── global_exploration/
+│   │   ├── scripts/
+│   │   └── reports/
+|   │       └── Analytical reports describing methods, results and interpretation
+│   │
+│   └── subsetting/
+│       ├── scripts/
+│       └── reports/
+|           └── Analytical reports describing methods, results and interpretation
 │
-├── plots/
-│   ├── Azimuth_PBMC/
-│   ├── CellAnnotation/
-│   ├── Global_Exploration/
-│   ├── Integration_HVG/
-│   ├── QC_by_sample/
-│   ├── SingleR/
-│   
-├── reports/
-├── tables/
-│ 
+├── objects/
+│   └── Analysis-specific Seurat objects and intermediate data structures
+│
+├── results/
+│   ├── plots/
+│   │   └── Analysis-specific visualization outputs
+│   │
+│   ├── tables/
+│   │   └── Generated analytical summaries and result tables
+│   │
+│   └── logs/
+│       └── Execution logs and reproducibility information
+│
+├── Setup_Environment/
+│   ├── 00_paths.R
+│   ├── 01_environment.R
+│   ├── 02_io_helpers.R
+│   ├── 03_checks.R
+│   └── 04_seed.R
+│
 ├── README.md
+└── LICENSE.txt
 ```
 
 # References
@@ -217,8 +182,9 @@ scRNAseq_project/
 -   Hao et al., 2021–2023 – Seurat v4/v5 framework and multimodal integration
 -   Satija Lab – Seurat documentation: <https://satijalab.org/seurat/>
 -   Azimuth reference mapping: <https://azimuth.hubmapconsortium.org/>
+-   CellMarker 2.0 – An updated cell marker database for human and mouse cell types
 
-# 🛠 Tools
+# 🛠 Tools and Resources
 
 -   R v4.6.0
 -   Seurat v5.5.0
@@ -226,6 +192,7 @@ scRNAseq_project/
 -   SingleR v2.14.0
 -   Azimuth v0.5.1
 -   celldex v1.22.0
+-   CellMarker 2.0 database
 
 ------------------------------------------------------------------------
 

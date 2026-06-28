@@ -2,7 +2,6 @@ End-to-End Single-Cell RNA-seq Analysis Framework: Seurat-Based
 Workflow, Integration and Consensus Cell-Type Annotation
 ================
 
-knitr::opts_chunk\$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 ![R](https://img.shields.io/badge/R-4.6.0-blue)
 ![scRNA–seq](https://img.shields.io/badge/scRNA--seq-Seurat-purple)

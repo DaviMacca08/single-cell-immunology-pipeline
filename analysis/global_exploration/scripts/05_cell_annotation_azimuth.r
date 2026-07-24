@@ -166,8 +166,6 @@ for (celltype in level_celltype) {
   
 }
 
-rm(celltype_plot_list)
-
 
 # =========================================================
 #                Prepare query for Azimuth

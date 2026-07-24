@@ -111,7 +111,7 @@ meta_vars <- c("sample_id", "donor", "disease", "condition", "compartment")
 
 clusters <- DimPlot(cd_harmony, reduction = "umap", group.by = "seurat_clusters", label = TRUE)
 
-DimPlot<- list()
+DimPlot_list <- list()
 
 for (v in meta_vars){
   
@@ -133,9 +133,9 @@ for (v in meta_vars){
   
   message("Generating Dimension plots of ", v )
   
-  DimPlot[[v]] <- DimPlot(cd_harmony, group.by = v, reduction = "umap") 
+  DimPlot_list[[v]] <- DimPlot(cd_harmony, group.by = v, reduction = "umap") 
   
-  p <- DimPlot[[v]] + clusters
+  p <- DimPlot_list[[v]] + clusters
   
   # save plot
   save_plot(object = p, filename = paste0(v, "_vs_Clusters",".pdf"), dir = paths$plots_global,
@@ -147,7 +147,7 @@ for (v in meta_vars){
   
 }
 
-rm(DimPlot)
+rm(DimPlot_list)
 
 # =========================================================
 #                 Find cluster markers
@@ -172,19 +172,6 @@ AllMarkers <- FindAllMarkers(
 stopifnot(length(unique(AllMarkers$cluster)) == length(unique(cd_harmony$seurat_clusters)))
 
 message("Marker detection completed successfully")
-
-# ---------------------------------
-# Find Top 5 markers per cluster
-# ---------------------------------
-
-top_markers <- AllMarkers |> 
-  filter(p_val_adj < 0.05,
-         pct.1 > 0.25,
-         pct.1 > pct.2,
-         !grepl("^RPL|^RPS|^MT-|^HSP|FOS|JUN", gene)) |> 
-  mutate(score = avg_log2FC * (pct.1 - pct.2)) |> 
-  group_by(cluster) |> 
-  slice_max(order_by = score, n = 5) 
 
 
 # =========================================================

@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
   message = FALSE,
   fig.align = "center",
   fig.width = 8,
-  fig.height = 6
+  fig.height = 5
 )
 
 source("../../Setup_Environment/00_paths.R")
@@ -47,12 +47,15 @@ The analytical workflow included:
     and compositional cross-referencing against the upstream cell-type
     annotation
 
-Six cell populations passed the initial QC gate. Five populations were carried through to DE testing after applying an additional biological interpretability criterion: three in IEL (IEL-Cytotoxic-TRM-like, IEL-TH17,
-IEL-Cycling-T-cells) and two in LPL (LPL-Cytotoxic-TRM-like, LPL-Treg).
-Across these five comparisons, differential expression results converge
-on two recurrent gene-level patterns identified at the compartment-resolved
-level in this analysis: recurrent up-regulation of *GNLY* in CD across
-four of five analyzed populations, and a stress-response/glucocorticoid-responsive gene module (*FKBP5*,
+Six cell populations passed the initial QC gate. Five populations were
+carried through to DE testing after applying an additional biological
+interpretability criterion: three in IEL (IEL-Cytotoxic-TRM-like,
+IEL-TH17, IEL-Cycling-T-cells) and two in LPL (LPL-Cytotoxic-TRM-like,
+LPL-Treg). Across these five comparisons, differential expression
+results converge on two recurrent gene-level patterns identified at the
+compartment-resolved level in this analysis: recurrent up-regulation of
+*GNLY* in CD across four of five analyzed populations, and a
+stress-response/glucocorticoid-responsive gene module (*FKBP5*,
 *TSC22D3*, *TXNIP*, *ZFP36L2*, *NFKBIA*, *DUSP2*) across every cell type
 analyzed. The latter provides direct, gene-level support for the
 "response to corticosteroid/glucocorticoid" pathway signal flagged as
@@ -143,7 +146,7 @@ analysis and is revisited in Section 8.1.
 ------------------------------------------------------------------------
 
 | Compartment | Cell population | Genes tested | Significant DEGs | Up-regulated | Down-regulated |
-|:-----------|:------------|-----------:|-----------:|-----------:|-----------:|
+|:-----------|:-----------|-----------:|-----------:|-----------:|-----------:|
 | IEL | IEL-Cycling-T-cells | 4593 | 1 | 1 | 0 |
 | IEL | IEL-Cytotoxic-TRM-like | 11403 | 10 | 8 | 2 |
 | IEL | IEL-TH17 | 10340 | 5 | 2 | 3 |
@@ -430,7 +433,9 @@ Every DESeq2 comparison in this report is based on **2 CD and 2 Control
 donors**. Although **at least three biological replicates per condition
 are generally recommended** for robust RNA-seq differential expression
 analysis, only two donors per group were available after quality-control
-filtering and were therefore retained for the analysis. DESeq2 remains computationally applicable with two replicates, although dispersion estimation and inference are less reliable.
+filtering and were therefore retained for the analysis. DESeq2 remains
+computationally applicable with two replicates, although dispersion
+estimation and inference are less reliable.
 
 This represents the principal limitation of the pseudobulk differential
 expression analysis. With *n* = 2 biological replicates per condition,
@@ -445,10 +450,11 @@ For this reason, **gene set enrichment analysis (GSEA)** constitutes the
 primary biological readout of this study. Because GSEA evaluates the
 complete ranked gene list rather than relying exclusively on individual
 gene significance thresholds, it can provide a more informative view of
-coordinated biological changes in low-powered settings such as this. Consequently, the pseudobulk differential
-expression results should be interpreted primarily as **gene-level
-support for pathway-level alterations identified by GSEA**, rather than
-as an independent discovery layer with equivalent statistical weight.
+coordinated biological changes in low-powered settings such as this.
+Consequently, the pseudobulk differential expression results should be
+interpreted primarily as **gene-level support for pathway-level
+alterations identified by GSEA**, rather than as an independent
+discovery layer with equivalent statistical weight.
 
 ## 8.2 Candidate ambient-RNA contamination genes
 
@@ -529,9 +535,9 @@ constrained but biologically coherent set of CD-associated genes. Two
 individual-gene-level patterns — near-universal *GNLY* up-regulation and
 a coordinated glucocorticoid-responsive module down-regulation — recur
 across four of five analyzed populations and directly corroborate
-pathway-level findings from the companion GSEA analysis, most notably resolving the
-previously-flagged "not independently verified" status of the
-corticosteroid response signature. At the same time, this analysis
+pathway-level findings from the companion GSEA analysis, most notably
+resolving the previously-flagged "not independently verified" status of
+the corticosteroid response signature. At the same time, this analysis
 surfaces concrete, previously undocumented limitations — a
 compartment-specific single-donor dominance of the TH17 signal, several
 candidate ambient-RNA genes among top DEGs, and a Treg compositional

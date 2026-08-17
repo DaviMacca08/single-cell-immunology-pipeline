@@ -1,0 +1,478 @@
+Pseudobulk Differential Expression Analysis of Intestinal IEL and LPL
+Compartments: Crohn’s Disease versus Control
+================
+Bioinformatics Analysis Service
+2026-08-05
+
+# 1. Executive Summary
+
+This report describes the pseudobulk differential expression (DE)
+analysis performed on the compartment-specific reclustered IEL and LPL
+single-cell RNA-seq data, comparing Crohn’s disease (CD) versus control
+(Control) tissue within each statistically eligible cell population.
+
+The analytical workflow included:
+
+- aggregation of single-cell counts into per-donor, per-cell-type
+  pseudobulk samples
+- a programmatic QC gate requiring at least 2 donors per condition and
+  at least 10 cells per pseudo-sample, blocking any comparison that
+  fails these criteria rather than proceeding silently
+- DESeq2 differential expression testing (`~ condition` design,
+  `Control` as reference level) with `apeglm` log2 fold-change shrinkage
+- diagnostic visualization (volcano plots, `plotMA`, top-DEG heatmaps)
+  and compositional cross-referencing against the upstream cell-type
+  annotation
+
+Six cell populations passed the initial QC gate. Five populations were
+carried through to DE testing after applying an additional biological
+interpretability criterion: three in IEL (IEL-Cytotoxic-TRM-like,
+IEL-TH17, IEL-Cycling-T-cells) and two in LPL (LPL-Cytotoxic-TRM-like,
+LPL-Treg). Across these five comparisons, differential expression
+results converge on two recurrent gene-level patterns identified at the
+compartment-resolved level in this analysis: recurrent up-regulation of
+*GNLY* in CD across four of five analyzed populations, and a
+stress-response/glucocorticoid-responsive gene module (*FKBP5*,
+*TSC22D3*, *TXNIP*, *ZFP36L2*, *NFKBIA*, *DUSP2*) across every cell type
+analyzed. The latter provides direct, gene-level support for the
+“response to corticosteroid/glucocorticoid” pathway signal flagged as
+provisional in the companion GSEA report.
+
+This analysis also surfaces two structural limitations that were not
+previously quantified: several candidate ambient-RNA/contamination genes
+among the top differentially expressed genes, and a compartment-specific
+donor imbalance in which a single CD donor drives the majority of the
+TH17 signal — a different donor in each compartment. Both are discussed
+in detail in Section 8.
+
+------------------------------------------------------------------------
+
+# 2. Statistical Design
+
+## 2.1 Pseudobulk construction and QC gate
+
+For each cell type, single-cell counts were aggregated by donor to form
+pseudobulk samples. A comparison was only carried forward to DESeq2
+testing if it satisfied, for both conditions independently:
+
+- at least 2 donors per condition group
+- at least 10 cells per pseudo-sample
+
+This gate is enforced programmatically (`stop()` on failure) rather than
+as a post-hoc filter, so that no comparison built on an under-powered
+donor structure is silently reported.
+
+## 2.2 DESeq2 model
+
+    design = ~ condition
+    condition releveled with "Control" as reference
+    contrast = c("condition", "CD", "Control")
+    lfcShrink(type = "apeglm")
+
+Positive log2 fold change and positive Wald statistic indicate higher
+expression in CD relative to Control, consistently across all five
+comparisons (the releveling step is executed independently inside each
+per-cell-type loop iteration, so the contrast direction cannot be
+inconsistent between cell types).
+
+## 2.3 Significance thresholds
+
+Genes were called significant at `padj < 0.05` and
+`|log2FoldChange| > 1`, consistent with the thresholds used to define
+the significant/DEG gene sets feeding into the companion GSEA analysis.
+
+------------------------------------------------------------------------
+
+# 3. Eligible Cell Types
+
+**IEL compartment**
+
+    Eligible cell types: IEL-Cycling-T-cells, IEL-Cytotoxic-TRM-like, IEL-TH17
+
+**LPL compartment**
+
+    Eligible cell types: LPL-Cytotoxic-TRM-like, LPL-Treg, LPL-Other-CD4-T-cells
+
+`LPL-Other-CD4-T-cells` passed the minimum QC requirements but was
+excluded from downstream DE analysis due to its heterogeneous
+transcriptional composition and lack of a clearly defined biological
+comparison target.
+
+## 3.1 Donor structure underlying every comparison
+
+Both compartments draw on the same four donors, split 2 CD / 2 Control:
+
+| Donor | Condition | Disease state label |
+|----|----|----|
+| 1425 | Control | normal |
+| 7420 | Control | normal |
+| 1813 | CD | mixed inflamed/non-inflamed (LPL); predominantly non-inflamed (IEL) |
+| 1818 | CD | mixed inflamed/non-inflamed |
+
+Every DESeq2 comparison in this report therefore rests on **exactly the
+minimum donor count** the QC gate permits (2 vs 2). This is the single
+most important statistical caveat governing the entire pseudobulk
+analysis and is revisited in Section 8.1.
+
+------------------------------------------------------------------------
+
+| Compartment | Cell population | Genes tested | Significant DEGs | Up-regulated | Down-regulated |
+|:---|:---|---:|---:|---:|---:|
+| IEL | IEL-Cycling-T-cells | 4593 | 1 | 1 | 0 |
+| IEL | IEL-Cytotoxic-TRM-like | 11403 | 10 | 8 | 2 |
+| IEL | IEL-TH17 | 10340 | 5 | 2 | 3 |
+| LPL | LPL-Cytotoxic-TRM-like | 11413 | 14 | 6 | 8 |
+| LPL | LPL-Treg | 9432 | 2 | 0 | 2 |
+
+**Table 1.** Summary of the differential expression analysis performed
+for each eligible cell population. *Genes tested* indicates the number
+of genes retained after pre-filtering and included in the DESeq2
+statistical model. Significant DEGs were defined as genes with an
+adjusted *P* value \< 0.05 and an absolute log2 fold change \> 1.
+
+------------------------------------------------------------------------
+
+# 4. IEL Compartment: Differential Expression Results
+
+## 4.1 IEL-Cycling-T-cells
+
+**Volcano plot**
+
+<img src="../../results/plots/Pseudobulk_IEL/Volcano_IELCyclingTcells_CDvsControl.png" alt="" width="2400" style="display: block; margin: auto;" />
+
+**MA plot (shrunk LFC)**
+
+<img src="../../results/plots/Pseudobulk_IEL/MAplot_IELCyclingTcells_CDvsControl.png" alt="" width="1000" style="display: block; margin: auto;" />
+
+**Top 30 DEGs (including non-significant top-ranked genes)**
+
+<img src="../../results/plots/Pseudobulk_IEL/Heatmap_TopDEG_IELCyclingTcells_CDvsControl.png" alt="" width="1400" style="display: block; margin: auto;" />
+
+**Interpretation.** Only one gene reaches significance: *GNLY*
+(granulysin), strongly up in CD. This is consistent with the small
+leading-edge sizes observed for this population in the companion GSEA
+analysis, and with this being the smallest of the five eligible cell
+types by cell number. The `plotMA` shows apeglm shrinkage behaving as
+expected: the bulk of genes are pulled tightly around LFC = 0, with only
+a handful of low-to-moderate count genes retaining appreciable fold
+change. The top-30 heatmap shows the glucocorticoid-responsive module
+(*NFKBIA*, *ZFP36L2*, *DUSP2*, *PTGER4*, *FKBP5*, *TXNIP*, *TSC22D3*)
+consistently higher in Control than CD across both donors per condition,
+despite none of these genes individually crossing the significance
+threshold here — a pattern-level signal below individual-gene
+significance, consistent with why GSEA (Section 4.3 of the companion
+report) detects this axis even where single-gene DE testing does not.
+
+## 4.2 IEL-Cytotoxic-TRM-like
+
+**Volcano plot**
+
+<img src="../../results/plots/Pseudobulk_IEL/Volcano_IELCytotoxicTRMlike_CDvsControl.png" alt="" width="2400" style="display: block; margin: auto;" />
+
+**MA plot (shrunk LFC)**
+
+<img src="../../results/plots/Pseudobulk_IEL/MAplot_IELCytotoxicTRMlike_CDvsControl.png" alt="" width="1000" style="display: block; margin: auto;" />
+
+**Top 30 DEGs (including non-significant top-ranked genes)**
+
+<img src="../../results/plots/Pseudobulk_IEL/Heatmap_TopDEG_IELCytotoxicTRMlike_CDvsControl.png" alt="" width="1400" style="display: block; margin: auto;" />
+
+**Interpretation.** This comparison shows the second-largest number of
+significant DEGs among the five (visually: 8 up — *HBB*, *C10orf128*,
+*GNLY*, *TYROBP*, *FGR*, *C11orf21*, *REG4*, *PLEKHG3* — and 2 down —
+*RP11-596C23.2*, *DUSP2*). Two findings require explicit caution rather
+than direct biological interpretation:
+
+- ***HBB*** (hemoglobin beta) among the top up-regulated genes is a
+  recognized signature of ambient erythrocyte RNA contamination in
+  droplet-based scRNA-seq, not a plausible T-cell transcriptional
+  program.
+- ***REG4*** (an epithelial antimicrobial peptide gene) is biologically
+  implausible as a genuine T-cell transcript and is more consistent with
+  ambient contamination from adjacent epithelial cells — physically
+  expected given the intraepithelial localization of this compartment.
+
+*TYROBP* and *FGR* (myeloid signaling adaptors) up in CD are more
+ambiguous: they could reflect genuine expression in NK-like
+tissue-resident cytotoxic cells (documented in some cytotoxic T/NK-like
+populations) or residual ambient signal; this cannot be resolved from
+pseudobulk data alone (Section 8.2). The top-30 heatmap again shows the
+corticosteroid-responsive module (*FKBP5*, *NFKBIA*, *ZFP36L2*, *ZFP36*,
+*IL6ST*) elevated in Control relative to CD.
+
+## 4.3 IEL-TH17
+
+**Volcano plot**
+
+<img src="../../results/plots/Pseudobulk_IEL/Volcano_IELTH17_CDvsControl.png" alt="" width="2400" style="display: block; margin: auto;" />
+
+**MA plot (shrunk LFC)**
+
+<img src="../../results/plots/Pseudobulk_IEL/MAplot_IELTH17_CDvsControl.png" alt="" width="1000" style="display: block; margin: auto;" />
+
+**Top 30 DEGs (including non-significant top-ranked genes)**
+
+<img src="../../results/plots/Pseudobulk_IEL/Heatmap_TopDEG_IELTH17_CDvsControl.png" alt="" width="1400" style="display: block; margin: auto;" />
+
+**Interpretation.** Five significant genes (visually: *GNLY*, *GZMB* up
+in CD; *FKBP5*, *TXNIP*, *ZFP36L2* down in CD). *GZMB* up is consistent
+with the activated, cytotoxic-leaning TH17 phenotype described in the
+companion GSEA report and in Jaeger et al. (2021). The three
+down-regulated genes are all members of the glucocorticoid-responsive
+module discussed above, again individually significant here (unlike in
+IEL-Cycling-T-cells), reinforcing that this module’s signal is strong
+enough in this population to clear single-gene significance, not only
+pathway-level significance. **This comparison should be interpreted with
+the donor-imbalance caveat in Section 8.3**: cell-type composition
+analysis indicates the CD arm of this comparison is dominated (~67% of
+TH17 cells) by a single donor (1818).
+
+------------------------------------------------------------------------
+
+# 5. LPL Compartment: Differential Expression Results
+
+## 5.1 LPL-Cytotoxic-TRM-like
+
+**Volcano plot**
+
+<img src="../../results/plots/Pseudobulk_LPL/Volcano_LPLCytotoxicTRMlike_CDvsControl.png" alt="" width="2400" style="display: block; margin: auto;" />
+
+**MA plot (shrunk LFC)**
+
+<img src="../../results/plots/Pseudobulk_LPL/MAplot_LPLCytotoxicTRMlike_CDvsControl.png" alt="" width="1000" style="display: block; margin: auto;" />
+
+**Top 30 DEGs (including non-significant top-ranked genes)**
+
+<img src="../../results/plots/Pseudobulk_LPL/Heatmap_TopDEG_LPLCytotoxicTRMlike_CDvsControl.png" alt="" width="1400" style="display: block; margin: auto;" />
+
+**Interpretation.** This is the comparison with the largest number of
+significant DEGs (visually: 6 up — *GNLY*, *C10orf128*, *AIF1*, *SPRY1*,
+*TRBV14*, *FCER1G*; 8 down — *CH25H*, *FBXO32*, *TXNIP*, *IFNG-AS1*,
+*CCL4L2*, *FKBP5*, *CXCR5*, *RGCC*), consistent with this being one of
+the larger eligible populations. Two individual results warrant a
+specific note rather than being read at face value alongside the
+pathway-level IFN-γ up-regulation reported in the GSEA analysis of this
+same population (Section 5.1, companion report):
+
+- ***IFNG-AS1*** (a long non-coding RNA reported to positively regulate
+  *IFNG* transcription) is significantly *down* in CD, which sits in
+  apparent tension with the Hallmark Interferon Gamma Response signature
+  being *up* in CD for this same population. These are not necessarily
+  contradictory (the lncRNA is not itself a member of the Hallmark gene
+  set, and negative-feedback dynamics are plausible), but the tension
+  should be resolved by inspecting IFN-γ pathway leading-edge genes
+  directly rather than assumed away.
+- ***CH25H*** (an interferon-stimulated gene with immunomodulatory,
+  oxysterol-mediated function) is the single most significant gene in
+  this entire report and is down in CD — again notable alongside an
+  up-regulated IFN-γ response signature, and worth the same
+  leading-edge-level reconciliation.
+
+The corticosteroid-responsive module (*FKBP5*, *TXNIP*) recurs here as
+well, consistent with every other comparison in this report.
+
+## 5.2 LPL-Treg
+
+**Volcano plot**
+
+<img src="../../results/plots/Pseudobulk_LPL/Volcano_LPLTreg_CDvsControl.png" alt="" width="2400" style="display: block; margin: auto;" />
+
+**MA plot (shrunk LFC)**
+
+<img src="../../results/plots/Pseudobulk_LPL/MAplot_LPLTreg_CDvsControl.png" alt="" width="1000" style="display: block; margin: auto;" />
+
+**Top 30 DEGs (including non-significant top-ranked genes)**
+
+<img src="../../results/plots/Pseudobulk_LPL/Heatmap_TopDEG_LPLTreg_CDvsControl.png" alt="" width="1400" style="display: block; margin: auto;" />
+
+**Interpretation.** The fewest significant genes of any comparison in
+this report: only *IL17A* and *TXNIP*, both down in CD, with no genes
+significantly up. *TXNIP* down is consistent with the
+glucocorticoid-responsive module pattern seen throughout. *IL17A* down
+in a Treg-annotated population is worth flagging rather than
+over-interpreting: it could reflect a reduction in IL17A-producing
+Treg/Th17-plasticity cells (a population with precedent in the
+literature, e.g. LAG3⁺ Tr1 cells producing regulatory cytokines
+alongside residual type-17 markers) within CD, consistent in direction
+with the reduced pathway-level TH17/Treg balance regulation implied by
+the IL2-STAT5 signaling finding in the companion GSEA report — but this
+is a single gene in a population with very few total significant hits,
+and should be treated as a lead for follow-up rather than a settled
+finding.
+
+------------------------------------------------------------------------
+
+# 6. Compositional Context
+
+## 6.1 Compartment composition by condition
+
+**IEL — proportions by disease and condition/donor**
+
+<img src="../../results/plots/Pseudobulk_IEL/HeatMap_IEL_CellxDisease.png" alt="" width="3200" style="display: block; margin: auto;" />
+
+<img src="../../results/plots/Pseudobulk_IEL/HeatMap_IEL_CellxDonor.png" alt="" width="3200" style="display: block; margin: auto;" />
+
+**LPL — proportions by disease and donor**
+
+<img src="../../results/plots/Pseudobulk_LPL/HeatMap_LPL_CellxDisease.jpg" alt="" width="2400" style="display: block; margin: auto;" />
+
+<img src="../../results/plots/Pseudobulk_LPL/HeatMap_LPL_CellxDonor.jpg" alt="" width="2400" style="display: block; margin: auto;" />
+
+## 6.2 Cross-compartment compositional concordances
+
+Two compositional shifts are directionally concordant across both
+compartments and independently support the DE/GSEA findings above:
+
+| Cell type | IEL: CD vs Control | LPL: CD vs Control | Direction |
+|----|----|----|----|
+| TFH | 1% vs 12% | 0% vs 17% | Concordant loss in CD, both compartments |
+| Cytotoxic-TRM-like | 60% vs 25% | 39% vs 18% | Concordant relative expansion in CD, both compartments |
+
+One compositional shift is **not** concordant with the a priori
+expectation set by the companion GSEA report’s citation of reduced Treg
+proportion in CD (Jaeger et al. 2021):
+
+| Cell type | IEL: CD vs Control | LPL: CD vs Control |
+|-----------|--------------------|--------------------|
+| Treg      | 1% vs 0%           | 12% vs 5%          |
+
+Both compartments show a *higher*, not lower, Treg proportion in CD by
+this pipeline’s transcriptional clustering. This is flagged explicitly
+as an open discrepancy in Section 8.4 rather than reconciled by
+assumption.
+
+------------------------------------------------------------------------
+
+# 7. Comparison with GSEA Results
+
+| Pseudobulk DE finding | Corresponding GSEA finding | Relationship |
+|----|----|----|
+| Glucocorticoid-responsive module (FKBP5, TSC22D3, TXNIP, ZFP36L2, NFKBIA, DUSP2) down in CD, all 5 cell types | “Response to corticosteroid/glucocorticoid” down, 3/5 cell types (<GO:BP>) | Direct gene-level confirmation; resolves the “not independently verified” caveat (Section 10.5, GSEA report) |
+| GNLY up in CD, 4/5 cell types | Cytotoxic/granzyme-associated <GO:BP> and Hallmark terms up across IEL/LPL cytotoxic populations | Consistent individual driver gene |
+| GZMB up in IEL-TH17 | Hallmark Inflammatory Response / IFN-γ Response up, IEL-TH17 | Consistent individual driver gene |
+| IFNG-AS1, CH25H down in CD, LPL-Cytotoxic-TRM-like | Hallmark Interferon Gamma Response up, same population | Apparent tension; requires leading-edge reconciliation (Section 5.1) |
+| TXNIP down in CD, LPL-Treg | IL2-STAT5 Signaling up (Hallmark), LPL-Treg | Compatible (TXNIP is a negative regulator of glucose uptake/STAT signaling contexts) but not directly tested |
+
+------------------------------------------------------------------------
+
+# 8. Limitations
+
+## 8.1 Minimum-donor statistical power
+
+### Limitations of the pseudobulk analysis
+
+Every DESeq2 comparison in this report is based on **2 CD and 2 Control
+donors**. Although **at least three biological replicates per condition
+are generally recommended** for robust RNA-seq differential expression
+analysis, only two donors per group were available after quality-control
+filtering and were therefore retained for the analysis. DESeq2 remains
+computationally applicable with two replicates, although dispersion
+estimation and inference are less reliable.
+
+This represents the principal limitation of the pseudobulk differential
+expression analysis. With *n* = 2 biological replicates per condition,
+DESeq2 has limited statistical power to estimate biological variability
+accurately and to distinguish true disease-associated effects from
+donor-specific variation. Accordingly, the small number of significant
+DEGs identified in each comparison (typically 1–14 genes) is expected
+and should not be interpreted as evidence for the absence of biological
+differences.
+
+For this reason, **gene set enrichment analysis (GSEA)** constitutes the
+primary biological readout of this study. Because GSEA evaluates the
+complete ranked gene list rather than relying exclusively on individual
+gene significance thresholds, it can provide a more informative view of
+coordinated biological changes in low-powered settings such as this.
+Consequently, the pseudobulk differential expression results should be
+interpreted primarily as **gene-level support for pathway-level
+alterations identified by GSEA**, rather than as an independent
+discovery layer with equivalent statistical weight.
+
+## 8.2 Candidate ambient-RNA contamination genes
+
+*HBB* and *REG4* among the top DEGs in IEL-Cytotoxic-TRM-like are better
+explained by ambient erythrocyte and epithelial RNA contamination,
+respectively, than by genuine T-cell biology. *TYROBP*, *FGR*, *FCER1G*,
+and *AIF1* (myeloid signaling adaptors) recurring across cytotoxic
+populations are more ambiguous and cannot be resolved as genuine versus
+ambient from pseudobulk data alone. Recommended follow-up: cross-check
+these genes’ expression specificity against the myeloid-contamination
+cluster already identified during upstream QC (Subsetting Compartment
+report), and consider explicit exclusion or flagging of established
+ambient-RNA marker genes before final reporting.
+
+## 8.3 Compartment-specific donor imbalance in TH17
+
+Cross-referencing the compositional heatmaps with the DE results reveals
+that the TH17 comparison is driven by a different single CD donor in
+each compartment: donor 1818 contributes ~67% of IEL-TH17 cells (versus
+~12% from donor 1813), while donor 1813 contributes ~37% of LPL-TH17
+cells (versus near-zero from donor 1818). With only 2 CD donors total,
+this means each TH17 comparison is closer to a single-donor signal with
+a second, sparsely-represented donor, than to a balanced 2-donor
+comparison. This should be stated explicitly alongside any TH17-specific
+finding in this or the companion GSEA report, and is a stronger, more
+specific version of the general minimum-donor caveat in Section 8.1.
+
+## 8.4 Treg compositional direction discrepancy
+
+As detailed in Section 6.2, this dataset shows Treg proportion
+*increasing*, not decreasing, in CD in both compartments — in tension
+with the Jaeger et al. (2021) flow cytometry finding of reduced
+CD25<sup>hi</sup> CD4⁺ T cells in CD, cited as supporting context in the
+companion GSEA report’s interpretation of the LPL-Treg IL2-STAT5 signal
+(Section 5.2, GSEA report). A plausible reconciliation is that this
+pipeline’s transcriptionally-defined Treg cluster and the original
+paper’s CD25<sup>hi</sup> flow cytometry gate are not measuring
+identical populations, but this has not been verified and should be
+treated as an open discrepancy, not assumed away.
+
+------------------------------------------------------------------------
+
+# 9. Reproducibility
+
+Environment:
+
+- R version: 4.6.0
+- DESeq2 version: 1.52.0
+- apeglm version: 1.34.0
+
+All intermediate DE result objects are stored under:
+
+`objects/pseudobulk/`
+
+All visual outputs under:
+
+IEL Compartment: `results/plots/Pseudobulk_IEL/`  
+LPL Compartment: `results/plots/Pseudobulk_LPL/`
+
+------------------------------------------------------------------------
+
+# 10. Deliverables
+
+- Pseudobulk DESeq2 result tables (`res`, `res_shrunk`) per cell type,
+  per compartment
+- Volcano plots, MA plots, top-ranked gene expression heatmaps per cell
+  type (this report)
+- Compositional proportion tables (cell type × condition / disease /
+  donor) for both compartments
+
+------------------------------------------------------------------------
+
+# 11. Conclusion
+
+Pseudobulk differential expression analysis across five cell populations
+in the IEL and LPL compartments identifies a small, statistically
+constrained but biologically coherent set of CD-associated genes. Two
+individual-gene-level patterns — near-universal *GNLY* up-regulation and
+a coordinated glucocorticoid-responsive module down-regulation — recur
+across four of five analyzed populations and directly corroborate
+pathway-level findings from the companion GSEA analysis, most notably
+resolving the previously-flagged “not independently verified” status of
+the corticosteroid response signature. At the same time, this analysis
+surfaces concrete, previously undocumented limitations — a
+compartment-specific single-donor dominance of the TH17 signal, several
+candidate ambient-RNA genes among top DEGs, and a Treg compositional
+trend running opposite to the cited literature — that should accompany
+any downstream use of these results and are proposed as priority
+follow-up items (Section 8).

@@ -6,6 +6,7 @@ suppressPackageStartupMessages({
   
   library(tidyverse)
   library(Seurat)
+  library(SingleCellExperiment)
   library(harmony)
   library(DESeq2)
   
@@ -18,5 +19,15 @@ suppressPackageStartupMessages({
   library(pheatmap)
   library(ComplexHeatmap)
   library(circlize)
+  
+  library(org.Hs.eg.db)
+  library(AnnotationDbi)
+  library(clusterProfiler)
+  library(msigdbr)
+  library(ReactomePA)
+  library(fgsea)
+  
+  library(CellChat)
+  library(liana)
   
 })

@@ -1,0 +1,277 @@
+Session information (Pseudobulk DESeq2 analysis for IEL compartment)
+
+2026-07-27 11:58:56.83125
+
+
+R version 4.6.0 (2026-04-24)
+Platform: aarch64-apple-darwin23
+Running under: macOS Tahoe 26.5.2
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Europe/Rome
+tzcode source: internal
+
+attached base packages:
+[1] grid      stats4    stats     graphics  grDevices utils    
+[7] datasets  methods   base     
+
+other attached packages:
+ [1] msigdbr_26.1.0              clusterProfiler_4.20.0     
+ [3] org.Hs.eg.db_3.23.1         AnnotationDbi_1.74.0       
+ [5] circlize_0.4.18             ComplexHeatmap_2.28.0      
+ [7] pheatmap_1.0.13             patchwork_1.3.2            
+ [9] Azimuth_0.5.1               shinyBS_0.65.0             
+[11] SingleR_2.14.0              celldex_1.22.0             
+[13] DESeq2_1.52.0               SummarizedExperiment_1.42.0
+[15] Biobase_2.72.0              MatrixGenerics_1.24.0      
+[17] matrixStats_1.5.0           GenomicRanges_1.64.0       
+[19] Seqinfo_1.2.0               IRanges_2.46.0             
+[21] S4Vectors_0.50.1            BiocGenerics_0.58.1        
+[23] generics_0.1.4              harmony_2.0.5              
+[25] Rcpp_1.1.2                  Seurat_5.5.1               
+[27] SeuratObject_5.4.0          sp_2.2-1                   
+[29] lubridate_1.9.5             forcats_1.0.1              
+[31] stringr_1.6.0               dplyr_1.2.1                
+[33] purrr_1.2.2                 readr_2.2.0                
+[35] tidyr_1.3.2                 tibble_3.3.1               
+[37] ggplot2_4.0.3               tidyverse_2.0.0            
+
+loaded via a namespace (and not attached):
+  [1] goftest_1.2-3                    
+  [2] DT_0.34.0                        
+  [3] Biostrings_2.80.1                
+  [4] HDF5Array_1.40.0                 
+  [5] vctrs_0.7.3                      
+  [6] ggtangle_0.1.2                   
+  [7] spatstat.random_3.5-0            
+  [8] digest_0.6.39                    
+  [9] png_0.1-9                        
+ [10] shape_1.4.6.1                    
+ [11] gypsum_1.8.0                     
+ [12] ggrepel_0.9.8                    
+ [13] deldir_2.0-4                     
+ [14] parallelly_1.48.0                
+ [15] magick_2.9.1                     
+ [16] fontLiberation_0.1.0             
+ [17] MASS_7.3-65                      
+ [18] Signac_1.17.1                    
+ [19] reshape2_1.4.5                   
+ [20] qvalue_2.44.0                    
+ [21] httpuv_1.6.17                    
+ [22] foreach_1.5.2                    
+ [23] withr_3.0.3                      
+ [24] ggfun_0.2.1                      
+ [25] survival_3.8-9                   
+ [26] EnsDb.Hsapiens.v86_2.99.0        
+ [27] memoise_2.0.1                    
+ [28] gson_0.2.0                       
+ [29] systemfonts_1.3.2                
+ [30] ragg_1.5.2                       
+ [31] tidytree_0.4.8                   
+ [32] zoo_1.8-15                       
+ [33] GlobalOptions_0.1.4              
+ [34] gtools_3.9.5                     
+ [35] pbapply_1.7-4                    
+ [36] KEGGREST_1.52.2                  
+ [37] promises_1.5.0                   
+ [38] otel_0.2.0                       
+ [39] httr_1.4.8                       
+ [40] restfulr_0.0.17                  
+ [41] globals_0.19.1                   
+ [42] fitdistrplus_1.2-6               
+ [43] rhdf5filters_1.24.0              
+ [44] rhdf5_2.56.0                     
+ [45] rstudioapi_0.19.0                
+ [46] DOSE_4.6.0                       
+ [47] UCSC.utils_1.8.0                 
+ [48] miniUI_0.1.2                     
+ [49] processx_3.9.0                   
+ [50] babelgene_22.9                   
+ [51] curl_7.1.0                       
+ [52] h5mread_1.4.0                    
+ [53] polyclip_1.10-7                  
+ [54] ExperimentHub_3.2.0              
+ [55] SparseArray_1.12.2               
+ [56] xtable_1.8-8                     
+ [57] doParallel_1.0.17                
+ [58] S4Arrays_1.12.0                  
+ [59] BiocFileCache_3.2.0              
+ [60] hms_1.1.4                        
+ [61] irlba_2.3.7                      
+ [62] colorspace_2.1-2                 
+ [63] filelock_1.0.3                   
+ [64] hdf5r_1.3.12                     
+ [65] ROCR_1.0-12                      
+ [66] reticulate_1.46.0                
+ [67] spatstat.data_3.1-9              
+ [68] magrittr_2.0.5                   
+ [69] lmtest_0.9-40                    
+ [70] ggtree_4.2.0                     
+ [71] later_1.4.8                      
+ [72] lattice_0.22-9                   
+ [73] spatstat.geom_3.8-1              
+ [74] future.apply_1.20.2              
+ [75] scattermore_1.2                  
+ [76] XML_3.99-0.23                    
+ [77] cowplot_1.2.0                    
+ [78] RcppAnnoy_0.0.23                 
+ [79] pillar_1.11.1                    
+ [80] nlme_3.1-169                     
+ [81] iterators_1.0.14                 
+ [82] pwalign_1.8.0                    
+ [83] caTools_1.18.3                   
+ [84] compiler_4.6.0                   
+ [85] beachmat_2.28.0                  
+ [86] RSpectra_0.16-2                  
+ [87] stringi_1.8.7                    
+ [88] tensor_1.5.1                     
+ [89] GenomicAlignments_1.48.0         
+ [90] plyr_1.8.9                       
+ [91] crayon_1.5.3                     
+ [92] abind_1.4-8                      
+ [93] BiocIO_1.22.0                    
+ [94] gridGraphics_0.5-1               
+ [95] emdbook_1.3.14                   
+ [96] googledrive_2.1.2                
+ [97] locfit_1.5-9.12                  
+ [98] bit_4.6.0                        
+ [99] fastmatch_1.1-8                  
+[100] textshaping_1.0.5                
+[101] codetools_0.2-20                 
+[102] SeuratData_0.2.2.9002            
+[103] alabaster.ranges_1.12.0          
+[104] GetoptLong_1.1.1                 
+[105] plotly_4.12.0                    
+[106] mime_0.13                        
+[107] splines_4.6.0                    
+[108] fastDummies_1.7.6                
+[109] tidydr_0.0.6                     
+[110] dbplyr_2.6.0                     
+[111] sparseMatrixStats_1.24.0         
+[112] cellranger_1.1.0                 
+[113] utf8_1.2.6                       
+[114] blob_1.3.0                       
+[115] clue_0.3-68                      
+[116] BiocVersion_3.23.1               
+[117] seqLogo_1.78.0                   
+[118] apeglm_1.34.0                    
+[119] AnnotationFilter_1.36.0          
+[120] fs_2.1.0                         
+[121] listenv_1.0.0                    
+[122] DelayedMatrixStats_1.34.0        
+[123] ggplotify_0.1.3                  
+[124] Matrix_1.7-5                     
+[125] callr_3.8.0                      
+[126] tzdb_0.5.0                       
+[127] tweenr_2.0.3                     
+[128] pkgconfig_2.0.3                  
+[129] tools_4.6.0                      
+[130] cachem_1.1.0                     
+[131] cigarillo_1.2.0                  
+[132] RSQLite_3.53.3                   
+[133] numDeriv_2016.8-1.1              
+[134] viridisLite_0.4.3                
+[135] DBI_1.3.0                        
+[136] fastmap_1.2.0                    
+[137] scales_1.4.0                     
+[138] ica_1.0-3                        
+[139] shinydashboard_0.7.3             
+[140] Rsamtools_2.28.0                 
+[141] AnnotationHub_4.2.2              
+[142] coda_0.19-4.1                    
+[143] BiocManager_1.30.27              
+[144] dotCall64_1.2                    
+[145] RANN_2.6.2                       
+[146] alabaster.schemas_1.12.0         
+[147] farver_2.1.2                     
+[148] scatterpie_0.2.6                 
+[149] yaml_2.3.12                      
+[150] rtracklayer_1.72.0               
+[151] cli_3.6.6                        
+[152] lifecycle_1.0.5                  
+[153] uwot_0.2.4                       
+[154] mvtnorm_1.4-1                    
+[155] presto_1.0.0                     
+[156] BSgenome.Hsapiens.UCSC.hg38_1.4.5
+[157] BiocParallel_1.46.0              
+[158] timechange_0.4.0                 
+[159] gtable_0.3.6                     
+[160] rjson_0.2.23                     
+[161] ggridges_0.5.7                   
+[162] progressr_1.0.0                  
+[163] ape_5.8-1                        
+[164] parallel_4.6.0                   
+[165] enrichit_0.2.0                   
+[166] jsonlite_2.0.0                   
+[167] RcppHNSW_0.7.0                   
+[168] TFBSTools_1.50.0                 
+[169] bitops_1.0-9                     
+[170] assertthat_0.2.1                 
+[171] bit64_4.8.2                      
+[172] Rtsne_0.17                       
+[173] yulab.utils_0.2.4                
+[174] alabaster.matrix_1.12.0          
+[175] spatstat.utils_3.2-3             
+[176] aisdk_1.4.12                     
+[177] bdsmatrix_1.3-7                  
+[178] alabaster.se_1.12.0              
+[179] GOSemSim_2.38.3                  
+[180] shinyjs_2.1.1                    
+[181] SeuratDisk_0.0.0.9021            
+[182] spatstat.univar_3.2-0            
+[183] lazyeval_0.2.3                   
+[184] alabaster.base_1.12.1            
+[185] shiny_1.14.0                     
+[186] enrichplot_1.32.0                
+[187] htmltools_0.5.9                  
+[188] GO.db_3.23.1                     
+[189] sctransform_0.4.3                
+[190] rappdirs_0.3.4                   
+[191] ensembldb_2.36.1                 
+[192] glue_1.8.1                       
+[193] TFMPvalue_1.0.0                  
+[194] spam_2.11-4                      
+[195] googlesheets4_1.1.2              
+[196] httr2_1.2.3                      
+[197] XVector_0.52.0                   
+[198] gdtools_0.5.1                    
+[199] RCurl_1.98-1.19                  
+[200] treeio_1.36.1                    
+[201] BSgenome_1.80.0                  
+[202] gridExtra_2.3.1                  
+[203] JASPAR2020_0.99.10               
+[204] igraph_2.3.3                     
+[205] R6_2.6.1                         
+[206] ggiraph_0.9.6                    
+[207] labeling_0.4.3                   
+[208] RcppRoll_0.3.2                   
+[209] GenomicFeatures_1.64.0           
+[210] bbmle_1.0.25.1                   
+[211] cluster_2.1.8.2                  
+[212] Rhdf5lib_2.0.0                   
+[213] gargle_1.6.1                     
+[214] aplot_0.3.1                      
+[215] GenomeInfoDb_1.48.0              
+[216] DirichletMultinomial_1.54.0      
+[217] DelayedArray_0.38.2              
+[218] tidyselect_1.2.1                 
+[219] ProtGenerics_1.44.0              
+[220] ggforce_0.5.0                    
+[221] fontBitstreamVera_0.1.1          
+[222] future_1.70.0                    
+[223] KernSmooth_2.23-26               
+[224] S7_0.2.2                         
+[225] fontquiver_0.2.1                 
+[226] data.table_1.18.4                
+[227] htmlwidgets_1.6.4                
+[228] RColorBrewer_1.1-3               
+[229] rlang_1.3.0                      
+[230] spatstat.sparse_3.2-0            
+[231] spatstat.explore_3.8-1           
+[232] ggnewscale_0.5.2                 

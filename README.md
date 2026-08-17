@@ -1,5 +1,6 @@
-End-to-End Single-Cell RNA-seq Analysis Framework: Seurat-Based
-Workflow, Integration and Consensus Cell-Type Annotation
+End-to-End Single-Cell RNA-seq Analysis Framework: Integration,
+Cell-Type Annotation, Pseudobulk Differential Expression and Functional
+Enrichment
 ================
 
 knitr::opts_chunk\$set(echo = TRUE, warning = FALSE, message = FALSE)
@@ -88,6 +89,11 @@ The analysis framework enables characterization of cellular
 heterogeneity across biological compartments and supports downstream
 compartment-specific investigations.
 
+The analysis framework extends beyond cell-type characterization to
+investigate condition-associated transcriptional changes and their
+biological interpretation through donor-level pseudobulk differential
+expression and pathway-level functional enrichment analysis.
+
 ------------------------------------------------------------------------
 
 # 📌 Key Results
@@ -109,6 +115,14 @@ robustness in downstream biological interpretation, including:
   marker-based strategies
 - Integration of multiple annotation sources into a unified consensus
   framework
+- Donor-level pseudobulk differential expression analysis to identify
+  condition-associated transcriptional changes while accounting for
+  biological replication
+- Functional interpretation of differential transcriptional programs
+  using gene set enrichment analysis (GSEA)
+- Identification of enriched biological pathways and coordinated
+  gene-expression programs associated with disease-related cellular
+  states
 
 The final output is a curated single-cell representation of the system,
 designed to support reproducible downstream analyses and
@@ -124,6 +138,19 @@ Currently available workflows:
 
 - Global exploration
 - Cell compartment-specific subsetting
+- Downstream pseudobulk differential expression and functional
+  enrichment
+
+The downstream analysis module performs donor-level pseudobulk
+aggregation and differential expression analysis across biological
+conditions, followed by pathway-level functional interpretation using
+gene set enrichment analysis (GSEA).
+
+This enables the workflow to progress from:
+
+**single-cell characterization → cell-type annotation →
+compartment-specific analysis → condition-associated transcriptional
+changes → functional interpretation**
 
 Each analysis is structured as a self-contained module and includes:
 
@@ -242,6 +269,9 @@ scRNAseq_project/
 - Azimuth v0.5.1
 - celldex v1.22.0
 - CellMarker 2.0 database
+- DESeq2 v1.52.0
+- fgsea v1.38.0
+- clusterProfiler v4.20.0
 
 ------------------------------------------------------------------------
 

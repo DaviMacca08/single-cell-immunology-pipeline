@@ -29,6 +29,7 @@ save_plot <- function(..., filename, dir, width = 12, height = 8, dpi = 300) {
 # ---------------------------------------------------------
 # Save base R graphics (e.g. pheatmap)
 # ---------------------------------------------------------
+# PDF
 open_pdf <- function(filename, dir, width = 10, height = 8) {
   
   pdf(file.path(dir, filename), width = width, height = height)
@@ -36,6 +37,18 @@ open_pdf <- function(filename, dir, width = 10, height = 8) {
 }
 
 close_pdf <- function() {
+  dev.off()
+}
+
+# PNG
+open_png <- function(filename, dir, width = 10, height = 8, dpi = 300) {
+  
+  png(file.path(dir, filename), width = width, height = height, res = 120)
+  invisible(NULL)
+  message("Saving plot: ", filename)
+}
+
+close_png <- function() {
   dev.off()
 }
 

@@ -9,12 +9,6 @@ save_plot <- function(..., filename, dir, width = 12, height = 8, dpi = 300) {
   
   plots <- list(...)
   
-  # if (length(plots) == 1) {
-  #   final_plot <- plots[[1]]
-  # } else {
-  #   final_plot <- patchwork::wrap_plots(plots)
-  # }
-  # 
   ggsave(
     filename = file.path(dir, filename),
     plot = plots,

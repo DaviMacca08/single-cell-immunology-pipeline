@@ -24,12 +24,8 @@ paths <- list(
   objects_gsea = file.path(base_dir, "objects/gsea"),
   objects_cellchat = file.path(base_dir, "objects/cellchat"),
   objects_liana = file.path(base_dir, "objects/liana"),
-  
-  # analysis
-  analysis = file.path(base_dir, "analysis"),
-  analysis_global = file.path(base_dir, "analysis/global_exploration"),
-  analysis_subsetting = file.path(base_dir, "analysis/subsetting"),
-  analysis_pseudobulk = file.path(base_dir, "analysis/pseudobulk"),
+  objects_bulkrnaseq = file.path(base_dir, "objects/bulkrnaseq"),
+  objects_trajectory = file.path(base_dir, "objects/trajectory"),
   
   # results
   results = file.path(base_dir, "results"),
@@ -99,6 +95,29 @@ paths <- list(
     # plots LIANA for LPL compartment
     plots_liana_lpl = file.path(base_dir, "results/plots/LIANA_LPL"),
   
+    # plots trajectory analysis
+    plots_trajectory_iel = file.path(base_dir, "results/plots/Trajectory_IEL"),
+    plots_trajectory_lpl = file.path(base_dir, "results/plots/Trajectory_LPL"),
+  
+  
+    # plots Bulk RNA_seq (PRIMARY)
+    plots_bulk_rnaseq_primary = file.path(base_dir, "results/plots/Bulk_RNAseq_primary"),
+    plots_bulk_rnaseq_primary_qc = file.path(base_dir, "results/plots/Bulk_RNAseq_primary/QC"),
+    plots_bulk_rnaseq_primary_eda = file.path(base_dir, "results/plots/Bulk_RNAseq_primary/EDA"),
+    plots_bulk_rnaseq_primary_deg = file.path(base_dir, "results/plots/Bulk_RNAseq_primary/DEGs"),
+    plots_bulk_rnaseq_primary_ora = file.path(base_dir, "results/plots/Bulk_RNAseq_primary/ORA"),
+    plots_bulk_rnaseq_primary_gsea = file.path(base_dir, "results/plots/Bulk_RNAseq_primary/GSEA"),
+  
+  
+    # plots Bulk RNA_seq (SENSITIVITY)
+    plots_bulk_rnaseq_sensitivity = file.path(base_dir, "results/plots/Bulk_RNAseq_sensitivity"),
+    plots_bulk_rnaseq_sensitivity_qc = file.path(base_dir, "results/plots/Bulk_RNAseq_sensitivity/QC"),
+    plots_bulk_rnaseq_sensitivity_eda = file.path(base_dir, "results/plots/Bulk_RNAseq_sensitivity/EDA"),
+    plots_bulk_rnaseq_sensitivity_deg = file.path(base_dir, "results/plots/Bulk_RNAseq_sensitivity/DEGs"),
+    plots_bulk_rnaseq_sensitivity_ora = file.path(base_dir, "results/plots/Bulk_RNAseq_sensitivity/ORA"),
+    plots_bulk_rnaseq_sensitivity_gsea = file.path(base_dir, "results/plots/Bulk_RNAseq_sensitivity/GSEA"),
+  
+  
   # tables inside results
   tables = file.path(base_dir, "results/tables"),
   
@@ -116,6 +135,12 @@ paths <- list(
   
     # tables GSEA for LPL compartment
     tables_gsea_LPL = file.path(base_dir, "results/tables/LPL_GSEA"),
+  
+  # tables bulk RNA-seq
+  tables_bulkrnaseq = file.path(base_dir, "results/tables/bulkrnaseq"),
+  
+  # tables trajectory
+  tables_trajectory = file.path(base_dir, "results/tables/trajectory"),
   
   # logs inside results
   logs = file.path(base_dir, "results/logs")

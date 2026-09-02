@@ -1,6 +1,6 @@
 End-to-End Single-Cell RNA-seq Analysis Framework: Integration,
-Cell-Type Annotation, Pseudobulk Differential Expression and Functional
-Enrichment
+Cell-Type Annotation, Differential Expression, Cell-Cell Communication
+and Trajectory Analysis
 ================
 
 knitr::opts_chunk\$set(echo = TRUE, warning = FALSE, message = FALSE)
@@ -18,9 +18,9 @@ analysis framework designed for the systematic exploration of cellular
 heterogeneity in complex biological systems.
 
 The project is structured to support end-to-end analysis workflows, from
-initial data exploration to downstream compartment-specific
-investigations, within a reproducible and extensible computational
-environment.
+initial data exploration and integration to compartment-specific
+differential expression, functional enrichment, cell-cell communication
+and trajectory analysis.
 
 It is suitable for:
 
@@ -90,9 +90,14 @@ heterogeneity across biological compartments and supports downstream
 compartment-specific investigations.
 
 The analysis framework extends beyond cell-type characterization to
-investigate condition-associated transcriptional changes and their
-biological interpretation through donor-level pseudobulk differential
-expression and pathway-level functional enrichment analysis.
+investigate condition-associated transcriptional changes, functional
+programs, intercellular communication and cellular state transitions.
+
+Downstream analyses include donor-level pseudobulk differential
+expression and pathway-level functional enrichment, as well as cell-cell
+communication analysis using complementary ligand-receptor inference
+approaches and trajectory analysis to investigate cellular progression
+and lineage relationships.
 
 ------------------------------------------------------------------------
 
@@ -123,10 +128,22 @@ robustness in downstream biological interpretation, including:
 - Identification of enriched biological pathways and coordinated
   gene-expression programs associated with disease-related cellular
   states
+- Characterization of cell-cell communication networks across cellular
+  populations using CellChat
+- Identification and prioritization of ligand-receptor interactions
+  using LIANA
+- Investigation of condition-associated changes in intercellular
+  signaling and communication patterns
+- Reconstruction of cellular trajectories and lineage relationships
+  using Slingshot
+- Evaluation of pseudotime distributions and descriptive marker dynamics
+  along inferred trajectories
 
 The final output is a curated single-cell representation of the system,
-designed to support reproducible downstream analyses and
-hypothesis-driven exploration of cellular composition and states.
+integrating cellular identity, transcriptional states, functional
+programs, intercellular communication and cellular trajectories to
+support reproducible downstream analyses and hypothesis-driven
+biological interpretation.
 
 ------------------------------------------------------------------------
 
@@ -136,15 +153,18 @@ The repository is organized into independent analytical modules.
 
 Currently available workflows:
 
-- Global exploration
+- Global exploration and integration
 - Cell compartment-specific subsetting
-- Downstream pseudobulk differential expression and functional
-  enrichment
+- Pseudobulk differential expression and functional enrichment
+- Cell-cell communication analysis with CellChat
+- Ligand-receptor inference with LIANA
+- Single-cell trajectory and pseudotime analysis with Slingshot
 
-The downstream analysis module performs donor-level pseudobulk
-aggregation and differential expression analysis across biological
-conditions, followed by pathway-level functional interpretation using
-gene set enrichment analysis (GSEA).
+The downstream analyses enable the workflow to progress from:
+
+**single-cell characterization → cell-type annotation →
+compartment-specific analysis → transcriptional changes → functional
+interpretation → cell-cell communication → cellular trajectories**
 
 This enables the workflow to progress from:
 
@@ -272,6 +292,9 @@ scRNAseq_project/
 - DESeq2 v1.52.0
 - fgsea v1.38.0
 - clusterProfiler v4.20.0
+- CellChat v2.2.0.9001
+- LIANA v0.1.14
+- Slingshot v2.20.0
 
 ------------------------------------------------------------------------
 

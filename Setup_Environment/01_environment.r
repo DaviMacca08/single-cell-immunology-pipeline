@@ -19,6 +19,7 @@ suppressPackageStartupMessages({
   library(pheatmap)
   library(ComplexHeatmap)
   library(circlize)
+  library(RColorBrewer)
   
   library(org.Hs.eg.db)
   library(AnnotationDbi)
@@ -30,4 +31,14 @@ suppressPackageStartupMessages({
   library(CellChat)
   library(liana)
   
+  library(matrixStats)
+  
+  library(slingshot)
+  library(condiments)
+  library(scater)
+  library(scran)
+
+  # GEO data acquisition & annotation
+  library(GEOquery)
+  library(hgu133plus2.db)
 })

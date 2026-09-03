@@ -1,0 +1,1044 @@
+Cross-cohort Bulk RNA-seq Analysis: Differential expression and
+functional enrichment
+================
+Davide Maccarrone
+2026-09-03
+
+# Executive Summary
+
+This report describes the differential expression and comparative
+transcriptomic analysis a primary analysis cohort and a sensitivity
+analysis cohort derived from GSE193677, where the `primary_cohort`
+represent a subset with sample from Ileum not inflammed, and the
+`sensitivity_cohort` it’s a mix of sample inflammed and not.
+
+The objective of this analysis was to characterize the CD-associated
+transcriptional signature within each cohort and compare the results
+from GSEA to the findings of the other analysis of the project.
+
+The analytical workflow included:
+
+- platform-specific quality control and exploratory data analysis
+- differential expression analysis using statistical models to obtain
+  DEGs (limma-voom)
+- functional enrichment through Over-Representation Analysis (ORA) and
+  Gene Set Enrichment Analysis (GSEA)
+
+Across the two cohorts, a consistent core of dysregulated genes and
+biological pathways was identified, supporting the reproducibility of
+the CD transcriptional phenotype across bulk RNA-seq and not only single
+cell RNA-seq.
+
+------------------------------------------------------------------------
+
+# Dataset Overview
+
+| Dataset | Platform | Controls | CD Samples | Cell Population | Reference |
+|----|----|---:|---:|----|----|
+| GSE193677 - Primary analysis | GPL16791 Illumina HiSeq 2500 | 121 | 201 | Intestinal biopsy tissue |  |
+| GSE193677 - Sensitivity analysis | GPL16791 Illumina HiSeq 2500 | 121 | 351 | Intestinal biopsy tissue |  |
+
+------------------------------------------------------------------------
+
+# Analytical Workflow
+
+The analytical pipeline was implemented independently for each cohort,
+using platform-appropriate statistical methodology, and integrated only
+at the level of summary statistics and enrichment results.
+
+1.  Raw data import and sample-metadata alignment
+2.  Quality control and exploratory data analysis (PCA, sample-to-sample
+    distance and correlation heatmaps, outlier detection)
+3.  Differential expression analysis
+    - limma-voom (empirical Bayes, `voomlmFit` → `makeContrasts` →
+      `eBayes`)
+4.  Multiple testing correction (Benjamini-Hochberg)
+5.  Functional enrichment analysis
+    - ORA against GO, KEGG, Reactome, and MSigDB Hallmark collections
+    - GSEA using pre-ranked, transcriptome-wide statistics (`fgsea`)
+6.  Cross-cohort comparison
+    - correlation of differential expression statistics across shared
+      genes
+    - concordance of enrichment results (NES) across datasets
+
+------------------------------------------------------------------------
+
+# Quality Control and Exploratory Data Analysis
+
+Sample-level quality control was performed independently for each cohort
+prior to differential expression analysis. As expected given the
+whole-biopsy nature of the tissue and the exclusion of overtly inflamed
+samples in the primary cohort, PC1-PC2 do not show a sharp separation
+between CD and Control - consistent with a subtle, compositionally
+diluted disease signal rather than a dominant single axis of variation.
+
+## Primary cohort
+
+![](../../results/plots/Bulk_RNAseq_primary/EDA/pca_plot.png)
+
+## Sensitivity cohort
+
+![](../../results/plots/Bulk_RNAseq_sensitivity/EDA/pca_plot.png)
+
+# Differential Expression Analysis
+
+Differential expression was assessed independently for each cohort using
+the limma-voom statistical model, comparing CD patients versus healthy
+controls. Significance thresholds were defined as:
+
+- Adjusted p-value (Benjamini–Hochberg) \< 0.05
+- Absolute log2 fold-change \> 1
+
+## Summary of differentially expressed genes
+
+| Cohort      | Total genes tested | DEG (up) | DEG (down) | Total DEG |
+|-------------|-------------------:|---------:|-----------:|----------:|
+| Primary     |              20975 |       23 |         54 |        77 |
+| Sensitivity |              21856 |      127 |         95 |       222 |
+
+**Primary Cohort**
+
+## Volcano plot
+
+![](../../results/plots/Bulk_RNAseq_primary/DEGs/volcano_plot.png)
+
+## Heatmap
+
+![](../../results/plots/Bulk_RNAseq_primary/DEGs/Heatmap_TopDegs_CD_vs_Control.png)
+
+## Biological interpretation
+
+The primary analysis identified 77 differentially expressed genes, with
+a predominance of downregulated genes in Crohn’s disease. The heatmap
+shows a partial but directionally consistent separation between CD and
+Control samples, indicating that the identified DEGs capture a
+disease-associated component of the transcriptional phenotype, although
+not a dominant axis of global sample variance (consistent with the
+diffuse PCA structure noted above).
+
+The dominant signature among downregulated genes is a coherent
+B-cell/plasma-cell and follicular-help module (CD19, CD79B, MS4A1, PAX5,
+CR2, FCER2, CXCR5, IGHD, TCL1A, VPREB3), accompanied by downregulation
+of the complement gene C6. This pattern is independently confirmed
+across GO, KEGG, Reactome and MSigDB C7 enrichment (see ORA and GSEA
+sections below), and is corroborated by a complete loss of the LPL-TFH
+population in the CD scRNA-seq compartment of this project (proportion
+0.00 in CD vs 0.17 in Control), suggesting coordinated suppression of
+follicular T-B help detectable at both the bulk-tissue and single-cell
+layers. A second, opposing signature among upregulated genes (LCN2,
+NOS2, DUOX2, DUOXA2, DMBT1, REG1A, REG1B, FPR2) is consistent with the
+recently characterized “LND” epithelial cell population, which is rare
+in non-IBD tissue but expands in active Crohn’s disease and is
+specialized in antimicrobial defense and immune cell recruitment (Li et
+al., Nature Communications, 2024, 15:7204).  
+The relatively stronger representation of downregulated genes over
+upregulated genes is consistent with a biopsy-level dilution effect:
+follicular B-cell/plasma-cell identity genes are concentrated in
+discrete lymphoid structures within the mucosa, so their coordinated
+loss produces a larger and more coherent transcriptional footprint in
+bulk tissue than the smaller, more diffusely expressed epithelial
+antimicrobial module.
+
+**Sensitivity Cohort**
+
+## Volcano plot
+
+![](../../results/plots/Bulk_RNAseq_sensitivity/DEGs/volcano_plot.png)
+
+## Heatmap
+
+![](../../results/plots/Bulk_RNAseq_sensitivity/DEGs/Heatmap_TopDegs_CD_vs_Control.png)
+
+## Biological interpretation
+
+The sensitivity analysis identified a broader transcriptional signature,
+with 222 differentially expressed genes compared with 77 genes in the
+primary analysis. The increased number of significant genes is
+consistent with the larger CD sample size and therefore greater
+statistical power, while the inclusion of both inflamed and non-inflamed
+biopsies also introduces additional biological heterogeneity.
+
+The B-cell/plasma-cell module identified in the primary cohort is
+retained and further extended in the sensitivity heatmap, which
+additionally includes multiple immunoglobulin variable- and
+constant-region genes (IGKV1-5, IGKV3-20, IGKV3-11, IGKV1-16, IGHV3-15,
+IGHV3-7, IGHV3-74, IGHV3-23, IGHV3-48, IGHV3-73, IGHV3-49, IGHV6-1,
+IGHA1, IGLV7-43) among the downregulated genes, alongside the same core
+identity genes (CD19, PAX5, CR2, FCER2). This confirms that the module
+is not specific to the non-inflamed disease state and remains detectable
+when inflamed tissue is included.  
+Despite this broader signal, the directionally consistent separation
+observed in the heatmap indicates that the CD-associated transcriptional
+phenotype is not restricted to the primary sampling strategy. This
+supports the robustness of the disease-associated molecular signal while
+highlighting the importance of biopsy inflammatory status as a source of
+biological variability.
+
+------------------------------------------------------------------------
+
+# Over-representation analysis (ORA)
+
+**Primary Cohort**
+
+## GO Terms
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img src="../../results/plots/Bulk_RNAseq_primary/ORA/GO_all_genes.png"
+style="width:32.0%" />
+
+<img src="../../results/plots/Bulk_RNAseq_primary/ORA/GO_up_genes.png"
+style="width:32.0%" />
+
+<img src="../../results/plots/Bulk_RNAseq_primary/ORA/GO_down_genes.png"
+style="width:32.0%" />
+
+</div>
+
+## Reactome
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_primary/ORA/Reactome_all_genes.png"
+style="width:50.0%" />
+
+<img
+src="../../results/plots/Bulk_RNAseq_primary/ORA/Reactome_down_genes.png"
+style="width:50.0%" />
+
+</div>
+
+### Treeplots
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_primary/ORA/Reactome_all_genes_treeplot.png"
+style="width:50.0%" />
+
+<img
+src="../../results/plots/Bulk_RNAseq_primary/ORA/Reactome_down_genes_treeplot.png"
+style="width:50.0%" />
+
+</div>
+
+## KEGG
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_primary/ORA/KEGG_all_genes.png"
+style="width:50.0%" />
+
+<img
+src="../../results/plots/Bulk_RNAseq_primary/ORA/KEGG_down_genes.png"
+style="width:50.0%" />
+
+</div>
+
+### Treeplots
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_primary/ORA/KEGG_all_genes_treeplot.png"
+style="width:50.0%" />
+
+<img
+src="../../results/plots/Bulk_RNAseq_primary/ORA/KEGG_down_genes_treeplot.png"
+style="width:50.0%" />
+
+</div>
+
+## Biological interpretation (GO, Reactome, KEGG - significant results)
+
+Across GO, Reactome and KEGG, the over-representation analysis of
+downregulated genes converges consistently on B-cell and complement
+biology: “Signaling by the B Cell Receptor (BCR)”, “Antigen activates B
+Cell Receptor (BCR) leading to generation of second messengers”,
+“Complement cascade” and “Regulation of Complement cascade” in Reactome;
+“B cell receptor signaling pathway” and “Hematopoietic cell lineage” in
+KEGG; B-cell proliferation, differentiation and activation terms
+together with “immunoglobulin binding” in GO. This is the same
+B-cell/plasma-cell module identified in the DEG heatmap above, now
+independently confirmed via three orthogonal pathway databases using
+non-overlapping annotation structures. Upregulated genes show enrichment
+for GPCR/chemokine receptor binding and epithelial antimicrobial terms,
+consistent with the LND-like signature discussed above.
+
+## ORA enrichment results empty for primary cohort
+
+| Analysis                       | Result                                 |
+|:-------------------------------|:---------------------------------------|
+| Reactome – Upregulated genes   | *Metabolism of amine-derived hormones* |
+| Hallmark – Upregulated genes   | *Xenobiotic metabolism*                |
+| Hallmark – All genes           | No significant enrichment              |
+| Hallmark – Downregulated genes | No significant enrichment              |
+| KEGG – Upregulated genes       | No significant enrichment              |
+
+## Biological interpretation
+
+Beyond the B-cell/complement signal already described above, ORA against
+the remaining Reactome, Hallmark and KEGG subsets (upregulated- and
+all-gene queries) produced limited additional significant enrichment,
+reflecting the relatively small number of DEGs available for
+over-representation testing in these specific queries. The only
+significant Hallmark result among the upregulated genes was Xenobiotic
+Metabolism, while Reactome identified Metabolism of Amine-Derived
+Hormones. No significant enrichment was detected for the remaining
+tested gene sets. These results should therefore be considered
+supportive rather than central to the biological interpretation of the
+primary cohort. The limited ORA signal is also consistent with the
+substantially richer pathway-level information obtained using the
+transcriptome-wide GSEA approach.
+
+**Sensitivity Cohort**
+
+## GO Terms
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/GO_all_genes.png"
+style="width:32.0%" />
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/GO_up_genes.png"
+style="width:32.0%" />
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/GO_down_genes.png"
+style="width:32.0%" />
+
+</div>
+
+## Reactome
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/Reactome_all_genes.png"
+style="width:50.0%" />
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/Reactome_up_genes.png"
+style="width:50.0%" />
+
+</div>
+
+### Treeplots
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/Reactome_all_genes_treeplot.png"
+style="width:50.0%" />
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/Reactome_up_genes_treeplot.png"
+style="width:50.0%" />
+
+</div>
+
+## KEGG
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/KEGG_all_genes.png"
+style="width:50.0%" />
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/KEGG_up_genes.png"
+style="width:50.0%" />
+
+</div>
+
+### Treeplots
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/KEGG_all_genes_treeplot.png"
+style="width:50.0%" />
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/KEGG_up_genes_treeplot.png"
+style="width:50.0%" />
+
+</div>
+
+## Hallmarks Collection H
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/Hallmark_H_all_genes.png"
+style="width:32.0%" />
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/ORA/Hallmark_H_up_genes.png"
+style="width:32.0%" />
+
+</div>
+
+## ORA enrichment results empty for sensitivity cohort
+
+| Analysis                       | Result                    |
+|:-------------------------------|:--------------------------|
+| Reactome – Downregulated genes | No significant enrichment |
+| KEGG – Downregulated genes     | No significant enrichment |
+| Hallmark – Downregulated genes | *KRAS signaling on*       |
+
+------------------------------------------------------------------------
+
+## Biological intepretation
+
+The sensitivity analysis showed broader functional enrichment than the
+primary analysis, consistent with the larger DEG set. Enriched pathways
+converge on immune and inflammatory signaling, including
+cytokine-associated processes, TNF/NF-kB signaling and IL-17-related
+responses. Several infection-related KEGG pathways were also enriched;
+however, these should be interpreted as pathway-level representations of
+shared host immune-response genes rather than evidence of specific viral
+infection. Overall, the sensitivity analysis provides stronger
+statistical support for the inflammatory component of the CD
+transcriptional phenotype.
+
+# Gene-set enrichment analysis
+
+**Primary Cohort**
+
+## GO
+
+![](../../results/plots/Bulk_RNAseq_primary/GSEA/GSEA_go.png)
+
+## Biological interpretation
+
+GSEA of GO terms identified three major components of the CD-associated
+transcriptional phenotype. Positively enriched biological processes
+included innate immune regulation, cytokine production, oxidative stress
+responses and multiple cell-cycle-related processes, including
+chromosome segregation and nuclear division, together with
+“immunoglobulin complex” and “antigen binding” as the top-ranked
+Cellular Component and Molecular Function terms respectively -
+consistent with the plasma-cell secretory shift noted in the DEG-level
+analysis above. This pattern suggests simultaneous activation of
+inflammatory signaling, proliferative/metabolic programs, and
+immunoglobulin-secretion machinery. Conversely, several negatively
+enriched terms were related to cell adhesion, T-cell receptor complex
+and extracellular matrix organization. Alterations of epithelial,
+adhesion and extracellular-matrix programs are well documented in
+Crohn’s disease and may reflect changes in tissue organization and
+epithelial–stromal interactions. Importantly, because the analysis was
+performed on bulk intestinal biopsies, these changes cannot be assigned
+to a specific cell population without complementary single-cell or
+spatial evidence.
+
+## Reactome
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_primary/GSEA/GSEA_reactome.png"
+style="width:50.0%" /> <img
+src="../../results/plots/Bulk_RNAseq_primary/GSEA/GSEA_reactome_treeplot.png"
+style="width:50.0%" />
+
+</div>
+
+## Biological interpretation
+
+Reactome GSEA further supports activation of immune and
+cytokine-associated signaling in CD. Enrichment of “Class I MHC mediated
+antigen processing & presentation” is of particular note, as it
+independently converges with the MHC-I finding identified as broadly
+present across both IEL and LPL compartments by CellChat and LIANA in
+the single-cell analysis of this project - the clearest point of direct,
+name-level convergence between the bulk and single-cell communication
+layers. The co-occurrence of “Degradation of CDH1 (endosomes)” and
+“Regulation of CDH1 Function” among the enriched Reactome terms,
+together with “cadherin binding” as the top GO Molecular Function term,
+is also directionally consistent with CDH1 being identified as the most
+biologically specific CellChat finding in the IEL compartment, although
+leading-edge gene identity should be verified before treating this as a
+confirmed convergence.  
+
+This interpretation is consistent with previous studies demonstrating
+increased interferon activity in Crohn’s disease intestinal tissue and
+with the established role of Th1/IFN-gamma-associated signaling in CD
+pathogenesis.
+
+## KEGG
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img src="../../results/plots/Bulk_RNAseq_primary/GSEA/GSEA_kegg.png"
+style="width:50.0%" /> <img
+src="../../results/plots/Bulk_RNAseq_primary/GSEA/GSEA_kegg_treeplot.png"
+style="width:50.0%" />
+
+</div>
+
+## Biological interpretation
+
+KEGG GSEA identifies a broad activation of immune and inflammatory
+signaling together with changes in cellular metabolic programs. Multiple
+infection-associated KEGG terms are represented, but these should not be
+interpreted as evidence of active infection because such pathways
+contain shared host-response genes involved in cytokine signaling,
+antigen presentation and innate immune activation. The overall KEGG
+profile therefore supports a disease-associated immune activation state
+rather than a pathogen-specific transcriptional signature.
+
+## Hallmarks Collection H
+
+![](../../results/plots/Bulk_RNAseq_primary/GSEA/GSEA_hallmarks_H.png)
+
+## Biological interpretation
+
+Hallmark GSEA provides the clearest summary of the primary
+transcriptional phenotype. The strongest positively enriched programs
+include IFN-gamma response, TNFA signaling via NF-kB and IL2–STAT5
+signaling, supporting a coordinated inflammatory and immune-activation
+state in CD. In parallel, enrichment of G2M checkpoint, E2F targets, MYC
+targets and mitotic spindle programs indicates increased representation
+of proliferative and cell-cycle-associated transcriptional programs.
+mTORC1 signaling and oxidative phosphorylation further suggest altered
+metabolic activity accompanying the inflammatory state. The convergence
+of inflammatory, proliferative and metabolic programs is consistent with
+the complex tissue-level transcriptional remodeling observed in
+intestinal CD.
+
+**Sensitivity Cohort**
+
+## GO
+
+![](../../results/plots/Bulk_RNAseq_sensitivity/GSEA/GSEA_go.png)
+
+## Biological interpretation
+
+GO GSEA identifies a coordinated enrichment of cell-cycle and
+immune-related biological processes in the sensitivity cohort.
+Positively enriched terms include chromosome segregation, nuclear
+division and other processes associated with cellular proliferation,
+together with processes related to immune regulation and responses to
+external stimuli. This indicates that the broader CD cohort is
+characterized not only by inflammatory activation but also by
+substantial transcriptional remodeling of proliferative and
+cellular-state programs. The enrichment of proliferation-associated
+processes is biologically consistent with the increased proliferative
+activity reported in Crohn’s disease intestinal mucosa, particularly in
+regenerating crypt compartments.
+
+## Reactome
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/GSEA/GSEA_reactome.png"
+style="width:50.0%" /> <img
+src="../../results/plots/Bulk_RNAseq_sensitivity/GSEA/GSEA_reactome_treeplot.png"
+style="width:50.0%" />
+
+</div>
+
+## Biological interpretation
+
+Reactome GSEA further supports the coexistence of immune activation and
+proliferative remodeling in the sensitivity cohort. Enriched pathways
+include processes related to cell-cycle progression together with immune
+signaling and antigen-processing-associated functions, indicating
+coordinated changes in both cellular proliferation and immune activity.
+This pattern is consistent with the established inflammatory environment
+of Crohn’s disease, where activation of mucosal immune pathways occurs
+together with epithelial and tissue remodeling. The Reactome results
+therefore reinforce the interpretation obtained from GO GSEA, while
+providing a pathway-level representation of the same broader
+inflammatory and proliferative phenotype.
+
+## KEGG
+
+<div style="display:flex; gap:10px; align-items:flex-start;">
+
+<img
+src="../../results/plots/Bulk_RNAseq_sensitivity/GSEA/GSEA_kegg.png"
+style="width:50.0%" /> <img
+src="../../results/plots/Bulk_RNAseq_sensitivity/GSEA/GSEA_kegg_treeplot.png"
+style="width:50.0%" />
+
+</div>
+
+## Biological interpretation
+
+KEGG GSEA highlights a prominent inflammatory signaling component
+specific to the sensitivity cohort, with enrichment of pathways
+including IL-17 signaling, TNF signaling and NOD-like receptor
+signaling - none of which reached significance in the non-inflamed
+primary cohort. This is consistent with the established involvement of
+the IL-23/IL-17 axis, TNF-associated inflammatory signaling and NOD2
+(the best-characterized Crohn’s disease susceptibility gene) in active
+disease, and supports the validity of the primary/sensitivity design:
+the core disease signature is retained across both cohorts, while
+classic acute inflammatory programs emerge specifically when inflamed
+tissue is included. This same absence of TNF/IL-17 signal in the
+primary, non-inflamed cohort is consistent with the detection-threshold
+limitation already noted for CellChat/LIANA, which likewise did not
+detect TNF, IFNG, IL17 or TGFB as communication pathways. Several
+infection-related KEGG pathways are also enriched. These terms should
+not be interpreted as evidence of active infection, since KEGG infection
+pathways frequently contain shared host-response genes involved in
+cytokine signaling, apoptosis, antigen processing and innate immune
+activation. Their enrichment in this analysis is therefore more
+appropriately interpreted as evidence of a broad inflammatory
+host-response program. The presence of cell-cycle and
+antigen-processing-related pathways further supports the view that the
+CD transcriptional phenotype involves coordinated immune activation
+together with cellular and tissue remodeling.
+
+## Hallmarks Collection H
+
+![](../../results/plots/Bulk_RNAseq_sensitivity/GSEA/GSEA_hallmarks_H.png)
+
+## Biological interpretation
+
+Hallmark GSEA provides the most coherent summary of the sensitivity
+transcriptional phenotype. The strongest positively enriched programs
+include G2M checkpoint, E2F targets, MYC targets and mitotic spindle,
+indicating a prominent proliferative and cell-cycle-associated
+transcriptional state. This is accompanied by enrichment of mTORC1
+signaling and oxidative phosphorylation, suggesting coordinated
+metabolic activity associated with the altered cellular state. In
+parallel, Interferon Gamma Response and TNFA Signaling via NFKB are
+strongly enriched, providing direct evidence of activation of two major
+inflammatory transcriptional programs in CD tissue. Increased interferon
+activity has long been documented in Crohn’s disease intestinal immune
+cells, while NF-kB activation is a well-established feature of the
+inflammatory intestinal mucosa in CD. IL2-STAT5 signaling is also
+positively enriched. This is particularly relevant to the broader
+immune-regulatory phenotype, as IL-2/STAT5 signaling is closely
+associated with regulatory T-cell biology, and mirrors the same pathway
+independently identified by GSEA in the LPL-Treg pseudobulk population
+of this project - a partial, directional cross-cohort convergence rather
+than a mechanistic replication, since the bulk dataset does not allow
+this signal to be assigned specifically to Tregs. Overall, the Hallmark
+results indicate that the CD-associated transcriptional phenotype
+combines inflammatory signaling, immune regulation, proliferative
+activity and metabolic remodeling, rather than representing an isolated
+inflammatory response.
+
+------------------------------------------------------------------------
+
+# Complete biological interpretation
+
+The integrated analysis provides convergent evidence that Crohn’s
+disease is associated with coordinated transcriptional, cellular and
+intercellular alterations across the intestinal immune compartment.
+Rather than being driven by a single inflammatory pathway, the results
+indicate a disease-associated state characterized by immune activation,
+cytotoxic differentiation, metabolic remodeling, altered cellular
+composition and reorganization of intercellular communication. At the
+bulk-tissue level, the GSE193677 analysis provides an independent,
+tissue-level validation of the disease-associated transcriptional
+phenotype. The primary cohort, restricted to non-inflamed ileal samples,
+identified 77 DEGs (23 upregulated and 54 downregulated), whereas the
+larger sensitivity cohort identified 222 DEGs (127 upregulated and 95
+downregulated). The stronger signal in the sensitivity cohort is
+expected given its larger number of CD samples, although its inclusion
+of both inflamed and non-inflamed biopsies also introduces greater
+biological heterogeneity. Importantly, the bulk analysis should be
+interpreted as a tissue-level validation of pathway activity, rather
+than as evidence attributable to individual immune cell populations.
+Notably, the most robust bulk-tissue finding - a coordinated
+downregulation of a B-cell/plasma-cell/ follicular-help module (CD19,
+CD79B, MS4A1, PAX5, CR2, FCER2, CXCR5) - has no direct counterpart in
+the single-cell layer of this project, since B lymphocytes are not part
+of the profiled IEL/LPL compartments; it is reported here as an
+orthogonal, hypothesis-generating observation rather than a
+cross-validated result. The limited ORA signal in the bulk cohorts
+further supports the use of GSEA as the principal functional readout. In
+the primary cohort, ORA yielded only isolated enrichment signals,
+including metabolism of amine-derived hormones in Reactome and
+xenobiotic metabolism in Hallmark, while several databases returned no
+significant enrichment. In the sensitivity cohort, ORA remained sparse,
+with no significant enrichment for several downregulated gene sets.
+These results should therefore not be interpreted as evidence for
+absence of biological regulation. Instead, the broader GSEA framework is
+more informative because it evaluates the ranked transcriptome rather
+than relying on a relatively small threshold-defined DEG list. The
+single-cell pseudobulk analysis provides substantially greater
+biological resolution and identifies a reproducible cytotoxic and
+metabolic component of the CD phenotype. Across the five statistically
+eligible cell populations, GNLY was increased in CD in four of five
+populations, providing gene-level support for the enrichment of
+cytotoxic/granzyme-associated programs. Conversely, a coherent
+glucocorticoid/stress-response module comprising FKBP5, TSC22D3, TXNIP,
+ZFP36L2, NFKBIA and DUSP2 was downregulated across all five populations.
+This gene-level pattern directly supports the corresponding
+corticosteroid/glucocorticoid-response signal detected by GSEA in
+several cell types. The functional enrichment analysis further reveals
+that oxidative phosphorylation and mitochondrial ATP-production programs
+represent the most consistent transcriptional feature across the
+single-cell dataset, being detected across all five eligible populations
+and across the interrogated gene-set collections. This is particularly
+relevant because it is observed across both IEL and LPL compartments
+rather than being restricted to a single lineage. The LPL compartment
+additionally shows a recurrent translation/ribosome-biogenesis program,
+whereas IEL populations display more heterogeneous immune and
+tissue-resident programs. These findings are compatible with the
+increasing recognition that metabolic state and mitochondrial function
+are closely coupled to immune-cell activation and intestinal
+inflammatory states, although the present analysis cannot establish
+whether the metabolic changes are a cause or consequence of
+inflammation. Within IEL, the strongest cell-type-specific signal is
+represented by the TH17-associated inflammatory program. GSEA identifies
+coordinated enrichment of inflammatory response, IFN-gamma response,
+IL2–STAT5 signaling and complement-related programs, while the
+pseudobulk analysis identifies GZMB among the genes supporting this
+phenotype. This is highly concordant with the original single-cell
+characterization of the same intestinal system, which identified
+CD-associated expansion of activated CD39⁺ TH17 cells and described
+their expression of cytotoxic and inflammatory mediators including GZMB
+and CCL4. The IEL cytotoxic compartment provides a complementary signal.
+The analysis identifies increased cytotoxic transcriptional activity
+together with a marked compositional shift in the cytotoxic/TRM-like
+population. The reduction of the gamma-delta component within the
+corresponding population is consistent with the published observation of
+reduced intestinal gamma-delta T cells in CD. The original Jaeger study
+also reported broader changes in IEL composition, including reduced
+CD8⁺, gamma-delta and Treg populations and increased activated TH17
+cells in inflamed CD tissue. Thus, the present analysis reproduces
+several major features of the source tissue biology while providing
+additional pathway-level resolution. In LPL, the transcriptional
+phenotype is shifted toward a combination of cytotoxic activation,
+proliferative/metabolic remodeling and regulatory signaling. Both
+LPL-Cytotoxic-TRM-like and LPL-Treg populations show the broader
+metabolic and translational changes identified by GSEA. In particular,
+IL2–STAT5 signaling is enriched in LPL-Treg, while CellChat identifies
+IL2 as a CD-associated communication pathway. This represents a useful
+cross-method convergence, but it should be described as directional
+convergence rather than direct mechanistic validation, because CellChat
+identifies an Innate-like/TRM CD8 population as the principal IL2 sender
+and the receptor configuration is not specifically Treg-selective. The
+cell–cell communication analyses extend this biological model from
+intracellular programs to network organization. CellChat identifies
+increased communication complexity in CD in both IEL and LPL, although
+the architecture differs between compartments. IEL shows a more diffuse
+CD network, with substantially more detected pathways but lower average
+edge strength, whereas LPL shows a proportional increase in both
+interaction number and total communication strength. This suggests that
+CD does not simply increase the intensity of one pre-existing signaling
+circuit; rather, it reorganizes the communication landscape in a
+compartment-dependent manner. A particularly consistent observation is
+the emergence of MHC-II-centered communication involving regulatory
+T-cell populations. In IEL, the dominant MHC-II receiver shifts from a
+Control-dominant TH17 effector population toward FOXP3⁺ IL2RA⁺ Treg,
+with additional involvement of TH17-like and macrophage populations. In
+LPL, MHC-II again undergoes a change in receiving population, with the
+Control-associated Activated effector Treg profile being replaced by
+FOXP3⁺ activated Treg and IFN-activated cytotoxic populations in CD.
+Importantly, these results should be described as population
+substitution/reorganization rather than simple pathway intensification,
+because the receiving populations are not equivalent between conditions.
+This Treg-centered communication phenotype is particularly interesting
+when considered together with the transcriptional data. GSEA identifies
+IL2–STAT5 signaling in LPL-Treg, while CellChat identifies MHC-II, MHC-I
+and IL2 as important components of the LPL communication landscape and
+GALECTIN, MHC-II and CDH1 as prominent components of the IEL CD profile.
+Nevertheless, the present dataset does not support the conclusion that
+Tregs are globally increased or decreased in CD. Indeed, the
+pseudobulk/scRNA-seq pipeline showed an increased relative Treg
+representation in CD, whereas the source literature reported reduced
+Treg proportions in inflamed CD tissue. This discrepancy should remain
+explicitly acknowledged rather than reconciled by assumption. The
+compartment-specific communication results provide additional
+mechanistic resolution. In IEL, the CDH1–CD103 axis is the most
+biologically specific interaction recovered. The predicted interaction
+between E-cadherin (CDH1) and CD103 (ITGAE/ITGB7) is consistent with the
+established role of CD103–E-cadherin interactions in epithelial
+retention of lymphocytes. However, because the FOXP3⁺ Treg sender is
+CD-emergent in this dataset, this result should be presented as a
+CD-specific population characterization rather than a statistically
+established differential interaction. The original intestinal
+single-cell study also identified ITGAE expression as a marker of
+tissue-resident IEL populations, providing additional biological context
+for this axis. The IEL-specific LIGHT–LTBR axis toward macrophages
+provides a second compartment-specific feature. LIGHT/TNFSF14 has
+established roles in intestinal immune regulation, but its biological
+effects are receptor-dependent and can be either inflammatory or
+regulatory. Therefore, the present result supports altered
+LIGHT-mediated communication in CD but does not by itself establish that
+this interaction is pathogenic. Recent literature similarly emphasizes
+the context-dependent functions of LIGHT through HVEM and LTBR in
+intestinal inflammation. In LPL, SIRPG–CD47 communication represents a
+different form of disease-associated remodeling. The
+functional-similarity analysis places shared pathways such as MHC-I,
+CD99, LCK and CypA within a relatively conserved communication core,
+whereas CD-exclusive pathways occupy a distinct region. SIRP is the
+pathway showing the largest between-condition distance, supporting a
+model of network reorganization rather than simple loss of signaling.
+This interpretation is also consistent with the known role of
+SIRP-family interactions in T-cell/APC and T-cell/T-cell costimulatory
+biology, although the present analysis remains transcriptome-based and
+does not demonstrate receptor activation at the protein level. The
+apparent absence of canonical inflammatory pathways such as TNF, IFNG,
+IL17 and TGFB from CellChat should not be interpreted as biological
+absence. These pathways are prominent in the GSEA and pseudobulk
+analyses, particularly the IFN-gamma and inflammatory programs in IEL
+TH17/cytotoxic populations. CellChat inference is dependent on
+ligand/receptor expression thresholds and the statistical framework used
+to infer communication probabilities, and therefore has a different
+detection space from pathway enrichment. This methodological
+complementarity is important: GSEA detects intracellular transcriptional
+consequences, whereas CellChat asks whether ligand/receptor expression
+supports a putative intercellular interaction. CellChat and LIANA should
+therefore be regarded as complementary rather than interchangeable
+approaches; systematic benchmarking has demonstrated that
+ligand–receptor predictions are sensitive to both the inference method
+and the underlying interaction resource. Taken together, the different
+analytical layers support a coherent model of CD-associated intestinal
+immune remodeling. Bulk RNA-seq establishes that the disease-associated
+transcriptional phenotype is detectable at tissue level; pseudobulk
+analysis localizes recurrent gene-level changes to specific immune
+populations; GSEA demonstrates coordinated inflammatory, cytotoxic,
+metabolic and regulatory programs; and CellChat adds a network-level
+layer showing that these altered cellular states occur within a
+reorganized communication landscape. The convergence is particularly
+strong around cytotoxic activity, IFN-associated inflammation, altered
+Treg-associated signaling, metabolic remodeling and compartment-specific
+communication. The resulting model is therefore not one of generalized
+immune activation alone. Instead, CD appears to involve simultaneous
+activation of inflammatory/cytotoxic programs, metabolic adaptation,
+changes in the relative representation and state of intestinal
+lymphocyte populations, and redistribution of intercellular signaling
+between these populations. This interpretation is consistent with the
+established cellular heterogeneity of intestinal CD and with the
+distinction between IEL and lamina propria immune niches reported in the
+primary single-cell literature. Finally, these results should be
+interpreted with the methodological constraints of each layer in mind.
+The pseudobulk comparisons are based on only two CD and two Control
+donors per eligible cell type, making GSEA more informative than
+individual-gene significance alone. CellChat is affected by severe
+condition-dependent cell-type imbalance, and several of its strongest
+findings are therefore CD-specific characterizations rather than
+conventional differential comparisons. LIANA provides an appropriate
+orthogonal framework for ligand–receptor inference, but specific LIANA
+concordance should only be added once its final results are explicitly
+available and verified. These limitations do not invalidate the
+integrated biological picture; rather, they define which conclusions can
+currently be considered robust observations and which remain mechanistic
+hypotheses requiring independent validation. Importantly, the orthogonal
+communication analysis did not merely increase confidence in the primary
+findings. In the LPL compartment, LIANA prompted re-examination of the
+original CellChat MHC-II interpretation and led to correction of an
+unsupported population- substitution claim. This illustrates the value
+of integrating independent computational frameworks when interpreting
+cell–cell communication from single-cell transcriptomic data.
+
+### Cross-validation with cell–cell communication analyses
+
+The single-cell communication analyses provide an orthogonal layer of
+evidence to the bulk and pseudobulk transcriptional results. LIANA
+independently reproduced two of the most mechanistically specific
+CellChat findings: the CDH1–CD103 axis in the IEL compartment and the
+SIRPG–CD47 axis in LPL. The CDH1–CD103 interaction is consistent with
+the established role of CD103–E-cadherin binding in the retention and
+localization of epithelial-resident lymphocytes, whereas SIRPG–CD47
+supports a reorganization of T-cell communication in the LPL
+compartment. These findings provide independent support for the cellular
+communication changes identified by the primary CellChat analysis.
+
+A particularly strong cross-method convergence was observed for the IL-2
+axis in LPL. LIANA identified the high-affinity IL2RA–IL2RB–IL2RG
+receptor complex preferentially associated with Treg populations, while
+GSEA independently identified IL2–STAT5 signalling as significantly
+enriched in the LPL Treg transcriptome in CD. This is concordant with
+the established biology of constitutive CD25 (IL2RA) expression and
+high-affinity IL-2 responsiveness in regulatory T cells. Thus, LIANA and
+GSEA converge on a Treg-centred IL-2 programme, providing stronger
+evidence than either method alone.
+
+The MHC-II findings also illustrate the value of orthogonal
+cross-validation. In LPL, LIANA initially appeared to disagree with the
+CellChat interpretation of a CD-associated change in the receiving Treg
+population. Direct re-examination of the CellChat object showed,
+however, that the original claim of absent MHC-II signalling toward
+Activated effector Treg in CD was not supported by the underlying
+communication table. The corrected interpretation is therefore a
+broadening or reorganization of the MHC-II communication repertoire
+rather than a simple population substitution.
+
+Together, these observations indicate that the CD-associated
+transcriptional phenotype is accompanied by changes in the cellular
+communication landscape, particularly involving regulatory T-cell
+biology, antigen-presentation pathways and tissue-resident lymphocyte
+interactions. Importantly, the communication analyses are complementary
+rather than redundant with bulk and pseudobulk transcriptomics:
+transcriptional enrichment identifies altered cellular programmes,
+whereas CellChat and LIANA provide information on the potential cellular
+sources, receivers and organization of ligand–receptor signalling.
+
+------------------------------------------------------------------------
+
+# Reproducibility
+
+All analyses were performed in a standardized R environment to ensure
+full computational reproducibility.
+
+Software environment:
+
+- R version: 4.6.0
+- edgeR: 4.10.1
+- DESeq2: 1.52.0
+- clusterProfiler: 4.20.0
+- ReactomePA: 1.56.0
+- fgsea: 1.38.0
+- msigdbr: 26.1.0
+- ComplexHeatmap: 2.28.0
+
+A complete session information log is stored in the `results/logs/`
+directory of the project repository, enabling full reproducibility of
+the analysis environment. Reproducibility of stochastic steps was
+ensured through a fixed random seed (`set.seed(1234)`).
+
+------------------------------------------------------------------------
+
+## Limitations and Considerations
+
+**Whole-biopsy resolution.** Both cohorts derive from bulk intestinal
+biopsies, comprising epithelium, stroma, and all resident immune
+populations. Cell-type-specific attribution of any signal (e.g., the
+B-cell module or the LND-like epithelial signature) is not possible
+without the complementary compartment-resolved scRNA-seq layer of this
+project, and even there, direct validation is limited to compartments
+and cell types actually profiled in the source dataset.
+
+**Absence of B-cell populations in the scRNA-seq reference.** The IEL
+and LPL compartments profiled by single-cell RNA-seq do not include
+B-lymphocyte or plasma-cell populations. The B-cell/plasma-cell/
+follicular module identified here is therefore an orthogonal,
+hypothesis-generating finding - not a replication of an existing
+single-cell result - and should be reported as such.
+
+**Undetectable pouch-tissue contamination.** GSE193677 sample metadata
+does not carry an explicit flag distinguishing native terminal ileum
+from surgically created ileal pouch tissue, a documented exclusion
+criterion (n=18 patients) in the original MSCCR cohort description. This
+cannot be verified or corrected from the public metadata available and
+is acknowledged as an unresolved, non-quantifiable source of potential
+heterogeneity within the “Ileum” region label.
+
+**Unmeasured technical covariates.** The original MSCCR processing
+pipeline adjusted for batch, RIN, rRNA rate, exonic rate, and genetic
+principal components; none of these are available in the public GEO
+metadata used here. The limma-voom model in this analysis includes only
+disease status as a covariate. Residual unmodeled technical variation
+cannot be excluded as a contributor to the observed transcriptional
+differences, though the concordance of the two cohorts (primary and
+sensitivity) and convergence with the independent single-cell layer both
+argue against this being the dominant driver of the reported signal.
+
+**CellChat/LIANA detection-space mismatch.** The apparent absence of
+TNF, IFNG, IL17 and TGFB from the CellChat/LIANA cell-cell communication
+results should not be interpreted as biological absence. These pathways
+are prominent in both the pseudobulk and the present bulk GSEA (notably
+IL-17 signaling, TNF signaling pathway and NOD-like receptor signaling,
+detected specifically in the sensitivity cohort, which includes inflamed
+tissue). Communication-inference tools depend on ligand/receptor
+co-expression thresholds and therefore occupy a different detection
+space than transcriptome-wide enrichment; the two should be read as
+complementary evidence layers, not as concordant or discordant tests of
+the same hypothesis.
+
+**Technical exclusion vs biological signal in cohort comparisons.** A
+subset of Reactome pathways related to collagen chain trimerization,
+present and significant in the primary cohort, were absent from the
+sensitivity cohort’s enrichment tables entirely. Gene-level inspection
+of the leading-edge genes confirmed consistent, non-inverted
+directionality and stronger significance in the sensitivity cohort,
+indicating the pathway’s disappearance from the enrichment table
+reflects a minimum-gene-set-size filtering threshold in that specific
+run rather than a loss or reversal of biological signal. This
+illustrates the importance of leading-edge-level verification before
+interpreting the presence or absence of a pathway across cohort-specific
+GSEA runs.
+
+**Unresolved Treg directionality.** The pseudobulk/scRNA-seq
+compositional analysis shows an increased relative Treg proportion in CD
+(LPL: 0.12 CD vs 0.05 Control), while the source single-cell literature
+(Jaeger et al., 2021) reports reduced Treg proportions in inflamed CD
+tissue. This discrepancy is explicitly acknowledged and not resolved by
+assumption; it may reflect differences in Treg subtype definition,
+activation state, or sampling between studies, and should be treated as
+an open question rather than a resolved concordance or contradiction.
+
+**Cross-sectional design.** Both GSE193677 cohorts and the source
+single-cell dataset are cross-sectional. No causal or temporal ordering
+between the transcriptional, compositional, and communication-level
+changes described in this report can be inferred.
+
+**Statistical power heterogeneity across layers.** The pseudobulk
+single-cell comparisons are based on as few as two CD and two Control
+donors for the least-represented eligible cell types, in contrast to the
+351 CD / 121 Control samples available in the bulk sensitivity cohort.
+Findings that converge across these very different power regimes (e.g.,
+oxidative phosphorylation, MHC-I) should be weighted more heavily than
+single-layer observations.
+
+------------------------------------------------------------------------
+
+# Deliverables
+
+This analysis produces a complete set of reproducible outputs,
+including:
+
+- quality-controlled, dataset-specific expression objects
+- differential expression result tables (per dataset)
+- functional enrichment result tables (ORA and GSEA, per dataset)
+
+------------------------------------------------------------------------
+
+## Conclusion
+
+This cross-cohort bulk RNA-seq analysis of GSE193677 provides an
+independent, tissue-level line of evidence for a coordinated Crohn’s
+disease transcriptional phenotype, complementing the single-cell
+pseudobulk, CellChat and LIANA analyses conducted on the primary Jaeger
+et al. dataset within this project. Three findings stand out as the most
+robust, cross-validated results of this bulk analysis: (i) a consistent
+downregulation of a B-cell/plasma-cell/follicular-help gene module
+(CD19, CD79B, MS4A1, PAX5, CR2, FCER2, CXCR5), reproduced across four
+independent enrichment databases and both cohorts, and echoed by the
+complete loss of the LPL-TFH population in the CD scRNA-seq compartment;
+(ii) an upregulated antimicrobial epithelial signature (LCN2, NOS2,
+DUOX2) consistent with the recently described CD-specific “LND”
+epithelial cell population; and (iii) a proliferative/metabolic program
+(MTORC1, MYC targets, oxidative phosphorylation) that mirrors the
+“universal” OXPHOS signature independently identified across both IEL
+and LPL compartments in the single-cell layer.
+
+The comparison between the primary (non-inflamed) and sensitivity
+(inflamed + non-inflamed) cohorts behaved as expected for this study
+design: the core disease signature was retained in both, while classic
+acute inflammatory programs (IL-17 signaling, TNF signaling, NOD-like
+receptor signaling) emerged specifically in the sensitivity cohort,
+supporting the validity of the primary cohort as a model of the CD
+transcriptional baseline independent of active inflammatory status.
+
+Several findings from this bulk analysis are not directly testable
+against the existing single-cell reference, most notably the
+B-cell/plasma-cell module, since B lymphocytes are not part of the
+IEL/LPL compartments profiled by scRNA-seq. These should be regarded as
+novel, hypothesis-generating results rather than replications, and are
+flagged as priorities for future compartment-resolved validation (e.g.,
+targeted B-cell/plasma-cell scRNA-seq or spatial transcriptomics of
+ileal lymphoid follicles).
+
+Taken together with the pseudobulk, CellChat and LIANA analyses, this
+bulk RNA-seq layer supports a model of Crohn’s disease as a coordinated,
+multi-program remodeling of the intestinal mucosa - encompassing
+immune/inflammatory activation, metabolic and proliferative
+reprogramming, altered cellular composition, and now, at the bulk-tissue
+level, a previously unexamined suppression of follicular B-cell help -
+rather than a single dominant inflammatory axis.

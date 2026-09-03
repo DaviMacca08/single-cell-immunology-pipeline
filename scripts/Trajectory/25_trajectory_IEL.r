@@ -418,7 +418,7 @@ save_rds(curves_iel, filename = "slingshot_curves_IEL.rds", dir = paths$objects_
 save_rds(sce_iel_traj, filename = "sce_IEL_trajectory.rds", dir = paths$objects_trajectory)
 save_rds(pseudo_iel, filename = "pseudotime_IEL.rds", dir = paths$objects_trajectory)
 save_rds(weights_iel, filename = "curve_weights_IEL.rds", dir = paths$objects_trajectory)
-save_csv(lineage_summary, filename = "IEL_lineage_summary.csv", dir = paths$objects_trajectory)
+save_csv(lineage_summary, filename = "IEL_lineage_summary.csv", dir = paths$tables_trajectory)
 
 message("[SAVE] Slingshot curves saved.")
 message("[SAVE] SCE trajectory object saved.")

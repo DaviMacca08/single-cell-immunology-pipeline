@@ -1,0 +1,8 @@
+"lineage","n_cells","prop_CD","lineage_end_cluster"
+"Lineage 1",11768,0.571,"Terminal effector CD8 T cells"
+"Lineage 2",11320,0.554,"FOXP3+ IL2RA+ Treg"
+"Lineage 3",10785,0.518,"Cytotoxic γδ T cells"
+"Lineage 4",9681,0.173,"γδ T cells / NK-like cytotoxic T cells"
+"Lineage 5",7496,0.22,"TH17 effector"
+"Lineage 6",3238,0.349,"NK-like cytotoxic T cells"
+"Lineage 7",3469,0.222,"CXCL13+ TFH-like T cells"

@@ -99,6 +99,11 @@ communication analysis using complementary ligand-receptor inference
 approaches and trajectory analysis to investigate cellular progression
 and lineage relationships.
 
+The framework also includes an external validation step based on an
+independent bulk RNA-seq dataset (GSE193677), used to assess whether
+transcriptional patterns identified in the single-cell analysis are
+supported at the bulk tissue level.
+
 ------------------------------------------------------------------------
 
 # 📌 Key Results
@@ -138,6 +143,14 @@ robustness in downstream biological interpretation, including:
   using Slingshot
 - Evaluation of pseudotime distributions and descriptive marker dynamics
   along inferred trajectories
+- External validation of disease-associated transcriptional signals
+  using an independent bulk RNA-seq dataset (GSE193677)
+
+<!-- -->
+
+- Cross-cohort comparison of transcriptional and pathway-level signals
+  to assess the consistency of single-cell-derived biological findings
+  in an independent dataset
 
 The final output is a curated single-cell representation of the system,
 integrating cellular identity, transcriptional states, functional
@@ -159,18 +172,15 @@ Currently available workflows:
 - Cell-cell communication analysis with CellChat
 - Ligand-receptor inference with LIANA
 - Single-cell trajectory and pseudotime analysis with Slingshot
+- External bulk RNA-seq validation and cross-cohort analysis using
+  GSE193677
 
 The downstream analyses enable the workflow to progress from:
 
 **single-cell characterization → cell-type annotation →
-compartment-specific analysis → transcriptional changes → functional
-interpretation → cell-cell communication → cellular trajectories**
-
-This enables the workflow to progress from:
-
-**single-cell characterization → cell-type annotation →
 compartment-specific analysis → condition-associated transcriptional
-changes → functional interpretation**
+changes → functional interpretation → cell-cell communication → cellular
+trajectories → external bulk RNA-seq validation**
 
 Each analysis is structured as a self-contained module and includes:
 
@@ -230,19 +240,6 @@ This approach ensures a balance between:
 
 ``` text
 scRNAseq_project/
-
-├── analysis/
-│   │
-│   ├── global_exploration/
-│   │   ├── scripts/
-│   │   └── reports/
-|   │       └── Analytical reports describing methods, results and interpretation
-│   │
-│   └── subsetting/
-│       ├── scripts/
-│       └── reports/
-|           └── Analytical reports describing methods, results and interpretation
-│
 ├── objects/
 │   └── Analysis-specific Seurat objects and intermediate data structures
 │
@@ -255,6 +252,9 @@ scRNAseq_project/
 │   │
 │   └── logs/
 │       └── Execution logs and reproducibility information
+│
+├── reports/
+│   └── Analysis-specifc report
 │
 ├── Setup_Environment/
 │   ├── 00_paths.R
@@ -290,11 +290,13 @@ scRNAseq_project/
 - celldex v1.22.0
 - CellMarker 2.0 database
 - DESeq2 v1.52.0
+- edgeR v4.10.3
 - fgsea v1.38.0
 - clusterProfiler v4.20.0
 - CellChat v2.2.0.9001
 - LIANA v0.1.14
 - Slingshot v2.20.0
+- condiments v1.20.0
 
 ------------------------------------------------------------------------
 
@@ -310,3 +312,15 @@ The pipeline emphasizes:
 - transparent annotation strategy
 - biological interpretability
 - suitability for real-world scRNA-seq analysis projects
+
+------------------------------------------------------------------------
+
+# 📬 Contact
+
+For questions, collaborations, or bioinformatics consulting inquiries:
+
+**Davide Maccarrone**
+
+- GitHub: <https://github.com/DaviMacca08>
+- LinkedIn: www.linkedin.com/in/davidemaccarrone
+- Email: <davide_maccarrone@icloud.com>

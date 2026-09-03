@@ -416,7 +416,7 @@ save_rds(curves_lpl, filename = "slingshot_curves_LPL.rds", dir = paths$objects_
 save_rds(sce_lpl_traj, filename = "sce_LPL_trajectory.rds", dir = paths$objects_trajectory)
 save_rds(pseudo_lpl, filename = "pseudotime_LPL.rds", dir = paths$objects_trajectory)
 save_rds(weights_lpl, filename = "curve_weights_LPL.rds", dir = paths$objects_trajectory)
-save_csv(lineage_summary, filename = "LPL_lineage_summary.csv", dir = paths$objects_trajectory)
+save_csv(lineage_summary, filename = "LPL_lineage_summary.csv", dir = paths$tables_trajectory)
 
 message("[SAVE] Slingshot curves saved.")
 message("[SAVE] SCE trajectory object saved.")

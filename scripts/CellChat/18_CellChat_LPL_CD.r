@@ -344,12 +344,11 @@ for (pw in pathways_all) {
   
   close_png()
   
-  open_png(filename = paste0("CellChat_LPL_CD_", pw, "_contribution.png"), dir = paths$plots_cellchat_lpl_path,
-           width = 1000, height = 800)
+  p <- netAnalysis_contribution(cellchat_obj, signaling = pw)
   
-  netAnalysis_contribution(cellchat_obj, signaling = pw)
+  save_plot(p, filename = paste0("CellChat_LPL_CD_", pw, "_contribution.png"), dir = paths$plots_cellchat_lpl_path)
   
-  close_png()
+  rm(p)
   
 }
 
